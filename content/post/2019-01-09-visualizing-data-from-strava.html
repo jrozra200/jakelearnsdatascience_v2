@@ -1,7 +1,7 @@
 ---
 title: Visualizing Exercise Data from Strava
 author: Jacob Rozran
-date: '2019-01-09'
+date: '2019-01-14'
 slug: visualizing-exercise-data-from-strava
 categories:
   - Data Visualization
@@ -49,12 +49,12 @@ token &lt;- httr::config(token = strava_oauth(name, client_id, secret,
 <pre class="r"><code>library(rStrava)
 
 ## LOAD THE TOKEN (AFTER THE FIRST TIME)
-stoken &lt;- httr::config(token = readRDS(&#39;/Users/jrozra200/Documents/jakelearnsdatascience/.httr-oauth&#39;)[[1]])
+stoken &lt;- httr::config(token = readRDS(oauth_location)[[1]])
 
 ## GET STRAVA DATA USING rStrava FUNCTION FOR MY ATHLETE ID
 my_act &lt;- get_activity_list(stoken, id = &#39;5954092&#39;)</code></pre>
 <p>This function returns a list of activities. class(my_act): list.</p>
-<p>In my case, there are 140 activies.</p>
+<p>In my case, there are 141 activies.</p>
 </div>
 <div id="formatting-the-data" class="section level3">
 <h3>FORMATTING THE DATA</h3>
@@ -77,126 +77,25 @@ for(act in 1:length(my_act)){
         
         info_df &lt;- rbind(info_df, tmp_df)
 }</code></pre>
-<p>I also want to convert a few fields to units that make more sense for me (miles, feet, hours instead of meters and seconds).</p>
-<pre class="r"><code>library(dplyr)
-library(lubridate)
-
-info_df$miles &lt;- info_df$distance / 1609.34 # CONVERT METERS TO MILES
-info_df$moving_time_hour &lt;- info_df$moving_time / 3600 # CONVERT SECONDS TO HOURS
-info_df$avg_mph &lt;- info_df$miles / info_df$moving_time_hour # CALCULATE MPH
-info_df$total_elevation_gain_ft &lt;- info_df$total_elevation_gain * 
-        3.28084 # CONVERT METERS TO FEET
-
-# CONVERT STRING DATE TO DATE CLASS
-info_df$start_date &lt;- as.Date(info_df$start_date, &quot;%Y-%m-%dT%H:%M:%SZ&quot;) 
-info_df$mon &lt;- month(info_df$start_date) # PULL OUT THE MONTH (FOR GROUPING)
-info_df$year &lt;- year(info_df$start_date) # PULL OUT THE YEAR (FOR GROUPING)
-
-# RENAME ACTIVITIES WHERE APPROPRIATE
-info_df$activity &lt;- ifelse(grepl(&quot;soccer&quot;, tolower(info_df$name)), &quot;Soccer&quot;,
-                           ifelse(info_df$type == &quot;Run&quot; &amp; info_df$trainer == TRUE,
-                                  &quot;Treadmill&quot;,
-                                  ifelse(info_df$type == &quot;Ride&quot; &amp; info_df$trainer == TRUE,
-                                         &quot;Peloton&quot;, as.character(info_df$type))))
-
-info_df &lt;- info_df[info_df$activity != &quot;Workout&quot;, ] # REMOVE PLAIN GYM WORKOUTS
-
-# ORDER ACTIVITIES TO GET THE CUMULATIVE SUM OF MILES
-info_df &lt;- info_df[order(info_df$start_date, decreasing = FALSE), ]
-info_df$total_sum &lt;- cumsum(info_df$miles) # CALCULATE THE OVERALL CUMULATIVE MILES
-
-# FOR EACH UNIQUE ACTIVITY, CALCULATE THE CUMULATIVE SUM
-info_sum &lt;- data.frame()
-for(act in unique(info_df$activity)){
-        tmp &lt;- info_df[info_df$activity == act, ]
-        
-        tmp$act_cum &lt;- cumsum(tmp$miles)
-        
-        info_sum &lt;- rbind(info_sum, tmp)
-}
-
-## FINALLY - LET&#39;S GROUP THE ACTIVITIES BY MONTH FOR A RIDGEPLOT
-mon_sum &lt;- as.data.frame(info_df %&gt;% group_by(mon, year, activity) %&gt;% 
-        summarise(total_elevation_gain_ft = sum(total_elevation_gain_ft),
-                  moving_time_hour = sum(moving_time_hour),
-                  miles = sum(miles),
-                  num_activites = length(unique(start_date))))
-
-## FOR EVERY 5 MILES ON BIKE, EQUATE TO 1 MILE RUN
-mon_sum$adjusted_miles &lt;- ifelse(mon_sum$activity == &quot;Ride&quot; | 
-                                         mon_sum$activity == &quot;Peloton&quot;,
-                                 mon_sum$miles / 5, mon_sum$miles)
-
-## PROBABLY NOT THE MOST EFFICIENT WAY TO DO IT, BUT ADD IN 0s FOR 
-## WHERE THERE ARE NO ACTIVITIES
-mon_sum_fin &lt;- data.frame()
-for(yr in 2014:2019){
-        for(mn in 1:12){
-                for(act in unique(mon_sum$activity)){
-                        if(dim(mon_sum[mon_sum$mon == mn &amp; mon_sum$year == yr &amp; 
-                                       mon_sum$activity == act, ])[1] &gt; 0){
-                                tmp &lt;- mon_sum[mon_sum$mon == mn &amp; 
-                                                       mon_sum$year == yr &amp; 
-                                                       mon_sum$activity == act, ]
-                        } else {
-                                tmp &lt;- data.frame(mon = mn,
-                                                  year = yr,
-                                                  activity = act, 
-                                                  total_elevation_gain_ft = 0,
-                                                  moving_time_hour = 0,
-                                                  miles = 0, 
-                                                  num_activites = 0,
-                                                  adjusted_miles = 0)
-                        }
-                        
-                        mon_sum_fin &lt;- rbind(mon_sum_fin, tmp)
-                }
-        }
-}
-
-## CONVERT THE DATE FOR VISUALIZATION
-mon_sum_fin$mon_year &lt;- as.Date(strptime(paste(mon_sum_fin$year, 
-                                               mon_sum_fin$mon,
-                                               &quot;01&quot;, sep = &quot;-&quot;), 
-                                         &quot;%Y-%m-%d&quot;))
-
-## GET RID OF THE ACTIVIES THAT HAVEN&#39;T HAPPENED
-mon_sum_fin &lt;- mon_sum_fin[mon_sum_fin$mon_year &gt;= &quot;2014-08-01&quot; &amp; 
-                                   mon_sum_fin$mon_year &lt;= Sys.Date(), ]</code></pre>
-<pre class="r"><code>library(ggplot2)
-library(ggridges)
-library(RColorBrewer)
-
-ggplot(data = info_df, aes(x = start_date, y = total_sum)) +
-        geom_line() + 
-        ggtitle(&quot;Cumulative Miles on Strava&quot;) +
-        xlab(&quot;Year&quot;) +
-        ylab(&quot;Miles (cumulative)&quot;) +
-        theme(panel.background = element_blank(), 
-              panel.grid.major = element_line(color = &quot;grey&quot;),
-              legend.position = &quot;right&quot;, legend.text = element_text(size = 8),
-              legend.key = element_rect(fill = &#39;white&#39;),
-              axis.title = element_text(size = 10), axis.text = element_text(size = 10))</code></pre>
-<p><img src="/posts/2019-01-09-visualizing-data-from-strava_files/figure-html/overall_cumulative-1.png" width="100%" /></p>
-<pre class="r"><code>ggplot(data = info_sum, aes(x = start_date, y = act_cum, color = activity)) +
-        geom_line() + 
-        ggtitle(&quot;Cumulative Miles by Activity on Strava&quot;) +
-        xlab(&quot;Year&quot;) +
-        ylab(&quot;Miles (cumulative)&quot;) +
-        theme(panel.background = element_blank(), 
-              panel.grid.major = element_line(color = &quot;grey&quot;),
-              legend.position = &quot;right&quot;, legend.text = element_text(size = 8),
-              legend.key = element_rect(fill = &#39;white&#39;),
-              axis.title = element_text(size = 10), axis.text = element_text(size = 10)) + 
-        scale_color_manual(name = &quot;&quot;, 
-                           values = colorRampPalette(brewer.pal(name = &quot;Blues&quot;, n = 8))(length(unique(info_sum$activity))))</code></pre>
-<p><img src="/posts/2019-01-09-visualizing-data-from-strava_files/figure-html/by_activity-1.png" width="100%" /></p>
-<pre class="r"><code>ggplot(mon_sum_fin, aes(x = mon_year, y = activity, fill = activity, height = adjusted_miles)) +
-        geom_density_ridges(stat = &quot;identity&quot;, scale = 0.9) +
-        theme_ridges() + 
-        theme(legend.position = &quot;none&quot;) + 
-        scale_fill_brewer(palette = &quot;Blues&quot;) + 
-        xlab(&quot;Year&quot;) + 
-        ylab(&quot;Activity&quot;)</code></pre>
-<p><img src="/posts/2019-01-09-visualizing-data-from-strava_files/figure-html/ridgeplot-1.png" width="100%" /></p>
+<p>I want to convert a few fields to units that make more sense for me (miles, feet, hours instead of meters and seconds). I’ve also created a number of features, though I’ve suppressed the code here. You can see all of the code on <a href="https://github.com/jrozra200/jakelearnsdatascience_v2/blob/master/content/post/2019-01-09-visualizing-data-from-strava.Rmd">github</a></p>
+</div>
+<div id="how-far-have-i-gone" class="section level3">
+<h3>HOW FAR HAVE I GONE?</h3>
+<p>Since 2014-08-08, I have - under my own power - traveled 1305.537736 miles. There were a few periods without much action (a whole year from mid-2016 through later-2017), which is a big sad. The last few months have been good, though.</p>
+<p><img src="/post/2019-01-09-visualizing-data-from-strava_files/figure-html/overall_cumulative-1.png" width="100%" /></p>
+<p>Here’s a similar view, but split by activity.</p>
+<ul>
+<li>I’ve been running recently.</li>
+<li>I haven’t really ridden my bike since the first 2 summers I had it.</li>
+<li>I rode the peloton when we first got it, but not since.</li>
+<li>I was a walker when I first tore the labrum in my hip in early 2018.</li>
+</ul>
+<p><img src="/post/2019-01-09-visualizing-data-from-strava_files/figure-html/by_activity-1.png" width="100%" /></p>
+<p>Finally, here’s the same data again, but split up in a <a href="https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html">ridgeplot</a>.</p>
+<p><img src="/post/2019-01-09-visualizing-data-from-strava_files/figure-html/ridgeplot-1.png" width="100%" /></p>
+</div>
+<div id="summary" class="section level3">
+<h3>SUMMARY</h3>
+<p>There’s a TON of data that is returned by the Strava API. This blog just scratches the surface of analysis that is possible - mostly I am just introducing how to get the data and get up and running.</p>
+<p>As a new year’s resolution, I’ve committed to run 312 miles this year. That is 6 miles per week for 52 weeks (for those trying to wrap their head around the weird number). Now that I’ve been able to pull this data, I’ll have to set up a tracker/dashboard for that data. More to come!</p>
 </div>

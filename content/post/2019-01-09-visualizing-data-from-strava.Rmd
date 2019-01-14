@@ -1,7 +1,7 @@
 ---
 title: Visualizing Exercise Data from Strava
 author: Jacob Rozran
-date: '2019-01-09'
+date: '2019-01-14'
 slug: visualizing-exercise-data-from-strava
 categories:
   - Data Visualization
@@ -63,11 +63,15 @@ token <- httr::config(token = strava_oauth(name, client_id, secret,
 Now that authentication is setup, using the **rStrava** package to pull activity 
 data is relatively straightforward.
 
+```{r hide_oauth_local, echo = FALSE}
+oauth_location <- "/Users/jrozra200/Documents/jakelearnsdatascience_v2/.httr-oauth"
+```
+
 ```{r get_strava_data}
 library(rStrava)
 
 ## LOAD THE TOKEN (AFTER THE FIRST TIME)
-stoken <- httr::config(token = readRDS('/Users/jrozra200/Documents/jakelearnsdatascience/.httr-oauth')[[1]])
+stoken <- httr::config(token = readRDS(oauth_location)[[1]])
 
 ## GET STRAVA DATA USING rStrava FUNCTION FOR MY ATHLETE ID
 my_act <- get_activity_list(stoken, id = '5954092')
@@ -103,10 +107,12 @@ for(act in 1:length(my_act)){
 }
 ```
 
-I also want to convert a few fields to units that make more sense for me (miles, 
-feet, hours instead of meters and seconds).
+I want to convert a few fields to units that make more sense for me (miles, 
+feet, hours instead of meters and seconds). I've also created a number of features, 
+though I've suppressed the code here. You can see all of the code on 
+[github](https://github.com/jrozra200/jakelearnsdatascience_v2/blob/master/content/post/2019-01-09-visualizing-data-from-strava.Rmd)
 
-```{r feature_creation, message = FALSE, warning = FALSE, error = FALSE}
+```{r feature_creation, message = FALSE, warning = FALSE, error = FALSE, echo = FALSE}
 library(dplyr)
 library(lubridate)
 
@@ -194,9 +200,14 @@ mon_sum_fin <- mon_sum_fin[mon_sum_fin$mon_year >= "2014-08-01" &
                                    mon_sum_fin$mon_year <= Sys.Date(), ]
 ```
 
+### HOW FAR HAVE I GONE?
 
+Since `r min(info_df$start_date)`, I have - under my own power - traveled 
+`r sum(info_df$miles)` miles. There were a few periods without much action 
+(a whole year from mid-2016 through later-2017), which is a big sad. The last 
+few months have been good, though. 
 
-```{r overall_cumulative, warning = FALSE, message = FALSE, out.width = "100%"}
+```{r overall_cumulative, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
 library(ggplot2)
 library(ggridges)
 library(RColorBrewer)
@@ -213,7 +224,14 @@ ggplot(data = info_df, aes(x = start_date, y = total_sum)) +
               axis.title = element_text(size = 10), axis.text = element_text(size = 10))
 ```
 
-```{r by_activity, warning = FALSE, message = FALSE, out.width = "100%"}
+Here's a similar view, but split by activity. 
+
+* I've been running recently. 
+* I haven't really ridden my bike since the first 2 summers I had it. 
+* I rode the peloton when we first got it, but not since. 
+* I was a walker when I first tore the labrum in my hip in early 2018. 
+
+```{r by_activity, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
 ggplot(data = info_sum, aes(x = start_date, y = act_cum, color = activity)) +
         geom_line() + 
         ggtitle("Cumulative Miles by Activity on Strava") +
@@ -228,7 +246,10 @@ ggplot(data = info_sum, aes(x = start_date, y = act_cum, color = activity)) +
                            values = colorRampPalette(brewer.pal(name = "Blues", n = 8))(length(unique(info_sum$activity))))
 ```
 
-```{r ridgeplot, warning = FALSE, message = FALSE, out.width = "100%"}
+Finally, here's the same data again, but split up in a 
+[ridgeplot](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html).
+
+```{r ridgeplot, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
 ggplot(mon_sum_fin, aes(x = mon_year, y = activity, fill = activity, height = adjusted_miles)) +
         geom_density_ridges(stat = "identity", scale = 0.9) +
         theme_ridges() + 
@@ -237,3 +258,14 @@ ggplot(mon_sum_fin, aes(x = mon_year, y = activity, fill = activity, height = ad
         xlab("Year") + 
         ylab("Activity")
 ```
+
+### SUMMARY
+
+There's a TON of data that is returned by the Strava API. This blog just 
+scratches the surface of analysis that is possible - mostly I am just 
+introducing how to get the data and get up and running. 
+
+As a new year's resolution, I've committed to run 312 miles this year. That is 
+6 miles per week for 52 weeks (for those trying to wrap their head around the 
+weird number). Now that I've been able to pull this data, I'll have to set up 
+a tracker/dashboard for that data. More to come!

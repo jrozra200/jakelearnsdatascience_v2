@@ -22,7 +22,7 @@ in. That first summer after buying my bike, I rode over 500 miles (more on that
 below). My neighbors at the time, also cyclists, introduced me to the app
 [Strava](https://www.strava.com/). Ever since then, I've tracked all of my rides, 
 runs, hikes, walks (perhaps not really exercise that needs to be tracked... but 
-I hurt myself early in 2018 and that's all I could do for a while), ect...
+I hurt myself early in 2018 and that's all I could do for a while), etc.
 everything I could, I tracked. 
 
 I got curious and found a package, [rStrava](https://github.com/fawda123/rStrava), 

@@ -202,8 +202,8 @@ mon_sum_fin <- mon_sum_fin[mon_sum_fin$mon_year >= "2014-08-01" &
 
 ### HOW FAR HAVE I GONE?
 
-Since `r min(info_df$start_date)`, I have - under my own power - traveled 
-`r sum(info_df$miles)` miles. There were a few periods without much action 
+Since `r format(min(info_df$start_date), "%B %d, %Y")`, I have - under my own power - traveled 
+`r round(sum(info_df$miles), 2)` miles. There were a few periods without much action 
 (a whole year from mid-2016 through later-2017), which is a big sad. The last 
 few months have been good, though. 
 

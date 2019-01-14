@@ -110,7 +110,7 @@ for(act in 1:length(my_act)){
 I want to convert a few fields to units that make more sense for me (miles, 
 feet, hours instead of meters and seconds). I've also created a number of features, 
 though I've suppressed the code here. You can see all of the code on 
-[github](https://github.com/jrozra200/jakelearnsdatascience_v2/blob/master/content/post/2019-01-09-visualizing-data-from-strava.Rmd)
+[github](https://github.com/jrozra200/jakelearnsdatascience_v2/blob/master/content/post/2019-01-09-visualizing-data-from-strava.Rmd).
 
 ```{r feature_creation, message = FALSE, warning = FALSE, error = FALSE, echo = FALSE}
 library(dplyr)

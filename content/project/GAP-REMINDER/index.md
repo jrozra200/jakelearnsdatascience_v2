@@ -13,7 +13,7 @@ summary = "A demonstration D3 project, shamelessly ripping off Gapminder."
 tags = ["d3.js", "data visualization"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://www.jakelearnsdatascience.com/projects/d3_sample_open_data_day_dc/"
+external_link = "https://www.jakelearnsdatascience.com/project/d3_sample_open_data_day_dc/"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your project's folder. 

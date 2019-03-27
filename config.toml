@@ -281,6 +281,11 @@ enableGitInfo = false
     link = "https://github.com/jrozra200/"
     
   [[params.social]]
+    icon = "chart-area"
+    icon_pack = "fas"
+    link = "https://public.tableau.com/profile/jacob.rozran#!/"
+ 
+  [[params.social]]
     icon = "chart-bar"
     icon_pack = "fas"
     link = "https://plot.ly/~rozran00#/"

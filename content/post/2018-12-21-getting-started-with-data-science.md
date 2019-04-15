@@ -29,9 +29,6 @@ some better or worse depending on your style.
 
 * [Johns Hopkins University Data Science Specialization on Coursera](https://www.coursera.org/specializations/jhu-data-science): As mentioned above 
 this course gave me my start with R, RStudio, and git.  
-* [DataCamp](https://www.datacamp.com/home): I have done a few of the courses in 
-python and R - they are interactive lessons that let you learn and do at the same time, 
-all in managable chunks.  
 * [Kaggle](https://www.kaggle.com/learn/overview): If you are as competitive as I 
 am, this site should get you going - the interactive kernals and social aspects of 
 this site make it a great place to see other data science in action. Plagiarism is 
@@ -76,6 +73,8 @@ being a good data scientist.
 * **Exponential View**: Not primarily focused on data, but is very frequently covering 
 artificial intelligence and machine learning topics. I recommend the newsletter that 
 goes along with this podcast (link below).  
+* **Not So Standard Deviations**: Richard Peng and Hilary Parker host a podcast on 
+all things data science. 
 * **The Data Lab Podcast**: Local [to Philly] data podcast interviewing local data 
 scientists. I find it reassuring to hear that my habits are often in line with 
 these peoples, plus I've picked up many really great tidbits (like the Exponential 

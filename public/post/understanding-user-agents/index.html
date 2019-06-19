@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Jacob Rozran">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="INTRODUCTION I have had a few discussions around web user agents at work recently. It turns out that they are not straightforward at all. In other words, trying to report browser usage to our Business Unit required a nontrivial translation. The more I dug in, the more I learned. I had some challenges finding the information, so I thought it be useful to document my findings and centralizing the sites I used to figure all this out.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/understanding-user-agents/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-74033249-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jake Learns Data Science">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Jake Learns Data Science">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/understanding-user-agents/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@rozran00">
+  <meta property="twitter:creator" content="@rozran00">
+  
+  <meta property="og:site_name" content="Jake Learns Data Science">
+  <meta property="og:url" content="/post/understanding-user-agents/">
+  <meta property="og:title" content="Understanding User Agents | Jake Learns Data Science">
+  <meta property="og:description" content="INTRODUCTION I have had a few discussions around web user agents at work recently. It turns out that they are not straightforward at all. In other words, trying to report browser usage to our Business Unit required a nontrivial translation. The more I dug in, the more I learned. I had some challenges finding the information, so I thought it be useful to document my findings and centralizing the sites I used to figure all this out."><meta property="og:image" content="/img/jakes_pic.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2015-06-19T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2015-06-19T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Understanding User Agents | Jake Learns Data Science</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jake Learns Data Science</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#tags">
+            
+            <span>Tags</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Understanding User Agents</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jacob Rozran">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2015-06-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2015-06-19 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Jun 19, 2015
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jacob Rozran">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="">User Agents</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Understanding%20User%20Agents&amp;url=%2fpost%2funderstanding-user-agents%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2funderstanding-user-agents%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2funderstanding-user-agents%2f&amp;title=Understanding%20User%20Agents"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2funderstanding-user-agents%2f&amp;title=Understanding%20User%20Agents"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Understanding%20User%20Agents&amp;body=%2fpost%2funderstanding-user-agents%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h3 id="introduction">INTRODUCTION</h3>
+
+<p>I have had a few discussions around web user agents at work recently. It turns out that they are not straightforward at all. In other words, trying to report browser usage to our Business Unit required a nontrivial translation. The more I dug in, the more I learned. I had some challenges finding the information, so I thought it be useful to document my findings and centralizing the sites I used to figure all this out.</p>
+
+<p>Just a quick background: Our web application, for a multitude of reasons, sends Internet Explorer users into a kind of compatibility mode in which it appears the browser is another version of IE (frequently 7, which no one uses anymore). In addition to this, in some of the application logs, there are user agents that appear with the prefix from the app followed by the browser as it understands it - also frequently IE7. For other browsers - it could be Google Crome (GC43; 43 is the browser version) or Mozilla Firefox (FF38; same deal here with the version number) - it does the same thing, though those browsers do not default to a compatibility mode in the same way.</p>
+
+<p>This is only the beginning of the confusion that is a web user agent string.</p>
+
+<p>While there isn&rsquo;t much I can do about the application logs doing its own user agent translations (we&rsquo;ll need to make some changes to the system logging), I can decipher the users strings from the places in the app that report the raw user agent strings. These are the strings that begin with Mozilla (more on that below). Let&rsquo;s walk through them.</p>
+
+<h3 id="the-user-agent-string">THE USER AGENT STRING</h3>
+
+<p>It can look like many different things. Here are some examples:</p>
+
+<ul>
+<li>Mozilla/5.0 (Windows NT 6.1;; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36<br /></li>
+<li>Mozilla/5.0 (Windows NT 6.3;; WOW64;; rv:31.0) Gecko/20100101 Firefox/31.0<br /></li>
+<li>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_10_3) AppleWebKit/600.5.17 (KHTML, like Gecko) Version/8.0.5 Safari/600.5.17<br /></li>
+<li>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; .NET4.0C;; .NET4.0E)<br /></li>
+<li>Mozilla/4.0 (compatible;; MSIE 7.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; MAEM;; .NET4.0C;; InfoPath.1)<br /></li>
+<li>Mozilla/4.0 (compatible;; MSIE 8.0;; Windows NT 5.1;; Trident/4.0;; .NET CLR 1.0.3705;; .NET CLR 1.1.4322;; Media Center PC 4.0;; .NET CLR 2.0.50727;; .NET CLR 3.0.4506.2152;; .NET CLR 3.5.30729;; InfoPath.3;; .NET4.0C;; yie8)<br /></li>
+<li>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; Trident/5.0)<br /></li>
+</ul>
+
+<p>As you can see - they all have different components and parts to them. Some seem to be very straightforward at first glance (keyword: seem) and others are totally baffling.</p>
+
+<h3 id="translating-the-user-agent-string">TRANSLATING THE USER AGENT STRING</h3>
+
+<p>Much of my understanding of these user agent strings came from plugging the user agent strings into this page and a fair amount of Googling.</p>
+
+<p>Let&rsquo;s pull apart the first user agent string from above: Mozilla/5.0 (Windows NT 6.1;; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36</p>
+
+<ul>
+<li>Mozilla/5.0<br />
+
+<ul>
+<li>&ldquo;MozillaProductSlice. Claims to be a Mozilla based user agent, which is only true for Gecko browsers like Firefox and Netscape. For all other user agents it means &lsquo;Mozilla-compatible&rsquo;. In modern browsers, this is only used for historical reasons. It has no real meaning anymore&rdquo;<br /></li>
+<li><strong>TRANSLATION</strong> We don&rsquo;t care about this field in any of the user agent strings. It&rsquo;s good to know that it starts the web user agent strings, but that&rsquo;s about it.<br /></li>
+</ul></li>
+<li>(Windows NT 6.1;; WOW64)<br />
+
+<ul>
+<li>Operating System = Windows 7<br /></li>
+<li><strong>TRANSLATION</strong> This is at least in the right ball park, but still not exactly straightforward. Why can&rsquo;t it just be Windows 7 for Windows 7?<br /></li>
+</ul></li>
+<li>AppleWebKit/537.36<br />
+
+<ul>
+<li>&ldquo;The Web Kit provides a set of core classes to display web content in windows&rdquo;<br /></li>
+<li><strong>TRANSLATION</strong> I don&rsquo;t even know&hellip; don&rsquo;t care.<br /></li>
+</ul></li>
+<li>(KHTML,<br />
+
+<ul>
+<li>&ldquo;Open Source HTML layout engine developed by the KDE project&rdquo;<br /></li>
+<li><strong>TRANSLATION</strong> Still don&rsquo;t know or care.<br /></li>
+</ul></li>
+<li>like Gecko)<br />
+
+<ul>
+<li>&ldquo;like Gecko&hellip;&rdquo;<br /></li>
+<li><strong>TRANSLATION</strong> What? Yep. Don&rsquo;t care - makes no sense.<br /></li>
+</ul></li>
+<li>Chrome/43.0.2357.81<br />
+
+<ul>
+<li>This is the browser and it&rsquo;s version<br /></li>
+<li><strong>TRANSLATION</strong> Google Chrome v. 43. YES! ONE THAT MAKES SENSE AND HAS INFO WE WANT!<br /></li>
+</ul></li>
+<li>Safari/537.36<br />
+
+<ul>
+<li>&ldquo;Based on Safari&rdquo;<br /></li>
+<li><strong>TRANSLATION</strong> Um&hellip; ok? So this isn&rsquo;t actually Apple Safari? NOPE! It&rsquo;s Chrome, which makes pulling Safari quite the challenge. I&rsquo;ll spell that out in more detail in outlining the if statement below.
+Out of that whole thing, we have several things that aren&rsquo;t important and several things that look like they could be another thing, but aren&rsquo;t.<br /></li>
+</ul></li>
+</ul>
+
+<p>So&hellip; Long story short - all of that info boils down to the user coming to our site using Google Crome 43 from a Window&rsquo;s 7 machine.</p>
+
+<h3 id="the-internet-explorer-user-agent">THE INTERNET EXPLORER USER AGENT</h3>
+
+<p>Confused yet? Hold on to your butts. The Internet Explorer User Agent String is the level 2 version of the previous string.</p>
+
+<p>Let&rsquo;s look at: Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; .NET4.0C;; .NET4.0E)</p>
+
+<p>I found some light reading to explain some of what we are about to dive into.</p>
+
+<p>Most important from that page is this line:</p>
+
+<p>&ldquo;When the F12 developer tools are used to change the browser mode of Internet Explorer, the version token of the user-agent string is modified to appear so that the browser appears to be an earlier version. <strong>This is done to allow browser specific content to be served to Internet Explorer and is usually necessary only when websites have not been updated to reflect current versions of the browser.</strong> When this happens, a Trident token is added to the user-agent string. This token includes a version number that enables you to identify the version of the browser, regardless of the current browser mode.&rdquo;</p>
+
+<p><strong>TRANSLATION</strong> Though the browser version above looks like MSIE 9.0 (that&rsquo;s clearly what the string says), the Trident version identifies the browser as actually Internet Explorer 11. I am 90% sure that our site has many many many many many customizations done to deal specifically with Internet Explorer funny business. This is why the browser appears many times as MSIE 7.0 (Like this example which is actually IE 11, too: Mozilla/4.0 (compatible;; MSIE 7.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; MAEM;; .NET4.0C;; InfoPath.1))</p>
+
+<p>If you&rsquo;d like additional information on Trident, it can be found here.</p>
+
+<p>Just to summarize: For those user agent strings from Internet Explorer, the important detail is that Trident bit for determining what browser they came from.</p>
+
+<h3 id="putting-the-pieces-together">PUTTING THE PIECES TOGETHER</h3>
+
+<p>Ok ok ok&hellip; now we at least can read the string - maybe there are a bunch of questions about a lot of this, but we can pull the browser version at this point.</p>
+
+<p>After pulling all of this information together and getting a general understanding of it, I read this <a href="http://webaim.org/blog/user-agent-string-history/" target="_blank">brief history of user agent strings</a>. Now I understand why they are the way they are - though I still think it&rsquo;s stupid.</p>
+
+<h3 id="deciphering-user-agents">DECIPHERING USER AGENTS</h3>
+
+<p>If you, like me, need to translate these user strings into something that normal people can understand - use this table for reference. We use Splunk to do our web scraping and analysis. By using the &ldquo;BIT THAT MATTERS,&rdquo; I was able to build a case statement to translate the User Agent Strings into human readable analysis.</p>
+
+<table>
+<thead>
+<tr>
+<th>BROWSER</th>
+<th>USER AGENT STRING EXAMPLE</th>
+<th>BIT THAT MATTERS</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Internet Explorer 11</td>
+<td>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; .NET4.0C;; .NET4.0E)</td>
+<td>Trident/7.0</td>
+</tr>
+
+<tr>
+<td>Internet Explorer 10</td>
+<td>Mozilla/4.0 (compatible;; MSIE 7.0;; Windows NT 6.2;; WOW64;; Trident/6.0;; .NET4.0E;; .NET4.0C;; .NET CLR 3.5.30729;; .NET CLR 2.0.50727;; .NET CLR 3.0.30729;; MDDCJS)</td>
+<td>Trident/6.0</td>
+</tr>
+
+<tr>
+<td>Internet Explorer 9</td>
+<td>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.0;; Trident/5.0;; BOIE9;;ENUSMSCOM)</td>
+<td>Trident/5.0</td>
+</tr>
+
+<tr>
+<td>Mozilla Firefox 4X.x</td>
+<td>Mozilla/5.0 (Windows NT 6.1;; Win64;; x64;; rv:40.0) Gecko/20100101 Firefox/40.0</td>
+<td>Firefox/4</td>
+</tr>
+
+<tr>
+<td>Mozilla Firefox 3X.x</td>
+<td>Mozilla/5.0 (Windows NT 6.1;; rv:38.0) Gecko/20100101 Firefox/38.0</td>
+<td>Firefox/3</td>
+</tr>
+
+<tr>
+<td>Google Chrome 4X.x</td>
+<td>Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko)</td>
+<td>Chrome/43.0.2357.81 Safari/537.36</td>
+</tr>
+
+<tr>
+<td>Google Chrome 3X.x</td>
+<td>Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36</td>
+<td>Chrome/3</td>
+</tr>
+
+<tr>
+<td>Apple Safari 8.x</td>
+<td>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5</td>
+<td>Version/8</td>
+</tr>
+
+<tr>
+<td>Apple Safari 7.x</td>
+<td>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_9_5) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/7.1.3 Safari/537.85.12</td>
+<td>Version/7</td>
+</tr>
+
+<tr>
+<td>Apple Safari 6.x</td>
+<td>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_7_5) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/6.1.6 Safari/537.78.2</td>
+<td>Version/6</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/learning/">learning</a>
+  
+  <a class="badge badge-light" href="">user agents</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/jakes_pic.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Jacob Rozran</a></h5>
+    <h6 class="card-subtitle">Data Guy, Dad, &amp; Uncle</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:jacob.rozran@gmail.com" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/rozran00/" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/jacob-rozran-884580b/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/jrozra200/" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://public.tableau.com/profile/jacob.rozran#!/" target="_blank" rel="noopener">
+          <i class="fas fa-chart-area"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://plot.ly/~rozran00#/" target="_blank" rel="noopener">
+          <i class="fas fa-chart-bar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.flickr.com/photos/jakes_project_365/" target="_blank" rel="noopener">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/files/cv.pdf" >
+          <i class="ai ai-cv"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2019 Jacob Rozran &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.07fbebbbf71b021c8836e1d7ecffa489.js"></script>
+
+    
+
+  </body>
+</html>
+

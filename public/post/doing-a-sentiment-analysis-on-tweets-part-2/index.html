@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Jacob Rozran">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="INTRO This is post is a continuation of my last post. There I pulled tweets from Twitter related to “Comcast email,” got rid of the junk, and removed the unnecessary/unwanted data.
+Now that I have the tweets, I will further clean the text and subject it to two different analyses: emotion and polarity.
+ WHY DOES THIS MATTER Before I get started, I thought it might be a good idea to talk about WHY I am doing this (besides the fact that I learned a new skill and want to show it off and get feedback).">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/doing-a-sentiment-analysis-on-tweets-part-2/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-74033249-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jake Learns Data Science">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Jake Learns Data Science">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/doing-a-sentiment-analysis-on-tweets-part-2/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@rozran00">
+  <meta property="twitter:creator" content="@rozran00">
+  
+  <meta property="og:site_name" content="Jake Learns Data Science">
+  <meta property="og:url" content="/post/doing-a-sentiment-analysis-on-tweets-part-2/">
+  <meta property="og:title" content="Doing a Sentiment Analysis on Tweets (Part 2) | Jake Learns Data Science">
+  <meta property="og:description" content="INTRO This is post is a continuation of my last post. There I pulled tweets from Twitter related to “Comcast email,” got rid of the junk, and removed the unnecessary/unwanted data.
+Now that I have the tweets, I will further clean the text and subject it to two different analyses: emotion and polarity.
+ WHY DOES THIS MATTER Before I get started, I thought it might be a good idea to talk about WHY I am doing this (besides the fact that I learned a new skill and want to show it off and get feedback)."><meta property="og:image" content="/img/jakes_pic.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2014-12-29T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2014-12-29T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Doing a Sentiment Analysis on Tweets (Part 2) | Jake Learns Data Science</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jake Learns Data Science</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#tags">
+            
+            <span>Tags</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Doing a Sentiment Analysis on Tweets (Part 2)</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jacob Rozran">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2014-12-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2014-12-29 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Dec 29, 2014
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jacob Rozran">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="">Data Engineering</a>, 
+    
+    <a href="">Data Analysis</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Doing%20a%20Sentiment%20Analysis%20on%20Tweets%20%28Part%202%29&amp;url=%2fpost%2fdoing-a-sentiment-analysis-on-tweets-part-2%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fdoing-a-sentiment-analysis-on-tweets-part-2%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fdoing-a-sentiment-analysis-on-tweets-part-2%2f&amp;title=Doing%20a%20Sentiment%20Analysis%20on%20Tweets%20%28Part%202%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fdoing-a-sentiment-analysis-on-tweets-part-2%2f&amp;title=Doing%20a%20Sentiment%20Analysis%20on%20Tweets%20%28Part%202%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Doing%20a%20Sentiment%20Analysis%20on%20Tweets%20%28Part%202%29&amp;body=%2fpost%2fdoing-a-sentiment-analysis-on-tweets-part-2%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<div id="intro" class="section level3">
+<h3>INTRO</h3>
+<p>This is post is a continuation of <a href="https://www.jakelearnsdatascience.com/posts/doing-a-sentiment-analysis-on-tweets-part-1/">my last post</a>. There I pulled tweets from Twitter related to “Comcast email,” got rid of the junk, and removed the unnecessary/unwanted data.</p>
+<p>Now that I have the tweets, I will further clean the text and subject it to two different analyses: emotion and polarity.</p>
+</div>
+<div id="why-does-this-matter" class="section level3">
+<h3>WHY DOES THIS MATTER</h3>
+<p>Before I get started, I thought it might be a good idea to talk about WHY I am doing this (besides the fact that I learned a new skill and want to show it off and get feedback). This yet incomplete project was devised for two reasons:</p>
+<ol style="list-style-type: decimal">
+<li>Understand the overall customer sentiment about the product I support</li>
+<li>Create an early warning system to help identify when things are going wrong on the platform</li>
+</ol>
+<p>Keeping the customer voice at the forefront of everything we do is tantamount to providing the best experience for the users of our platform. Identifying trends in sentiment and emotion can help inform the team in many ways, including seeing the reaction to new features/releases (i.e. – seeing a rise in comments about a specific addition from a release) and identifying needed changes to current functionality (i.e. – users who continually comment about a specific behavior of the application) and improvements to user experience (i.e. – trends in comments about being unable to find a certain feature on the site). Secondarily, this analysis can act as an early warning system when there are issues with the platform (i.e. – a sudden spike in comments about the usability of a mobile device).</p>
+<p>Now that I’ve explained why I am doing this (which I probably should have done in this sort of detail the first post), let’s get into how it is actually done…</p>
+</div>
+<div id="step-one-stripping-the-text-for-analysis" class="section level3">
+<h3>STEP ONE: STRIPPING THE TEXT FOR ANALYSIS</h3>
+<p>There are a number of things included in tweets that dont matter for the analysis. Things like twitter handles, URLs, punctuation… they are not necessary to do the analysis (in fact, they may well confound it). This bit of code handles that cleanup.</p>
+<p>For those following the scripts on GitHub, this is part of my <a href="https://github.com/jrozra200/scraping_twitter/blob/master/tweet_clean.R">tweet_clean.R script</a>. Also, to give credit where it is due: I’ve borrowed and tweaked the code from <a href="http://andybromberg.com/sentiment-analysis/">Andy Bromberg’s blog</a> to do this task.</p>
+<pre class="r"><code>library(stringr) ##Does some of the text editing
+
+##Cleaning up the data some more (just the text now) First grabbing only the text
+text &lt;- paredTweetList$Tweet
+
+# remove retweet entities
+text &lt;- gsub(&quot;(RT|via)((?:\\b\\W*@\\w+)+)&quot;, &quot;&quot;, text)
+# remove at people
+text &lt;- gsub(&quot;@\\w+&quot;, &quot;&quot;, text)
+# remove punctuation
+text &lt;- gsub(&quot;[[:punct:]]&quot;, &quot;&quot;, text)
+# remove numbers
+text &lt;- gsub(&quot;[[:digit:]]&quot;, &quot;&quot;, text)
+# remove html links
+text &lt;- gsub(&quot;http\\w+&quot;, &quot;&quot;, text)
+
+# define &quot;tolower error handling&quot; function
+try.error &lt;- function(x) {
+# create missing value
+y &lt;- NA
+# tryCatch error
+try_error &lt;- tryCatch(tolower(x), error=function(e) e)
+# if not an error
+if (!inherits(try_error, &quot;error&quot;))
+y &lt;- tolower(x)
+# result
+return(y)
+}
+# lower case using try.error with sapply
+text &lt;- sapply(text, try.error)
+
+# remove NAs in text
+text &lt;- text[!is.na(text)]
+# remove column names
+names(text) &lt;- NULL</code></pre>
+</div>
+<div id="step-two-classifying-the-emotion-for-each-tweet" class="section level3">
+<h3>STEP TWO: CLASSIFYING THE EMOTION FOR EACH TWEET</h3>
+<p>So now the text is just that: only text. The punctuation, links, handles, etc. have been removed. Now it is time to estimate the emotion of each tweet.</p>
+<p>Through some research, I found that there are many posts/sites on Sentiment Analysis/Emotion Classification that use the <a href="https://cran.r-project.org/web/packages/sentiment/index.html">“Sentiment” package in R</a>. I thought: “Oh great – a package tailor made to solve the problem for which I want an answer.” The problem is that this package has been deprecated and removed from the CRAN library.</p>
+<p>To get around this, I downloaded the archived package and pulled the code for doing the emotion classification. With some minor tweaks, I was able to get it going. This can be seen in its entirety in the <a href="https://github.com/jrozra200/scraping_twitter/blob/master/classify_emotion.R">classify_emotion.R script</a>. You can also see the “made for the internet” version here:</p>
+<pre class="r"><code>library(RTextTools)
+library(tm)
+algorithm &lt;- &quot;bayes&quot;
+prior &lt;- 1.0
+verbose &lt;- FALSE
+matrix &lt;- create_matrix(text)
+lexicon &lt;- read.csv(&quot;./data/emotions.csv.gz&quot;,header=FALSE)
+
+counts &lt;- list(anger=length(which(lexicon[,2]==&quot;anger&quot;)), 
+               disgust=length(which(lexicon[,2]==&quot;disgust&quot;)), 
+               fear=length(which(lexicon[,2]==&quot;fear&quot;)), 
+               joy=length(which(lexicon[,2]==&quot;joy&quot;)), 
+               sadness=length(which(lexicon[,2]==&quot;sadness&quot;)), 
+               surprise=length(which(lexicon[,2]==&quot;surprise&quot;)), 
+               total=nrow(lexicon))
+documents &lt;- c()
+
+for (i in 1:nrow(matrix)) {
+        if (verbose) print(paste(&quot;DOCUMENT&quot;,i))
+        scores &lt;- list(anger=0,disgust=0,fear=0,joy=0,sadness=0,surprise=0)
+        doc &lt;- matrix[i,]
+        words &lt;- findFreqTerms(doc,lowfreq=1)
+
+        for (word in words) {
+                for (key in names(scores)) {
+                        emotions &lt;- lexicon[which(lexicon[,2]==key),]
+                        index 0) {
+                                entry &lt;- emotions[index,]
+                                
+                                category &lt;- as.character(entry[[2]]])
+                                count &lt;- counts[[category]]
+
+                                score &lt;- 1.0
+                                if (algorithm==&quot;bayes&quot;) score &lt;- abs(log(score*prior/count))
+                                if (verbose) {
+                                        print(paste(&quot;WORD:&quot;,word,&quot;CAT:&quot;,
+                                                    category,&quot;SCORE:&quot;,score))
+                                        }
+                                
+                                scores[[category]] &lt;- scores[[category]]+score
+                                }
+                        }
+                }
+        
+        if (algorithm==&quot;bayes&quot;) {
+                for (key in names(scores)) {
+                        count &lt;- counts[[key]]
+                        total &lt;- counts[[&quot;total&quot;]]
+                        score &lt;- abs(log(count/total))
+                        scores[[key]] &lt;- scores[[key]]+score
+                        }
+                } else {
+                        for (key in names(scores)) {
+                                scores[[key]] &lt;- scores[[key]]+0.000001
+                                }
+                        }
+        
+        best_fit &lt;- names(scores)[which.max(unlist(scores))]
+        if (best_fit == &quot;disgust&quot; &amp;&amp; as.numeric(unlist(scores[2]))-3.09234 &lt; .01) best_fit &lt;- NA
+        documents &lt;- rbind(documents, c(scores$anger, 
+                                        scores$disgust, 
+                                        scores$fear, 
+                                        scores$joy, 
+                                        scores$sadness, 
+                                        scores$surprise, 
+                                        best_fit))
+        }
+
+colnames(documents) &lt;- c(&quot;ANGER&quot;, &quot;DISGUST&quot;, &quot;FEAR&quot;, &quot;JOY&quot;, 
+                         &quot;SADNESS&quot;, &quot;SURPRISE&quot;, &quot;BEST_FIT&quot;)</code></pre>
+<p>Here is a sample output from this code:</p>
+<table style="width:88%;">
+<colgroup>
+<col width="11%" />
+<col width="13%" />
+<col width="9%" />
+<col width="8%" />
+<col width="13%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ANGER</th>
+<th>DISGUST</th>
+<th>FEAR</th>
+<th>JOY</th>
+<th>SADNESS</th>
+<th>SURPRISE</th>
+<th>BEST_FIT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“1.46871776464786”</td>
+<td>“3.09234031207392”</td>
+<td>“2.06783599555953”</td>
+<td>“1.02547755260094”</td>
+<td>“7.34083555412328”</td>
+<td>“7.34083555412327”</td>
+<td>“sadness”</td>
+</tr>
+<tr class="even">
+<td>“7.34083555412328”</td>
+<td>“3.09234031207392”</td>
+<td>“2.06783599555953”</td>
+<td>“1.02547755260094”</td>
+<td>“1.7277074477352”</td>
+<td>“2.78695866252273”</td>
+<td>“anger”</td>
+</tr>
+<tr class="odd">
+<td>“1.46871776464786”</td>
+<td>“3.09234031207392”</td>
+<td>“2.06783599555953”</td>
+<td>“1.02547755260094”</td>
+<td>“7.34083555412328”</td>
+<td>“7.34083555412328”</td>
+<td>“sadness”</td>
+</tr>
+</tbody>
+</table>
+<p>Here you can see that the initial author is using naive Bayes (which honestly I don’t yet understand) to analyze the text. I wanted to show a quick snipet of how the analysis is being done “under the hood.”</p>
+<p>For my purposes though, I only care about the emotion outputted and the tweet it is analyzed from.</p>
+<pre class="r"><code>emotion &lt;- documents[, &quot;BEST_FIT&quot;]`</code></pre>
+<p>This variable, emotion, is returned by the classify_emotion.R script.</p>
+<div id="challenges-observed" class="section level4">
+<h4>CHALLENGES OBSERVED</h4>
+<p>In addition to not fully understanding the code, the emotion classification seems to only work OK (which is pretty much expected… this is a canned analysis that hasn’t been tailored to my analysis at all). I’d like to come back to this one day to see if I can do a better job analyzing the emotions of the tweets.</p>
+</div>
+</div>
+<div id="step-three-classifying-the-polarity-of-each-tweet" class="section level3">
+<h3>STEP THREE: CLASSIFYING THE POLARITY OF EACH TWEET</h3>
+<p>Similarly to what we saw in step 5, I will use the cleaned text to analyze the polarity of each tweet.</p>
+<p>This code is also from the old R Packaged titled “Sentiment.” As with above, I was able to get the code working with only some minor tweaks. This can be seen in its entirety in the <a href="https://github.com/jrozra200/scraping_twitter/blob/master/classify_polarity.R">classify_polarity.R script</a>. Here it is, too:</p>
+<pre class="r"><code>algorithm &lt;- &quot;bayes&quot;
+pstrong &lt;- 0.5
+pweak &lt;- 1.0
+prior &lt;- 1.0
+verbose &lt;- FALSE
+matrix &lt;- create_matrix(text)
+lexicon &lt;- read.csv(&quot;./data/subjectivity.csv.gz&quot;,header=FALSE)
+counts &lt;- list(positive=length(which(lexicon[,3]==&quot;positive&quot;)),
+               negative=length(which(lexicon[,3]==&quot;negative&quot;)), 
+               total=nrow(lexicon))
+documents &lt;- c()
+
+for (i in 1:nrow(matrix)) {
+        if (verbose) print(paste(&quot;DOCUMENT&quot;,i))
+        scores &lt;- list(positive=0,negative=0)
+        doc &lt;- matrix[i,]
+        words &lt;- findFreqTerms(doc, lowfreq=1)
+        
+        for (word in words) {
+                index 0) {
+                        entry &lt;- lexicon[index,]
+                        
+                        polarity &lt;- as.character(entry[[2]])
+                        category &lt;- as.character(entry[[3]])
+                        count &lt;- counts[[category]]
+                        
+                        score &lt;- pweak
+                        if (polarity == &quot;strongsubj&quot;) score &lt;- pstrong
+                        if (algorithm==&quot;bayes&quot;) score &lt;- abs(log(score*prior/count))
+                        
+                        if (verbose) {
+                                print(paste(&quot;WORD:&quot;, word, &quot;CAT:&quot;, 
+                                            category, &quot;POL:&quot;, polarity, 
+                                            &quot;SCORE:&quot;, score))
+                                }
+                        
+                        scores[[category]] &lt;- scores[[category]]+score
+                }
+        }
+        
+        if (algorithm==&quot;bayes&quot;) {
+                for (key in names(scores)) {
+                        count &lt;- counts[[key]]
+                        total &lt;- counts[[&quot;total&quot;]]
+                        score &lt;- abs(log(count/total))
+                        scores[[key]] &lt;- scores[[key]]+score
+                        }
+                } else {
+                        for (key in names(scores)) {
+                                scores[[key]] &lt;- scores[[key]]+0.000001
+                        }
+                }
+        
+        best_fit &lt;- names(scores)[which.max(unlist(scores))]
+        ratio &lt;- as.integer(abs(scores$positive/scores$negative))
+        if (ratio==1) best_fit &lt;- &quot;neutral&quot;
+        documents &lt;- rbind(documents,c(scores$positive, 
+                                       scores$negative, 
+                                       abs(scores$positive/scores$negative), 
+                                       best_fit))
+        
+        if (verbose) {
+                print(paste(&quot;POS:&quot;, scores$positive,&quot;NEG:&quot;, 
+                            scores$negative, &quot;RATIO:&quot;, 
+                            abs(scores$positive/scores$negative)))
+                cat(&quot;\n&quot;)
+                }
+        }
+
+colnames(documents) &lt;- c(&quot;POS&quot;,&quot;NEG&quot;,&quot;POS/NEG&quot;,&quot;BEST_FIT&quot;)</code></pre>
+<p>Here is a sample output from this code:</p>
+<table>
+<thead>
+<tr class="header">
+<th>POS</th>
+<th>NEG</th>
+<th>POS/NEG</th>
+<th>BEST_FIT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>“1.03127774142571”</td>
+<td>“0.445453222112551”</td>
+<td>“2.31512017476245”</td>
+<td>“positive”</td>
+</tr>
+<tr class="even">
+<td>“1.03127774142571”</td>
+<td>“26.1492093145274”</td>
+<td>“0.0394381997949273”</td>
+<td>“negative”</td>
+</tr>
+<tr class="odd">
+<td>“17.9196623384892”</td>
+<td>“17.8123396772424”</td>
+<td>“1.00602518608961”</td>
+<td>“neutral”</td>
+</tr>
+</tbody>
+</table>
+<p>Again, I just wanted to show a quick snipet of how the analysis is being done “under the hood.”</p>
+<p>I only care about the polarity outputted and the tweet it is analyzed from.</p>
+<pre class="r"><code>polarity &lt;- documents[, &quot;BEST_FIT&quot;]</code></pre>
+<p>This variable, polarity, is returned by the classify_polarity.R script.</p>
+<div id="challenges-observed-1" class="section level4">
+<h4>CHALLENGES OBSERVED</h4>
+<p>As with above, this is a stock analysis and hasn’t been tweaked for my needs. The analysis does OK, but I want to come back to this again one day to see if I can do better.</p>
+</div>
+</div>
+<div id="quick-conclusion" class="section level3">
+<h3>QUICK CONCLUSION</h3>
+<p>So… Now I have the emotion and polarity for each tweet. This can be useful to see on its own, but I think is more worthwhile in aggregate. In my next post, I’ll show that.</p>
+<p>Also in the next post- I’ll also show an analysis of the word count with a wordcloud… This gets into the secondary point of this analysis. Hypothetically, I’d like to see common issues bubbled up through the wordcloud.</p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="">data engineering</a>
+  
+  <a class="badge badge-light" href="">data analysis</a>
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/twitter/">twitteR</a>
+  
+  <a class="badge badge-light" href="">sentiment analysis</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/jakes_pic.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Jacob Rozran</a></h5>
+    <h6 class="card-subtitle">Data Guy, Dad, &amp; Uncle</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:jacob.rozran@gmail.com" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/rozran00/" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/jacob-rozran-884580b/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/jrozra200/" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://public.tableau.com/profile/jacob.rozran#!/" target="_blank" rel="noopener">
+          <i class="fas fa-chart-area"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://plot.ly/~rozran00#/" target="_blank" rel="noopener">
+          <i class="fas fa-chart-bar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.flickr.com/photos/jakes_project_365/" target="_blank" rel="noopener">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/files/cv.pdf" >
+          <i class="ai ai-cv"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/doing-a-sentiment-analysis-on-tweets-part-1/">Doing a Sentiment Analysis on Tweets (Part 1)</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2019 Jacob Rozran &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.07fbebbbf71b021c8836e1d7ecffa489.js"></script>
+
+    
+
+  </body>
+</html>
+

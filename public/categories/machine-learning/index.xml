@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Jake Learns Data Science</title>
+    <link>/categories/machine-learning/</link>
+    <description>Recent content in Machine Learning on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Thu, 07 Jul 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Machine Learning Demystified</title>
+      <link>/post/machine-learning-demystified/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-demystified/</guid>
+      <description>The differences and applications of Supervised and Unsupervised Machine Learning.
+Introduction Machine learning is one of the buzziest terms thrown around in technology these days. Combine machine learning with big data in a Google search and you&amp;rsquo;ve got yourself an unmanageable amount of information to digest. In an (possibly ironic) effort to help navigate this sea of information, this post is meant to be an introduction and simplification of some common machine learning terminology and types with some resources to dive deeper.</description>
+    </item>
+    
+  </channel>
+</rss>

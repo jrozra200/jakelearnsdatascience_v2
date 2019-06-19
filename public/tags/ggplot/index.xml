@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ggplot on Jake Learns Data Science</title>
+    <link>/tags/ggplot/</link>
+    <description>Recent content in ggplot on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ggplot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visualizing Exercise Data from Strava</title>
+      <link>/post/visualizing-exercise-data-from-strava/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/visualizing-exercise-data-from-strava/</guid>
+      <description>INTRODUCTION My wife introduced me to cycling in 2014 - I fell in love with it and went all in. That first summer after buying my bike, I rode over 500 miles (more on that below). My neighbors at the time, also cyclists, introduced me to the app Strava. Ever since then, I’ve tracked all of my rides, runs, hikes, walks (perhaps not really exercise that needs to be tracked… but I hurt myself early in 2018 and that’s all I could do for a while), etc.</description>
+    </item>
+    
+  </channel>
+</rss>

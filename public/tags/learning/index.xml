@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>learning on Jake Learns Data Science</title>
+    <link>/tags/learning/</link>
+    <description>Recent content in learning on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Fri, 21 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started with Data Science</title>
+      <link>/post/getting-started-with-data-science/</link>
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/getting-started-with-data-science/</guid>
+      <description>Everyone in the world has a &amp;ldquo;how to&amp;rdquo; guide to data science&amp;hellip; well, maybe not everyone - but there are a lot of &amp;ldquo;guides&amp;rdquo; out there. I get this question infrequently, so I thought I would do my best to put together what have been my best resources for learning.
+MY STORY Personally, I learned statistics by getting my Masters in Applied Statistics at Villanova University - it took 2.</description>
+    </item>
+    
+    <item>
+      <title>Sierpinski Triangles (and Carpets) in R</title>
+      <link>/post/sierpinski-triangles-and-carpets-in-r/</link>
+      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sierpinski-triangles-and-carpets-in-r/</guid>
+      <description>Recently in class, I was asked the following question:
+ Start with an equilateral triangle and a point chosen at random from the interior of that triangle. Label one vertex 1, 2, a second vertex 3, 4, and the last vertex 5, 6. Roll a die to pick a vertex. Place a dot at the point halfway between the roll-selected vertex and the point you chose. Now consider this new dot as a starting point to do this experiment once again.</description>
+    </item>
+    
+    <item>
+      <title>Understanding User Agents</title>
+      <link>/post/understanding-user-agents/</link>
+      <pubDate>Fri, 19 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/understanding-user-agents/</guid>
+      <description>INTRODUCTION I have had a few discussions around web user agents at work recently. It turns out that they are not straightforward at all. In other words, trying to report browser usage to our Business Unit required a nontrivial translation. The more I dug in, the more I learned. I had some challenges finding the information, so I thought it be useful to document my findings and centralizing the sites I used to figure all this out.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hackathon on Jake Learns Data Science</title>
+    <link>/categories/hackathon/</link>
+    <description>Recent content in Hackathon on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Mon, 07 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/hackathon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Open Data Day - DC Hackathon</title>
+      <link>/post/open-data-day-dc-hackathon/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/open-data-day-dc-hackathon/</guid>
+      <description>For those of you who aren&amp;rsquo;t stirred from bed in the small hours to learn data science, you might have missed that March 5th was international open data day. There are hundreds of local events around the world; I was lucky enough to attend DC&amp;rsquo;s Open Data Day Hackathon. I met a bunch of great people doing noble things with data who taught me a crap-ton (scientific term) and also validated my love for data science and how much I&amp;rsquo;ve learned since beginning my journey almost two years ago.</description>
+    </item>
+    
+  </channel>
+</rss>

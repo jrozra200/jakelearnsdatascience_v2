@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Data on Jake Learns Data Science</title>
+    <link>/categories/open-data/</link>
+    <description>Recent content in Open Data on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Tue, 15 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/open-data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exploring Open Data - Predicting the Amoung of Violations</title>
+      <link>/post/exploring-open-data-predicting-the-amount-of-violations/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/exploring-open-data-predicting-the-amount-of-violations/</guid>
+      <description>Introduction In my last post, I went over some of the highlights of the open data set of all Philadelphia Parking Violations. In this post, I’ll go through the steps to build a model to predict the amount of violations the city issues on a daily basis. I’ll walk you through cleaning and building the data set, selecting and creating the important features, and building predictive models using Random Forests and Linear Regression.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Open Data - Philadelphia Parking Violations</title>
+      <link>/post/exploring-open-data-philadelphia-parking-violations/</link>
+      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/exploring-open-data-philadelphia-parking-violations/</guid>
+      <description>Introduction A few weeks ago, I stumbled across Dylan Purcell&amp;rsquo;s article on Philadelphia Parking Violations. This is a nice glimpse of the data, but I wanted to get a taste of it myself. I went and downloaded the entire data set of Parking Violations in Philadelphia from the OpenDataPhilly website and came up with a few questions after checking out the data:
+How many tickets in the data set?</description>
+    </item>
+    
+    <item>
+      <title>Open Data Day - DC Hackathon</title>
+      <link>/post/open-data-day-dc-hackathon/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/open-data-day-dc-hackathon/</guid>
+      <description>For those of you who aren&amp;rsquo;t stirred from bed in the small hours to learn data science, you might have missed that March 5th was international open data day. There are hundreds of local events around the world; I was lucky enough to attend DC&amp;rsquo;s Open Data Day Hackathon. I met a bunch of great people doing noble things with data who taught me a crap-ton (scientific term) and also validated my love for data science and how much I&amp;rsquo;ve learned since beginning my journey almost two years ago.</description>
+    </item>
+    
+  </channel>
+</rss>

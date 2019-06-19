@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Visualization on Jake Learns Data Science</title>
+    <link>/categories/data-visualization/</link>
+    <description>Recent content in Data Visualization on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Visualizing Exercise Data from Strava</title>
+      <link>/post/visualizing-exercise-data-from-strava/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/visualizing-exercise-data-from-strava/</guid>
+      <description>INTRODUCTION My wife introduced me to cycling in 2014 - I fell in love with it and went all in. That first summer after buying my bike, I rode over 500 miles (more on that below). My neighbors at the time, also cyclists, introduced me to the app Strava. Ever since then, I’ve tracked all of my rides, runs, hikes, walks (perhaps not really exercise that needs to be tracked… but I hurt myself early in 2018 and that’s all I could do for a while), etc.</description>
+    </item>
+    
+    <item>
+      <title>Prime Number Patterns</title>
+      <link>/post/prime-number-patterns/</link>
+      <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/prime-number-patterns/</guid>
+      <description>I found a very thought provoking and beautiful visualization on the D3 Website regarding prime numbers. What the visualization shows is that if you draw periodic curves beginning at the origin for each positive integer, the prime numbers will be intersected by only two curves: the prime itself&amp;rsquo;s curve and the curve for one.
+When I saw this, my mind was blown. How interesting&amp;hellip; and also how obvious. The definition of a prime is that it can only be divided by itself and one (duh).</description>
+    </item>
+    
+    <item>
+      <title>Using the Google Search API and Plotly to Locate Waterparks</title>
+      <link>/post/waterparks-with-the-google-search-api-and-plotly/</link>
+      <pubDate>Wed, 04 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/waterparks-with-the-google-search-api-and-plotly/</guid>
+      <description>I’ve got a buddy who manages and builds waterparks. I thought to myself… I am probably the only person in the world who has a friend that works at a waterpark - cool. Then I started thinking some more… there has to be more than just his waterpark in this country; I’ve been to at least a few… and the thinking continued… I wonder how many there are… and continued… and I wonder where they are… and, well, here we are at the culmination of that curiosity with this blog post.</description>
+    </item>
+    
+  </channel>
+</rss>

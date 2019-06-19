@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>D3.js on Jake Learns Data Science</title>
+    <link>/tags/d3.js/</link>
+    <description>Recent content in D3.js on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Fri, 20 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/d3.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prime Number Patterns</title>
+      <link>/post/prime-number-patterns/</link>
+      <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/prime-number-patterns/</guid>
+      <description>I found a very thought provoking and beautiful visualization on the D3 Website regarding prime numbers. What the visualization shows is that if you draw periodic curves beginning at the origin for each positive integer, the prime numbers will be intersected by only two curves: the prime itself&amp;rsquo;s curve and the curve for one.
+When I saw this, my mind was blown. How interesting&amp;hellip; and also how obvious. The definition of a prime is that it can only be divided by itself and one (duh).</description>
+    </item>
+    
+    <item>
+      <title>GAP RE-MINDER</title>
+      <link>/project/gap-reminder/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>/project/gap-reminder/</guid>
+      <description>A demonstration D3 project, shamelessly ripping off Gapminder.</description>
+    </item>
+    
+    <item>
+      <title>Open Data Day - DC Hackathon</title>
+      <link>/post/open-data-day-dc-hackathon/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/open-data-day-dc-hackathon/</guid>
+      <description>For those of you who aren&amp;rsquo;t stirred from bed in the small hours to learn data science, you might have missed that March 5th was international open data day. There are hundreds of local events around the world; I was lucky enough to attend DC&amp;rsquo;s Open Data Day Hackathon. I met a bunch of great people doing noble things with data who taught me a crap-ton (scientific term) and also validated my love for data science and how much I&amp;rsquo;ve learned since beginning my journey almost two years ago.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1351 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jake Learns Data Science on Jake Learns Data Science</title>
+    <link>/</link>
+    <description>Recent content in Jake Learns Data Science on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Tue, 26 Mar 2019 00:00:00 -0400</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Jake Learns Data Science Visitor Dashboard</title>
+      <link>/project/jake-learns-data-science-visitors/</link>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 -0400</pubDate>
+      
+      <guid>/project/jake-learns-data-science-visitors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Data Scientist&#39;s Take on the Roadmap to AI</title>
+      <link>/post/a-data-scientists-take-on-the-roadmap-to-ai/</link>
+      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-data-scientists-take-on-the-roadmap-to-ai/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;INTRODUCTION&lt;/h3&gt;
+&lt;p&gt;Recently I was asked by a former colleague about getting into AI. He has truly big data and wants to use this data to power “AI” - if the headlines are to be believed, everyone else is already doing it. Though it was difficult for my ego, I told him I couldn’t help him in our 30 minute call and that he should think about hiring someone to get him there.&lt;/p&gt;
+&lt;p&gt;The truth was I really didn’t have a solid answer for him in the moment. This was truly disappointing - in my current role and in my previous role, I put predictive models into production. After thinking about it for a bit, there is definitely a similar path I took in both roles.&lt;/p&gt;
+&lt;p&gt;There’s 3 steps in my mind to getting to “AI.” Though this seems simple, it is a long process and potentially not linear - you may have to keep coming back to previous steps.&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Baseline (Reporting)&lt;/li&gt;
+&lt;li&gt;Understand (Advanced Analytics)&lt;/li&gt;
+&lt;li&gt;Artificial Intelligence (Data Science)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;baseline-reporting&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;BASELINE (REPORTING)&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Fun fact:&lt;/em&gt; You cannot effectively predict anything if you cannot measure the impact.&lt;/p&gt;
+&lt;p&gt;What I mean by &lt;strong&gt;baseline&lt;/strong&gt; is building out a reporting suite.&lt;/p&gt;
+&lt;p&gt;Having a fundamental understanding of your business and environment is key. Without doing this step, you may try to predict the wrong thing entirely - or start with something that isn’t the most impactful.&lt;/p&gt;
+&lt;p&gt;For me, this step started with finding the data in the first place. Perhaps, like my colleague, you have lots of data and you’re ready to jump in. That’s great and makes getting started that much more straightforward. In my role, I joined a finance team that really didn’t have a good bead on this - finding the data was difficult (and getting the owners of that data to give me access was a process as well).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To be successfull, start small and iterate.&lt;/strong&gt; Our first reports were built from manually downloading machine logs, processing them in R with JSON packages, and turning them into a black-and-white document. It was ugly, but it helped us know what we needed to know in that moment - oh yeah… it was MUCH better than nothing. &lt;em&gt;“Don’t let perfection be the enemy of good.”&lt;/em&gt; - paraphrased from Voltaire.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/post/2019-03-23-a-data-scientists-take-on-the-roadmap-to-ai/First_Report.png&#34; alt=&#34;First Report - with some details removed&#34; /&gt;
+&lt;/center&gt;
+&lt;p&gt;From this, I gained access to our organizations data warehouse, put automation in place, and purchased some Tableau licenses. This phase took a few months and is constantly being refined, but we are now able to see the impact of our decisions at a glance.&lt;/p&gt;
+&lt;p&gt;This new understanding inevitably leads to more questions - queue step 2: &lt;strong&gt;Understanding&lt;/strong&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;understanding-advanced-analytics&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;UNDERSTANDING (ADVANCED ANALYTICS)&lt;/h3&gt;
+&lt;p&gt;If you have never circulated reports and dashboards to others… let me fill you in on something: it will ALWAYS lead to additional, progressively harder questions.&lt;/p&gt;
+&lt;p&gt;This step is an investment in time and expertise - you have to commit to having dedicated resource(s) (read: people… it is inhumane to call people resources and you may only need one person or some of a full time person’s time).&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Why did X go up unexpectedly (breaks the current trend)?&lt;/li&gt;
+&lt;li&gt;Are we over indexing on this type of customer?&lt;/li&gt;
+&lt;li&gt;Right before our customer leaves, this weird thing happens - what is this weird thing and why is it happening?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Like the previous step - this will be ongoing. Investing in someone to do advanced analytics will help you to understand the fine details of your business AND … (drum roll) … &lt;strong&gt;will help you to understand&lt;/strong&gt; &lt;strong&gt;which part of your business is most ripe for “AI”!&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;artificial-intelligence-data-science&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;ARTIFICIAL INTELLIGENCE (DATA SCIENCE)&lt;/h3&gt;
+&lt;p&gt;It is at this point that you will able to do real, bonafide, &lt;strong&gt;data &lt;/strong&gt; &lt;strong&gt;science&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;A quick rant:&lt;/em&gt; Notice that I purposefully did not use the term “AI” (I know I used it throughout this article and even in the title of this section… what can I say - I am in-tune with marketing concepts, too). “AI” is a term that is overused and rarely implemented. Data science, however, comes in many forms and can really transform your business.&lt;/p&gt;
+&lt;p&gt;Here’s a few ideas for what you can do with &lt;strong&gt;data science&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Prediction/Machine Learning&lt;/li&gt;
+&lt;li&gt;Testing&lt;/li&gt;
+&lt;li&gt;Graph Analysis&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Perhaps you want to &lt;strong&gt;predict&lt;/strong&gt; whether a sale is fraud or which existing customer is most apt to buy your new product?&lt;/p&gt;
+&lt;p&gt;You can also &lt;strong&gt;test&lt;/strong&gt; whether a new strategy works better than the old. This requires that you use statistical concepts to ensure valid testing and results.&lt;/p&gt;
+&lt;p&gt;My new obsession is around &lt;strong&gt;graph analysis&lt;/strong&gt;. With graphs you can see relationships that may have been hidden before - this will enable you to identify new targets and enrich your understanding of your business!&lt;/p&gt;
+&lt;p&gt;Data science usually is very specific thing and takes many forms!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;SUMMARY&lt;/h3&gt;
+&lt;p&gt;Getting to &lt;strong&gt;data science&lt;/strong&gt; is a process - it will take an investment. There are products out there that will help you shortcut some of these steps and I encourage you to consider these.&lt;/p&gt;
+&lt;p&gt;There are products to help with reporting, analytics, and data science. These should, in my very humble opinion, be used by people who are dedicated to the organizations data, analytics, and science.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Directions for data science - measure, analyze, predict, repeat!&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Visualizing Exercise Data from Strava</title>
+      <link>/post/visualizing-exercise-data-from-strava/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/visualizing-exercise-data-from-strava/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;INTRODUCTION&lt;/h3&gt;
+&lt;p&gt;My wife introduced me to cycling in 2014 - I fell in love with it and went all in. That first summer after buying my bike, I rode over 500 miles (more on that below). My neighbors at the time, also cyclists, introduced me to the app &lt;a href=&#34;https://www.strava.com/&#34;&gt;Strava&lt;/a&gt;. Ever since then, I’ve tracked all of my rides, runs, hikes, walks (perhaps not really exercise that needs to be tracked… but I hurt myself early in 2018 and that’s all I could do for a while), etc. everything I could, I tracked.&lt;/p&gt;
+&lt;p&gt;I got curious and found a package, &lt;a href=&#34;https://github.com/fawda123/rStrava&#34;&gt;rStrava&lt;/a&gt;, where I can download all of my activity. Once I had it, I put it into a few visualizations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;establish-strava-authentication&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;ESTABLISH STRAVA AUTHENTICATION&lt;/h3&gt;
+&lt;p&gt;First thing I had to do was set up a Strava account and application. I found some really nice instructions on &lt;a href=&#34;http://www.open-thoughts.com/2017/01/the-quantified-cyclist-analysing-strava-data-using-r/&#34;&gt;another blog&lt;/a&gt; that helped walk me through this.&lt;/p&gt;
+&lt;p&gt;After that, I installed rStrava and set up authentication (you only have to do this the first time).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## INSTALLING THE NECESSARY PACKAGES
+install.packages(&amp;quot;devtools&amp;quot;)
+devtools::install_github(&amp;#39;fawda123/rStrava&amp;#39;)
+
+## LOAD THE LIBRARY
+library(rStrava)
+
+## ESTABLISH THE APP CREDENTIALS
+name &amp;lt;- &amp;#39;jakelearnsdatascience&amp;#39; 
+client_id  &amp;lt;- &amp;#39;31528&amp;#39; 
+secret &amp;lt;- &amp;#39;MY_SECRET_KEY&amp;#39;
+
+## CREATE YOUR STRAVA TOKEN
+token &amp;lt;- httr::config(token = strava_oauth(name, client_id, secret, 
+                                           cache = TRUE)) 
+## cache = TRUE is optional - but it saves your token to the working directory&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;get-my-exercise-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;GET MY EXERCISE DATA&lt;/h3&gt;
+&lt;p&gt;Now that authentication is setup, using the &lt;strong&gt;rStrava&lt;/strong&gt; package to pull activity data is relatively straightforward.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rStrava)
+
+## LOAD THE TOKEN (AFTER THE FIRST TIME)
+stoken &amp;lt;- httr::config(token = readRDS(oauth_location)[[1]])
+
+## GET STRAVA DATA USING rStrava FUNCTION FOR MY ATHLETE ID
+my_act &amp;lt;- get_activity_list(stoken, id = &amp;#39;5954092&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This function returns a list of activities. class(my_act): list.&lt;/p&gt;
+&lt;p&gt;In my case, there are 141 activies.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;formatting-the-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;FORMATTING THE DATA&lt;/h3&gt;
+&lt;p&gt;To make the data easier to work with, I convert it to a data frame. There are many more fields than I’ve selected below - these are all I want for this post.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;info_df &amp;lt;- data.frame()
+for(act in 1:length(my_act)){
+        tmp &amp;lt;- my_act[[act]]
+        
+        tmp_df &amp;lt;- data.frame(name = tmp$name,
+                             type = tmp$type,
+                             distance = tmp$distance,
+                             moving_time = tmp$moving_time,
+                             elapsed_time = tmp$elapsed_time,
+                             start_date = tmp$start_date_local,
+                             total_elevation_gain = tmp$total_elevation_gain,
+                             trainer = tmp$trainer,
+                             manual = tmp$manual,
+                             average_speed = tmp$average_speed,
+                             max_speed = tmp$max_speed)
+        
+        info_df &amp;lt;- rbind(info_df, tmp_df)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I want to convert a few fields to units that make more sense for me (miles, feet, hours instead of meters and seconds). I’ve also created a number of features, though I’ve suppressed the code here. You can see all of the code on &lt;a href=&#34;https://github.com/jrozra200/jakelearnsdatascience_v2/blob/master/content/post/2019-01-09-visualizing-data-from-strava.Rmd&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;how-far-have-i-gone&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;HOW FAR HAVE I GONE?&lt;/h3&gt;
+&lt;p&gt;Since August 08, 2014, I have - under my own power - traveled 1305.54 miles. There were a few periods without much action (a whole year from mid-2016 through later-2017), which is a big sad. The last few months have been good, though.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-visualizing-data-from-strava_files/figure-html/overall_cumulative-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Here’s a similar view, but split by activity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I’ve been running recently.&lt;/li&gt;
+&lt;li&gt;I haven’t really ridden my bike since the first 2 summers I had it.&lt;/li&gt;
+&lt;li&gt;I rode the peloton when we first got it, but not since.&lt;/li&gt;
+&lt;li&gt;I was a walker when I first tore the labrum in my hip in early 2018.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-visualizing-data-from-strava_files/figure-html/by_activity-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Finally, here’s the same data again, but split up in a &lt;a href=&#34;https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html&#34;&gt;ridgeplot&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-01-09-visualizing-data-from-strava_files/figure-html/ridgeplot-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;SUMMARY&lt;/h3&gt;
+&lt;p&gt;There’s a TON of data that is returned by the Strava API. This blog just scratches the surface of analysis that is possible - mostly I am just introducing how to get the data and get up and running.&lt;/p&gt;
+&lt;p&gt;As a new year’s resolution, I’ve committed to run 312 miles this year. That is 6 miles per week for 52 weeks (for those trying to wrap their head around the weird number). Now that I’ve been able to pull this data, I’ll have to set up a tracker/dashboard for that data. More to come!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Data Science</title>
+      <link>/post/getting-started-with-data-science/</link>
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/getting-started-with-data-science/</guid>
+      <description>
+
+&lt;p&gt;Everyone in the world has a &amp;ldquo;how to&amp;rdquo; guide to data science&amp;hellip; well, maybe not everyone -
+but there are a lot of &amp;ldquo;guides&amp;rdquo; out there. I get this question infrequently, so I thought I would do
+my best to put together what have been my best resources for learning.&lt;/p&gt;
+
+&lt;h3 id=&#34;my-story&#34;&gt;MY STORY&lt;/h3&gt;
+
+&lt;p&gt;Personally, I learned statistics by getting my Masters in Applied Statistics at
+Villanova University - it took 2.5 years. I got my introduction to R by working
+through the &lt;a href=&#34;https://www.coursera.org/specializations/jhu-data-science&#34; target=&#34;_blank&#34;&gt;Johns Hopkins University Data Science Specialization on Coursera&lt;/a&gt;. Similarly for
+python, I got an online introduction via &lt;a href=&#34;https://www.datacamp.com/courses/intro-to-python-for-data-science&#34; target=&#34;_blank&#34;&gt;DataCamp&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This was all bolstered by working with these tools at work and in side projects.
+The repetition of working with these tools every day has made it more fluent.&lt;/p&gt;
+
+&lt;p&gt;Here are some resources that I&amp;rsquo;ve used or know of - I&amp;rsquo;ve tried to outline them and
+group them to the best of my ability. There&amp;rsquo;s many more out there, and you may find
+some better or worse depending on your style.&lt;/p&gt;
+
+&lt;h3 id=&#34;learning-data&#34;&gt;LEARNING DATA&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/specializations/jhu-data-science&#34; target=&#34;_blank&#34;&gt;Johns Hopkins University Data Science Specialization on Coursera&lt;/a&gt;: As mentioned above
+this course gave me my start with R, RStudio, and git.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kaggle.com/learn/overview&#34; target=&#34;_blank&#34;&gt;Kaggle&lt;/a&gt;: If you are as competitive as I
+am, this site should get you going - the interactive kernals and social aspects of
+this site make it a great place to see other data science in action. Plagiarism is
+greatest form of flattery (and easiest way to learn - thanks, Stack Overflow).&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.edx.org/learn/r-programming&#34; target=&#34;_blank&#34;&gt;EdX - R Programming&lt;/a&gt;: I haven&amp;rsquo;t used EdX
+much, but there is a wealth of MOOCs here.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;learning-statistics-other-important-math&#34;&gt;LEARNING STATISTICS &amp;amp; OTHER IMPORTANT MATH&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.khanacademy.org/math/statistics-probability&#34; target=&#34;_blank&#34;&gt;Khahn Academy - Statistics&lt;/a&gt;: I
+have used Khahn Academy on multiple occasions for refreshers in Statistics and Linear Algebra.
+The classes are interactive, manageable, and self-paced.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.khanacademy.org/math/linear-algebra&#34; target=&#34;_blank&#34;&gt;Khahn Academy - Linear Algebra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/specializations/statistics&#34; target=&#34;_blank&#34;&gt;Coursera - Statistics with R&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.edx.org/course/subject/data-analysis-statistics&#34; target=&#34;_blank&#34;&gt;EdX - Data Analytics &amp;amp; Statistics courses&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Of course -  higher education, as well.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;data-books&#34;&gt;DATA BOOKS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy&lt;/strong&gt; - &lt;em&gt;Cathy O&amp;rsquo;Neil&lt;/em&gt;&lt;/a&gt;: Cathy O&amp;rsquo;Neil
+does a great job of outlining how data algorithms can have  unintended negative consequences.
+Anyone who builds an machine learning algorithm should read.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/Street-Journal-Guide-Information-Graphics/dp/0393347281&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Wall Street Journal Guide to Information Graphics: The Dos and Don&amp;rsquo;ts of Presenting Data, Facts, and Figures&lt;/strong&gt; - &lt;em&gt;Dona M. Wong&lt;/em&gt;&lt;/a&gt;:
+I have this book on my desk as a reference. Quick read filled with easy to understand
+rules and objectives for creating data visualizations. Analyzing data is hard - this
+book teaches tips to build clear and informative visualizations that don&amp;rsquo;t take away
+from the message.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/Signal-Noise-Many-Predictions-Fail-but-ebook/dp/B007V65R54&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;The Signal and the Noise: Why So Many Predictions Fail-but Some Don&amp;rsquo;t&lt;/strong&gt; - &lt;em&gt;Nate Silver&lt;/em&gt;&lt;/a&gt;: Nate
+Silver is [in]famous for predicting elections. This book gets into the details of how he does that.
+Super interesting for a guy increasingly interested in politics.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/How-Not-Be-Wrong-Mathematical/dp/0143127535&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;How Not to Be Wrong: The Power of Mathematical Thinking&lt;/strong&gt; - &lt;em&gt;Jordan Ellenberg&lt;/em&gt;&lt;/a&gt;: Critical
+thinking is crucial in data science and analytics. This book gives some great tips on
+how to approach &amp;ldquo;facts&amp;rdquo; with the right mindset.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Thinking, Fast and Slow&lt;/strong&gt; - &lt;em&gt;Daniel Kahneman&lt;/em&gt;&lt;/a&gt;: Currently
+on my list to read.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;podcasts&#34;&gt;PODCASTS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hidden Brain&lt;/strong&gt;: NPR podcast covering many topics. I find it super interesting. While not
+distinctly data related, it frequently covers topics that have tangential importance to
+being a good data scientist.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exponential View&lt;/strong&gt;: Not primarily focused on data, but is very frequently covering
+artificial intelligence and machine learning topics. I recommend the newsletter that
+goes along with this podcast (link below).&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Not So Standard Deviations&lt;/strong&gt;: Richard Peng and Hilary Parker host a podcast on
+all things data science.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Data Lab Podcast&lt;/strong&gt;: Local [to Philly] data podcast interviewing local data
+scientists. I find it reassuring to hear that my habits are often in line with
+these peoples, plus I&amp;rsquo;ve picked up many really great tidbits (like the Exponential
+View newsletter).&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;O&amp;rsquo;Reilly Data Show&lt;/strong&gt;: I have attended the Strata data conference by O&amp;rsquo;Reilly. Much
+like the conference, this podcast covers many relevant data themes.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Skeptic&lt;/strong&gt;: Another data podcast that covers many good data topics.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;blogs-newsletters&#34;&gt;BLOGS &amp;amp; NEWSLETTERS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.exponentialview.co/&#34; target=&#34;_blank&#34;&gt;Exponential View&lt;/a&gt;: Billed as a weekly &amp;ldquo;wondermissive&amp;rdquo;,
+the author Azeem Azhar covers many topics relevant to data and the greater technology
+economy. I truly look forward to getting this newsletter every Sunday morning.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: I follow many great data people on twitter and get a great deal of my
+data news there.&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Build a Binary Classification Model</title>
+      <link>/post/how-to-build-a-binary-classification-model/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how-to-build-a-binary-classification-model/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#what-is-binary-classification&#34;&gt;What Is Binary Classification?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#algorithms-for-binary-classification&#34;&gt;Algorithms for Binary Classification&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#logistic-regression&#34;&gt;Logistic Regression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#decision-treesrandom-forests&#34;&gt;Decision Trees/Random Forests&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#decision-trees&#34;&gt;Decision Trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#random-forests&#34;&gt;Random Forests&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nearest-neighbor&#34;&gt;Nearest Neighbor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#support-vector-machines-svm&#34;&gt;Support Vector Machines (SVM)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#neural-networks&#34;&gt;Neural Networks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#great.-now-what&#34;&gt;Great. Now what?&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#determining-what-the-problem-is&#34;&gt;Determining What the Problem is&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#locate-and-obtain-data&#34;&gt;Locate and Obtain Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#data-mining-preparing-for-analysis&#34;&gt;Data Mining &amp;amp; Preparing for Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#splitting-the-data&#34;&gt;Splitting the Data&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#building-the-models&#34;&gt;Building the Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#validating-the-models&#34;&gt;Validating the Models&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;what-is-binary-classification&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What Is Binary Classification?&lt;/h3&gt;
+&lt;p&gt;Binary classification is used to classify a given set into two categories. Usually, this answers a yes or no question:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Did a particular passenger on the Titanic survive?&lt;/li&gt;
+&lt;li&gt;Is a particular user account compromised?&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Is my product on the shelf in a certain pharmacy?&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This type of inference is frequently made using supervised machine learning techniques. Supervised machine learning means that you have historical, labeled data, from which your algorithm may learn.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;algorithms-for-binary-classification&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Algorithms for Binary Classification&lt;/h3&gt;
+&lt;p&gt;There are many methods for doing binary classification. To name a few:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Logistic Regression&lt;/li&gt;
+&lt;li&gt;Decision Trees/Random Forests&lt;/li&gt;
+&lt;li&gt;Nearest Neighbor&lt;/li&gt;
+&lt;li&gt;Support Vector Machines (SVM)&lt;/li&gt;
+&lt;li&gt;Neural Networks&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;logistic-regression&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Logistic Regression&lt;/h4&gt;
+&lt;p&gt;Logistic regression is a parametric statistical model that predicts binary outcomes. Parametric means that this algorithm is based off of a distribution (in this case, the logistic distribution), and as such must follow a few assumptions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Obviously, the dependent variable must be binary&lt;/li&gt;
+&lt;li&gt;Only meaningful independent variables are included in the model&lt;/li&gt;
+&lt;li&gt;Error terms need to be independent and identically distributed&lt;/li&gt;
+&lt;li&gt;Independent variables need to be independent from one another&lt;/li&gt;
+&lt;li&gt;Large sample sizes are preferred&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Because of these assumptions, parametric tests tend to be more statistically powerful than nonparametric tests; in other words, they tend to better find a significant effect when it indeed exists.&lt;/p&gt;
+&lt;p&gt;Logistic regression follows the equation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;probability of the outcome being 1 given the independent variables&lt;/li&gt;
+&lt;li&gt;Dependent variable&lt;/li&gt;
+&lt;li&gt;Limited to values between 0 and 1&lt;/li&gt;
+&lt;li&gt;independent variables&lt;/li&gt;
+&lt;li&gt;intercept and coefficients for the independent variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This equation is created based on a training set of data – or historical, labeled data – and then is used to predict the likelihoods of future, unlabeled data.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/binary_classification/logistic_regression.png&#34; alt=&#34;Logistic Regression Example&#34; /&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;decision-treesrandom-forests&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Decision Trees/Random Forests&lt;/h4&gt;
+&lt;div id=&#34;decision-trees&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Decision Trees&lt;/h5&gt;
+&lt;p&gt;A decision tree is a nonparametric classifier. It effectively partitions the data, starting first by splitting on the independent variable that gives the most information gain, and then recursively repeating this process at subsequent levels.&lt;/p&gt;
+&lt;p&gt;Information gain is a formula that determines how “important” an independent variable is in predicting the dependent variable. It takes into account how many distinct values there are (in terms of categorical variables) and the number and size of branches in the decision tree. The goal is to pick the most informative variable that is still general enough to prevent overfitting.&lt;/p&gt;
+&lt;p&gt;The bottom of the decision tree, at the leaf nodes, are groupings of events within the set that all follow the rules set forth throughout the tree to get to the node. Future, unlabeled events, are then fed into the tree to see which group the belong – the average of the labeled (training) data for the leaf is then assigned as the predicted value for the unlabeled event.&lt;/p&gt;
+&lt;p&gt;As with logistic regression, overfitting is a concern. If you allow a decision tree to continue to grow without bound, eventually you will have all identical events in each leaf; while this may look beneficial, it may be too specific to the training data and mislabel future events. “Pruning” occurs to prevent overfitting.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/machine_learning_demystified/tree.png&#34; alt=&#34;Decision Tree of the Titanic Survivors&#34; /&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;random-forests&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Random Forests&lt;/h5&gt;
+&lt;p&gt;Random forests is an ensemble method build upon the decision trees. Random forests are a “forest” of decision trees – in other words, you use bootstrap sampling techniques to build many over-fit decision trees, then average out the results to determine a final model.&lt;/p&gt;
+&lt;p&gt;A bootstrap sample is sampling with replacement – in every selection for the sample, each event has an equal chance of being chosen.&lt;/p&gt;
+&lt;p&gt;To clarify – building a random forest model means taking many bootstrap samples and building an over-fit decision tree (meaning you continue to split the tree without bound until every leaf node has identical groups in them) on each. These results, taken together, correct for the biases and potential overfitting of an individual tree.&lt;/p&gt;
+&lt;p&gt;The more trees in your random forest, the better – the trade-off being that more trees mean more computing. Random forests often take a long time to train.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;nearest-neighbor&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Nearest Neighbor&lt;/h4&gt;
+&lt;p&gt;The k-nearest neighbor algorithm is a very simple algorithm. Using the training set as reference, the new, unlabeled data is predicted by taking the average of the k closest events. Being a lazy learner, where evaluation does not take place until you classify new events, it is quick to run.&lt;/p&gt;
+&lt;p&gt;It can be difficult to determine what k should be. However, because it is easy computationally, you can run multiple iterations without much overhead.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/binary_classification/knn.jpg&#34; alt=&#34;Nearest Neighbor&#34; /&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;div id=&#34;support-vector-machines-svm&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Support Vector Machines (SVM)&lt;/h4&gt;
+&lt;p&gt;SVM is also an ensemble machine learning method. SVM recursively attempts to “split” the two categories by maximizing the distance between a hyperplane (a plane in more than 2 dimensions; most applications of machine learning are in the higher dimensional space) and the closest points in each category.&lt;/p&gt;
+&lt;p&gt;As you can see in the simple example below, the plane iteratively improves the split between the two groups.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/binary_classification/svm.png&#34; alt=&#34;Support Vector Machines&#34; /&gt;
+&lt;/center&gt;
+&lt;p&gt;There are multiple kernels that can be used with SVM, depending on the shape of the data:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear&lt;/li&gt;
+&lt;li&gt;Polynomial&lt;/li&gt;
+&lt;li&gt;Radial&lt;/li&gt;
+&lt;li&gt;Sigmoid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You may also choose to configure how big of steps can be taken by the plane in each iteration among other configurations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;neural-networks&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Neural Networks&lt;/h4&gt;
+&lt;p&gt;Neural networks (there are several varieties) are built to mimic how a brain solves problems. This is done by creating multiple layers from a single input – most easily demonstrated with image recognition – where it is able to turn groups of pixels into another, single value, over and over again, to provide more information to train the model.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/binary_classification/neural_nets.gif&#34; alt=&#34;Neural Networks&#34; /&gt;
+&lt;/center&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;great.-now-what&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Great. Now what?&lt;/h3&gt;
+&lt;p&gt;Now that we know how we understand some of the tools in our arsenal, what are the steps to doing the analysis?&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Determining what the problem is&lt;/li&gt;
+&lt;li&gt;Locate and obtain data&lt;/li&gt;
+&lt;li&gt;Data mining for understanding &amp;amp; preparing for analysis&lt;/li&gt;
+&lt;li&gt;Split data into training and testing sets&lt;/li&gt;
+&lt;li&gt;Build model(s) on training data&lt;/li&gt;
+&lt;li&gt;Test models on test data&lt;/li&gt;
+&lt;li&gt;Validate and pick the best model&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;determining-what-the-problem-is&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Determining What the Problem is&lt;/h4&gt;
+&lt;p&gt;While it is easy to ask a question, it is difficult to understand all of the assumption being made by the question asker. For example, a simple question is asked:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Will my product be on the shelf of this pharmacy next week?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;While that question may seem straightforward at first glance, what product are we talking about? What pharmacy are we talking about? What is the time frame which is being evaluated? Does it need to be in the pharmacy and available if you ask or does the customer need to be able to visually identify the product? Does it need to be available for the entire time period in question or did just have to be available at least part of the time period in question?&lt;/p&gt;
+&lt;p&gt;Being as specific as possible is vital in order to deliver the correct answer. It is easy to misinterpret the assumptions of the question asker and then do a lot of work in to answer the wrong question. Specificity will help ensure time is not wasted and that question asker gets an answer that they were looking for.&lt;/p&gt;
+&lt;p&gt;The final question may look more like:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Will there be any Tylenol PM available over-the-counter at midnight, February 28, 2017 at Walgreens on the corner of 17th and John F. Kennedy Blvd in Philadelphia?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Well – we don’t know. We can now use historical data to make our best guess. This question is specific enough to answer.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;locate-and-obtain-data&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Locate and Obtain Data&lt;/h4&gt;
+&lt;p&gt;Where is your data? Is it in a database? Some excel spreadsheet? Once you find it, how big is it? Can you download the data locally? Do you need to find a distributed database to handle it? If it is in a database, can you do some of the data mining (next step) before downloading the data?&lt;/p&gt;
+&lt;p&gt;Be careful… “SELECT * FROM my_table;” can get scary, quick.&lt;/p&gt;
+&lt;p&gt;This is also a good time to think about what tools and/or languages you want to use to mine and manipulate the data. Excel? SQL? R? Python? Some of the numerous other tools or languages out there that are good at a bunch of different things (Julia, Scala, Weka, Orange, etc.)?&lt;/p&gt;
+&lt;p&gt;Get the data into one spot, preferably with some guidance on what and where it is in relation to what you need for your problem and open it up.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-mining-preparing-for-analysis&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Data Mining &amp;amp; Preparing for Analysis&lt;/h4&gt;
+&lt;p&gt;The most time consuming step in any data science article you read will always be the data cleaning step. This document is no different – you will spend an inordinate amount of time getting to know the data, cleaning it, getting to know it better, and cleaning it again. You may then proceed to analysis, discover you’ve missed something, and come back to this step.&lt;/p&gt;
+&lt;p&gt;There is a lot to consider in this step and each data analysis is different.&lt;/p&gt;
+&lt;p&gt;Is your data complete? If you are missing values in your data, how will you deal with them? There is no overarching rule on this. If you are dealing with continuous data, perhaps you’ll fill missing data points with the average of similar data. Perhaps you can infer what it should be based on context. Perhaps it constitutes such a small portion of your data, the logical thing to do is to just drop the events all together.&lt;/p&gt;
+&lt;p&gt;The dependent variable – how does it break down? We are dealing with binomial data here; is there way more zeros then ones? How will you deal with that if there is?&lt;/p&gt;
+&lt;p&gt;Are you doing your analysis on a subset? If so, is your sample representative of the population? How can you be sure? This is where histograms are your friend.&lt;/p&gt;
+&lt;p&gt;Do you need to create variables? Perhaps one independent variable you have is a date, which might be tough to use as an input to your model. Should you find out which day of the week each date was? Month? Year? Season? These are easier to add in as a model input in some cases.&lt;/p&gt;
+&lt;p&gt;Do you need to standardize your data? Perhaps men are listed as “M,” “Male,” “m,” “male,” “dude,” and “unsure.” It would behoove you, in this example, to standardize this data to all take on the same value.&lt;/p&gt;
+&lt;p&gt;In most algorithms, correlated input variables are bad. This is the time to plot all of the independent variables against each other to see if there is correlation. If there are correlated variables, it may be a tough choice to drop one (or all!).&lt;/p&gt;
+&lt;p&gt;Speaking of independent variables, which are important to predict your dependent variable? You can use information gain packages (depending on the language/tool you are using to do your analysis), step-wise regression, or random forests to help understand the important variables.&lt;/p&gt;
+&lt;p&gt;In many of these steps, there are no hard-and-fast rules on how to proceed. You’ll need to make a decision in the context of your problem. In many cases, you may be wrong and need to come back to the decision after trying things out.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;splitting-the-data&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Splitting the Data&lt;/h4&gt;
+&lt;p&gt;Now that you (think you) have a clean dataset, you’ll need to split it into training and testing datasets. You’ll want to have as much data as possible to train on, though still have enough data left over to test on. This is less and less of an issue in the age of big data. However, sometimes too much data and it will take too long for your algorithms to train. Again – this is another decision that will need to be made in the context of your problem.&lt;/p&gt;
+&lt;p&gt;There are a few options for splitting your data. The most straightforward being take a portion of your overall dataset to train on (say 70%) and leave behind the rest to test on. This works well in most big data applications.&lt;/p&gt;
+&lt;p&gt;If you do not have a lot of data (or if you do), consider cross-validation. This is an iterative approach where you train your algorithm recursively on the same data set, leaving some portion out each iteration to be used as the test set. The most popular versions of cross-validation are k-fold cross validation and leave-one-out cross validation. There is even nested cross-validation, which gets very Inception-like.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;building-the-models&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Building the Models&lt;/h4&gt;
+&lt;p&gt;Finally, you are ready to do what we came to do – build the models. We have our datasets cleaned, enriched, and split. Time to build our models. I say it plural because you’ll always want to evaluate which method and/or inputs works best. You’ll want to pick a few of the algorithms from above and build the model.&lt;/p&gt;
+&lt;p&gt;While that is vague, depending on your language or tool of choice, there are multiple packages available to perform each analysis. It is generally only a line or two of code to train each model; once we have our models trained, it is time to validate.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;validating-the-models&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Validating the Models&lt;/h4&gt;
+&lt;p&gt;So – which model did best? How can you tell? We start by predicting results for our test set with each model and building a confusion matrix for each:&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/binary_classification/conf_mat.png&#34; alt=&#34;Confusion Matrix&#34; /&gt;
+&lt;/center&gt;
+&lt;p&gt;With this, we can calculate the specificity, sensitivity, and accuracy for each model.&lt;/p&gt;
+&lt;center&gt;
+&lt;img src=&#34;/img/binary_classification/equation.png&#34; alt=&#34;Equations&#34; /&gt;
+&lt;/center&gt;
+&lt;p&gt;For each value, higher is better. The best model is one that performs the best in each of these counts.&lt;/p&gt;
+&lt;p&gt;In the real world, frequently one model will have better specificity, while another will have better sensitivity, and yet another will be the most accurate. Again, there is no hard and fast rule one which model to choose; it all depends on the context. Perhaps false positives are really bad in your context, then the specificity rate should be given more merit. It all depends.&lt;/p&gt;
+&lt;p&gt;From here, you have some measures in order to pick a model and implement it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Much of model building, in general, is part computer science, part statistics, and part business understanding. Understanding which tools and languages are best to implement the best statistical modeling technique to solve a business problem can feel like more of a form of art than science at times.&lt;/p&gt;
+&lt;p&gt;In this document, I’ve presented some algorithms and steps to do binary classification, which is just the tip of the iceberg. I am sure there are algorithms and steps missing – I hope that this helps in your understanding.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Prime Number Patterns</title>
+      <link>/post/prime-number-patterns/</link>
+      <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/prime-number-patterns/</guid>
+      <description>&lt;p&gt;I found a very
+&lt;a href=&#34;https://www.jasondavies.com/primos/&#34; target=&#34;_blank&#34;&gt;thought provoking and beautiful visualization&lt;/a&gt;
+on the &lt;a href=&#34;https://d3js.org/&#34; target=&#34;_blank&#34;&gt;D3 Website&lt;/a&gt; regarding prime numbers. What the
+visualization shows is that if you draw periodic curves beginning at the origin
+for each positive integer, the prime numbers will be intersected by only two
+curves: the prime itself&amp;rsquo;s curve and the curve for one.&lt;/p&gt;
+
+&lt;p&gt;When I saw this, my mind was blown. How interesting&amp;hellip; and also how obvious. The
+definition of a prime is that it can only be divided by itself and one (duh).
+This is a visualization of that fact. The patterns that emerge are stunning.&lt;/p&gt;
+
+&lt;p&gt;I wanted to build the data and visualization for myself in R. While not as
+spectacular as the original I found, it was still a nice adventure. I used
+&lt;a href=&#34;https://plot.ly/feed/&#34; target=&#34;_blank&#34;&gt;Plotly&lt;/a&gt; to visualize the data. The code can be found on
+&lt;a href=&#34;https://github.com/jrozra200/prime_number_patterns/blob/master/making_periodic_curves.R&#34; target=&#34;_blank&#34;&gt;github&lt;/a&gt;.
+Here is the &lt;a href=&#34;https://plot.ly/~rozran00/130&#34; target=&#34;_blank&#34;&gt;visualization&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;/img/prime_number_patterns/130.png&#34; alt=&#34;Prime Number Patterns&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Demystified</title>
+      <link>/post/machine-learning-demystified/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-demystified/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;The differences and applications of Supervised and Unsupervised Machine Learning.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Machine learning&lt;/strong&gt; is one of the buzziest terms thrown around in technology
+these days. Combine machine learning with &lt;strong&gt;big data&lt;/strong&gt; in a Google search and
+you&amp;rsquo;ve got yourself an unmanageable amount of information to digest. In an
+(possibly ironic) effort to help navigate this sea of information, this post is
+meant to be an introduction and simplification of some common machine learning
+terminology and types with some resources to dive deeper.&lt;/p&gt;
+
+&lt;h3 id=&#34;supervised-vs-unsupervised-machine-learning&#34;&gt;Supervised vs. Unsupervised Machine Learning&lt;/h3&gt;
+
+&lt;p&gt;At the highest level, there are two different types of machine learning -
+supervised and unsupervised. Supervised means that we have historical information
+in order to learn from and make future decisions; unsupervised means that we
+have no previous information, but might be attempting to group things together
+or do some other type of pattern or outlier recognition.&lt;/p&gt;
+
+&lt;p&gt;In each of these subsets there are many methodologies and motivations; I&amp;rsquo;ll
+explain how they work and give a simple example or two.&lt;/p&gt;
+
+&lt;h3 id=&#34;supervised-machine-learning&#34;&gt;Supervised Machine Learning&lt;/h3&gt;
+
+&lt;p&gt;Supervised machine learning is nothing more than using historical information
+(read: data) in order to predict a future event or explain a behavior using
+algorithms. I know - this is vague - but humans use these algorithms based on
+previous learning everyday in their lives to predict things.&lt;/p&gt;
+
+&lt;p&gt;A very simple example: if it is sunny outside when we wake up, it is perfectly
+reasonable to assume that it will not rain that day. Why do we make this
+prediction? Because over time, we&amp;rsquo;ve learned that on sunny days it typically
+does not rain. We don&amp;rsquo;t know for sure that today it won&amp;rsquo;t rain but we&amp;rsquo;re willing
+to make decisions based on our prediction that it won&amp;rsquo;t rain.&lt;/p&gt;
+
+&lt;p&gt;Computers do this exact same thing in order to make predictions. The real gains
+come from Supervised Machine Learning when you have lots of accurate historical
+data. In the example above, we can&amp;rsquo;t be 100% sure that it won&amp;rsquo;t rain because
+we&amp;rsquo;ve also woken up on a few sunny mornings in which we&amp;rsquo;ve driven home after
+work in a monsoon - adding more and more data for your supervised machine
+learning algorithm to learn from also allows it to make concessions for these
+other possible outcomes.&lt;/p&gt;
+
+&lt;p&gt;Supervised Machine Learning can be used to classify (usually binary or yes/no
+outcomes but can be broader - is a person going to default on their loan? will
+they get divorced?) or predict a value (how much money will you make next year?
+what will the stock price be tomorrow?). Some popular supervised machine
+learning methods are regression (linear, which can predict a continuous value,
+or logistic, which can predict a binary value), decision trees, k-nearest
+neighbors, and naive Bayes.&lt;/p&gt;
+
+&lt;p&gt;My favorite of these methods is decision trees. A decision tree is used to
+classify your data. Once the data is classified, the average is taken of each
+terminal node; this value is then applied to any future data that fits this
+classification.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;/img/machine_learning_demystified/tree.png&#34; alt=&#34;Decision Tree of the Titanic Survivors&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;The decision tree above shows that if you were a female and in first or second
+class, there was a high likelihood you survived. If you were a male in second
+class who was younger than 12 years old, you also had a high likelihood of
+surviving. This tree could be used to predict the potential outcomes of future
+sinking ships (morbid&amp;hellip; I know).&lt;/p&gt;
+
+&lt;h3 id=&#34;unsupervised-machine-learning&#34;&gt;Unsupervised Machine Learning&lt;/h3&gt;
+
+&lt;p&gt;Unsupervised machine learning is the other side of this coin. In this case, we
+do not necessarily want to make a prediction. Instead, this type of machine
+learning is used to find similarities and patterns in the information to cluster
+or group.&lt;/p&gt;
+
+&lt;p&gt;An example of this: Consider a situation where you are looking at a group of
+people and you want to group similar people together. You don&amp;rsquo;t know anything
+about these people other than what you can see in their physical appearance. You
+might end up grouping the tallest people together and the shortest people
+together. You could do this same thing by weight instead&amp;hellip; or hair length&amp;hellip; or
+eye color&amp;hellip; or use all of these attributes at the same time! It&amp;rsquo;s natural in
+this example to see how &amp;ldquo;close&amp;rdquo; people are to one another based on different
+attributes.&lt;/p&gt;
+
+&lt;p&gt;What these type of algorithms do is evaluate the &amp;ldquo;distances&amp;rdquo; of one piece of
+information from another piece. In a machine learning setting you look for
+similarities and &amp;ldquo;closeness&amp;rdquo; in the data and group accordingly.&lt;/p&gt;
+
+&lt;p&gt;This could allow the administrators of a mobile application to see the different
+types of users of their app in order to treat each group with different rules
+and policies. They could cluster samples of users together and analyze each
+cluster to see if there are opportunities for targeted improvements.&lt;/p&gt;
+
+&lt;p&gt;The most popular of these unsupervised machine learning methods is called
+k-means clustering. In
+&lt;a href=&#34;https://en.wikipedia.org/wiki/K-means_clustering&#34; target=&#34;_blank&#34;&gt;k-means clustering&lt;/a&gt;, the
+goal is to partition your data
+into k clusters (where k is how many clusters you want - 1, 2,&amp;hellip;, 10, etc.). To
+begin this algorithm, k &lt;em&gt;means&lt;/em&gt; (or cluster centers) are randomly chosen. Each
+data point in the sample is clustered to the closest mean; the center (or
+centroid, to use the technical term) of each cluster is calculated and that
+becomes the new &lt;em&gt;mean&lt;/em&gt;. This process is repeated until the mean of each cluster is
+optimized.&lt;/p&gt;
+
+&lt;p&gt;The important part to note is that the output of k-means is clustered data that
+is &amp;ldquo;learned&amp;rdquo; without any input from a human. Similar methods are used in
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Natural_language_processing&#34; target=&#34;_blank&#34;&gt;Natural Language Processing (NLP)&lt;/a&gt;
+in order to do &lt;a href=&#34;https://en.wikipedia.org/wiki/Topic_model&#34; target=&#34;_blank&#34;&gt;Topic Modeling&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;resources-to-learn-more&#34;&gt;Resources to Learn More&lt;/h3&gt;
+
+&lt;p&gt;There are an uncountable amount resources out there to dive deeper into this
+topic. Here are a few that I&amp;rsquo;ve used or found along my Data Science journey.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE: I&amp;rsquo;ve written a whole post on this. You can find it &lt;a href=&#34;https://www.jakelearnsdatascience.com/posts/getting-started-with-data-science/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;O&amp;rsquo;Reilly has a &lt;a href=&#34;http://shop.oreilly.com/category/get/machine-learning-kit.do&#34; target=&#34;_blank&#34;&gt;ton of great books&lt;/a&gt;
+that focus on various areas of machine learning.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.edx.org/course/subject/data-analysis-statistics&#34; target=&#34;_blank&#34;&gt;edX&lt;/a&gt; and
+&lt;a href=&#34;https://www.coursera.org/courses?languages=en&amp;amp;query=machine+learning&#34; target=&#34;_blank&#34;&gt;coursera&lt;/a&gt;
+have a TON of self-paced and instructor-led learning courses in machine learning.
+There is a specific series of courses offered by Columbia University that look
+particularly applicable.&lt;/li&gt;
+&lt;li&gt;If you are interested in learning machine learning and already have a
+familiarity with R and Statistics,
+&lt;a href=&#34;https://www.datacamp.com/courses/introduction-to-machine-learning-with-r&#34; target=&#34;_blank&#34;&gt;DataCamp has a nice, free program&lt;/a&gt;.
+If you are new to R, they have a
+&lt;a href=&#34;https://www.datacamp.com/getting-started?step=2&amp;amp;track=r&#34; target=&#34;_blank&#34;&gt;free program&lt;/a&gt; for that, too.&lt;/li&gt;
+&lt;li&gt;There are also many, many blogs out there to read about how people are using data science and machine learning.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Exploring Open Data - Predicting the Amoung of Violations</title>
+      <link>/post/exploring-open-data-predicting-the-amount-of-violations/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/exploring-open-data-predicting-the-amount-of-violations/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;In &lt;a href=&#34;https://www.jakelearnsdatascience.com/posts/exploring-open-data-philadelphia-parking-violations/&#34;&gt;my last post&lt;/a&gt;, I went over some of the highlights of the open data set of all Philadelphia Parking Violations. In this post, I’ll go through the steps to build a model to predict the amount of violations the city issues on a daily basis. I’ll walk you through cleaning and building the data set, selecting and creating the important features, and building predictive models using &lt;a href=&#34;https://en.wikipedia.org/wiki/Random_forest&#34;&gt;Random Forests&lt;/a&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Linear_regression&#34;&gt;Linear Regression&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-1-load-packages-and-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 1: Load Packages and Data&lt;/h3&gt;
+&lt;p&gt;Just an initial step to get the right libraries and data loaded in R.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(plyr)
+library(randomForest)
+
+## DATA FILE FROM OPENDATAPHILLY
+ptix &amp;lt;- read.csv(&amp;quot;Parking_Violations.csv&amp;quot;)
+
+## READ IN THE WEATHER DATA (FROM NCDC)
+weather_data &amp;lt;- read.csv(&amp;quot;weather_data.csv&amp;quot;)
+
+## LIST OF ALL FEDERAL HOLIDAYS DURING THE 
+## RANGE OF THE DATA SET
+holidays &amp;lt;- as.Date(c(&amp;quot;2012-01-02&amp;quot;, &amp;quot;2012-01-16&amp;quot;, 
+                      &amp;quot;2012-02-20&amp;quot;, &amp;quot;2012-05-28&amp;quot;, 
+                      &amp;quot;2012-07-04&amp;quot;, &amp;quot;2012-09-03&amp;quot;, 
+                      &amp;quot;2012-10-08&amp;quot;, &amp;quot;2012-11-12&amp;quot;, 
+                      &amp;quot;2012-11-22&amp;quot;, &amp;quot;2012-12-25&amp;quot;, 
+                      &amp;quot;2013-01-01&amp;quot;, &amp;quot;2013-01-21&amp;quot;, 
+                      &amp;quot;2013-02-18&amp;quot;, &amp;quot;2013-05-27&amp;quot;, 
+                      &amp;quot;2013-07-04&amp;quot;, &amp;quot;2013-09-02&amp;quot;, 
+                      &amp;quot;2013-10-14&amp;quot;, &amp;quot;2013-11-11&amp;quot;, 
+                      &amp;quot;2013-11-28&amp;quot;, &amp;quot;2013-12-25&amp;quot;, 
+                      &amp;quot;2014-01-01&amp;quot;, &amp;quot;2014-01-20&amp;quot;, 
+                      &amp;quot;2014-02-17&amp;quot;, &amp;quot;2014-05-26&amp;quot;, 
+                      &amp;quot;2014-07-04&amp;quot;, &amp;quot;2014-09-01&amp;quot;, 
+                      &amp;quot;2014-10-13&amp;quot;, &amp;quot;2014-11-11&amp;quot;, 
+                      &amp;quot;2014-11-27&amp;quot;, &amp;quot;2014-12-25&amp;quot;, 
+                      &amp;quot;2015-01-01&amp;quot;, &amp;quot;2015-01-09&amp;quot;, 
+                      &amp;quot;2015-02-16&amp;quot;, &amp;quot;2015-05-25&amp;quot;, 
+                      &amp;quot;2015-07-03&amp;quot;, &amp;quot;2015-09-07&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-formatting-the-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 2: Formatting the Data&lt;/h3&gt;
+&lt;p&gt;First things first, we have to total the amount of tickets per day from the raw data. For this, I use the plyr command ddply. Before I can use the ddply command, I need to format the Issue.Date.and.Time column to be a Date variable in the R context.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;days &amp;lt;- as.data.frame(as.Date(
+                      ptix$Issue.Date.and.Time, 
+                      format = &amp;quot;%m/%d/%Y&amp;quot;))
+names(days) &amp;lt;- &amp;quot;DATE&amp;quot;
+count_by_day &amp;lt;- ddply(days, .(DATE), summarize, 
+                      count = length(DATE)) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, I do the same exact date formatting with the weather data.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;weather_data$DATE &amp;lt;- as.Date(as.POSIXct(strptime(as.character(weather_data$DATE), 
+                                                 format = &amp;quot;%Y%m%d&amp;quot;)), 
+                             format = &amp;quot;%m/%d/%Y&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that both the ticket and weather data have the same date format (and name), we can use the join function from the plyr package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;count_by_day &amp;lt;- join(count_by_day, weather_data, by = &amp;quot;DATE&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With the data joined by date, it is time to clean. There are a number of columns with unneeded data (weather station name, for example) and others with little or no data in them, which I just flatly remove. The data has also been coded with negative values representing that data had not been collected for any number of reasons (I’m not surprised that snow was not measured in the summer); for that data, I’ve made any values coded -9999 into 0. There are some days where the maximum or minimum temperature was not gathered (I’m not sure why). As this is the main variable I plan to use to predict daily violations, I drop the entire row if the temperature data is missing.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## I DON&amp;#39;T CARE ABOUT THE STATION OR ITS NAME - 
+## GETTING RID OF IT
+count_by_day$STATION &amp;lt;- NULL
+count_by_day$STATION_NAME &amp;lt;- NULL
+
+## A BUNCH OF VARIABLE ARE CODED WITH NEGATIVE VALUES 
+## IF THEY WEREN&amp;#39;T COLLECTED - CHANGING THEM TO 0s
+count_by_day$MDPR[count_by_day$MDPR &amp;lt; 0] &amp;lt;- 0
+count_by_day$DAPR[count_by_day$DAPR &amp;lt; 0] &amp;lt;- 0
+count_by_day$PRCP[count_by_day$PRCP &amp;lt; 0] &amp;lt;- 0
+count_by_day$SNWD[count_by_day$SNWD &amp;lt; 0] &amp;lt;- 0
+count_by_day$SNOW[count_by_day$SNOW &amp;lt; 0] &amp;lt;- 0
+count_by_day$WT01[count_by_day$WT01 &amp;lt; 0] &amp;lt;- 0
+count_by_day$WT03[count_by_day$WT03 &amp;lt; 0] &amp;lt;- 0
+count_by_day$WT04[count_by_day$WT04 &amp;lt; 0] &amp;lt;- 0
+
+## REMOVING ANY ROWS WITH MISSING TEMP DATA
+count_by_day &amp;lt;- count_by_day[
+                         count_by_day$TMAX &amp;gt; 0, ]
+count_by_day &amp;lt;- count_by_day[
+                         count_by_day$TMIN &amp;gt; 0, ]
+
+## GETTING RID OF SOME NA VALUES THAT POPPED UP
+count_by_day &amp;lt;- count_by_day[!is.na(
+                         count_by_day$TMAX), ]
+
+## REMOVING COLUMNS THAT HAVE LITTLE OR NO DATA 
+## IN THEM (ALL 0s)
+count_by_day$TOBS &amp;lt;- NULL
+count_by_day$WT01 &amp;lt;- NULL
+count_by_day$WT04 &amp;lt;- NULL
+count_by_day$WT03 &amp;lt;- NULL
+
+## CHANGING THE DATA, UNNECESSARILY, FROM 10ths OF 
+## DEGREES CELCIUS TO JUST DEGREES CELCIUS
+count_by_day$TMAX &amp;lt;- count_by_day$TMAX / 10
+count_by_day$TMIN &amp;lt;- count_by_day$TMIN / 10&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-visualizing-the-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 3: Visualizing the Data&lt;/h3&gt;
+&lt;p&gt;At this point, we have joined our data sets and gotten rid of the unhelpful “stuff.” What does the data look like?&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/open_data_2/histogram-of-daily-violation-counts.png&#34; alt=&#34;Daily Violation Counts&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Daily Violation Counts&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;There are clearly two populations here. With the benefit of hindsight, the small population on the left of the histogram is mainly Sundays. The larger population with the majority of the data is all other days of the week.&lt;/p&gt;
+&lt;p&gt;Let’s make some new features to explore this idea.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4-new-feature-creation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 4: New Feature Creation&lt;/h3&gt;
+&lt;p&gt;As we see in the histogram above, there are obviously a few populations in the data - I know that day of the week, holidays, and month of the year likely have some strong influence on how many violations are issued. If you think about it, most parking signs include the clause: “Except Sundays and Holidays.” Plus, spending more than a few summers in Philadelphia at this point, I know that from Memorial Day until Labor Day the city relocates to the &lt;em&gt;South&lt;/em&gt; Jersey Shore (emphasis on the South part of the Jersey Shore). That said - I add in those features as predictors.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## FEATURE CREATION - ADDING IN THE DAY OF WEEK
+count_by_day$DOW &amp;lt;- as.factor(weekdays(count_by_day$DATE))
+
+## FEATURE CREATION - ADDING IN IF THE DAY WAS A HOLIDAY
+count_by_day$HOL &amp;lt;- 0
+count_by_day$HOL[as.character(count_by_day$DATE) %in% 
+                 as.character(holidays)] &amp;lt;- 1
+count_by_day$HOL &amp;lt;- as.factor(count_by_day$HOL)
+
+## FEATURE CREATION - ADDING IN THE MONTH
+count_by_day$MON &amp;lt;- as.factor(months(count_by_day$DATE))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now - let’s see if the Sunday thing is real. Here is a scatterplot of the data. The circles represent Sundays; triangles are all other days of the week.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/open_data_2/temp_vs_tickets.png&#34; alt=&#34;Temperature vs. Ticket Counts&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Temperature vs. Ticket Counts&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;You can clearly see that Sunday’s tend to do their own thing in a very consistent manner that is similar to the rest of the week. In other words, the slope for Sundays is very close to that of the slope for all other days of the week. There are some points that don’t follow those trends, which are likely due to snow, holidays, and/or other man-made or weather events.&lt;/p&gt;
+&lt;p&gt;Let’s split the data into a training and test set (that way we can see how well we do with the model). I’m arbitrarily making the test set the last year of data; everything before that is the training set.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;train &amp;lt;- count_by_day[count_by_day$DATE &amp;lt; &amp;quot;2014-08-01&amp;quot;, ]
+test &amp;lt;- count_by_day[count_by_day$DATE &amp;gt;= &amp;quot;2014-08-01&amp;quot;, ]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-5-feature-identification&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 5: Feature Identification&lt;/h3&gt;
+&lt;p&gt;We now have a data set that is ready for some model building! The problem to solve next is figuring out which features best explain the count of violations issued each day. My preference is to use Random Forests to tell me which features are the most important. We’ll also take a look to see which, if any, variables are highly correlated. High correlation amongst input variables will lead to high variability due to multicollinearity issues.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;featForest &amp;lt;- randomForest(count ~ MDPR + DAPR + PRCP + 
+                                   SNWD + SNOW + TMAX + 
+                                   TMIN + DOW + HOL + MON, 
+                           data = train, importance = TRUE,
+                           ntree = 10000)
+
+## PLOT THE VARIABLE TO SEE THE IMPORTANCE
+varImpPlot(featForest)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the Variable Importance Plot below, you can see very clearly that the day of the week (&lt;strong&gt;DOW&lt;/strong&gt;) is by far the most important variable in describing the amount of violations written per day. This is followed by whether or not the day was a holiday (&lt;strong&gt;HOL&lt;/strong&gt;), the minimum temperature (&lt;strong&gt;TMIN&lt;/strong&gt;), and the month (&lt;strong&gt;MON&lt;/strong&gt;). The maximum temperature is in there, too, but I think that it is likely highly correlated with the minimum temperature (we’ll see that next). The rest of the variables have very little impact.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/open_data_2/varimpplot.png&#34; alt=&#34;Variable Importance Plot&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Variable Importance Plot&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cor(count_by_day[,c(3:9)])&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I’ll skip the entire output of the correlation table, but &lt;strong&gt;TMIN&lt;/strong&gt; and &lt;strong&gt;TMAX&lt;/strong&gt; have a correlation coefficient of 0.940379171. Because &lt;strong&gt;TMIN&lt;/strong&gt; has a higher variable importance and there is a high correlation between the &lt;strong&gt;TMIN&lt;/strong&gt; and &lt;strong&gt;TMAX&lt;/strong&gt;, I’ll leave &lt;strong&gt;TMAX&lt;/strong&gt; out of the model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-6-building-the-models&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 6: Building the Models&lt;/h3&gt;
+&lt;p&gt;The goal here was to build a multiple linear regression model - since I’ve already started down the path of Random Forests, I’ll do one of those, too, and compare the two. To build the models, we do the following:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## BUILD ANOTHER FOREST USING THE IMPORTANT VARIABLES
+predForest &amp;lt;- randomForest(count ~ DOW + HOL + TMIN + MON, 
+                           data = train, importance = TRUE, 
+                           ntree = 10000)
+
+## BUILD A LINEAR MODEL USING THE IMPORTANT VARIABLES
+linmod_with_mon &amp;lt;- lm(count ~ TMIN + DOW + HOL + MON, 
+                      data = train)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In looking at the summary, I have questions on whether or not the month variable (&lt;strong&gt;MON&lt;/strong&gt;) is significant to the model or not. Many of the variables have rather high p-values.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(linmod_with_mon)
+
+Call:
+lm(formula = count ~ TMIN + DOW + HOL + MON, data = train)
+
+Residuals:
+    Min     1Q Median      3Q    Max 
+-4471.5 -132.1   49.6   258.2 2539.8 
+
+Coefficients:
+              Estimate Std. Error  t value Pr(&amp;gt;|t|) 
+(Intercept)  5271.4002    89.5216   58.884  &amp;lt; 2e-16 ***
+TMIN          -15.2174     5.6532   -2.692 0.007265 ** 
+DOWMonday    -619.5908    75.2208   -8.237 7.87e-16 ***
+DOWSaturday  -788.8261    74.3178  -10.614  &amp;lt; 2e-16 ***
+DOWSunday   -3583.6718    74.0854  -48.372  &amp;lt; 2e-16 ***
+DOWThursday   179.0975    74.5286    2.403 0.016501 * 
+DOWTuesday   -494.3059    73.7919   -6.699 4.14e-11 ***
+DOWWednesday -587.7153    74.0264   -7.939 7.45e-15 ***
+HOL1        -3275.6523   146.8750  -22.302  &amp;lt; 2e-16 ***
+MONAugust     -99.8049   114.4150   -0.872 0.383321 
+MONDecember  -390.2925   109.4594   -3.566 0.000386 ***
+MONFebruary  -127.8091   112.0767   -1.140 0.254496 
+MONJanuary    -73.0693   109.0627   -0.670 0.503081 
+MONJuly      -346.7266   113.6137   -3.052 0.002355 ** 
+MONJune       -30.8752   101.6812   -0.304 0.761481 
+MONMarch       -1.4980    94.8631   -0.016 0.987405 
+MONMay          0.1194    88.3915    0.001 0.998923 
+MONNovember   170.8023    97.6989    1.748 0.080831 . 
+MONOctober    125.1124    92.3071    1.355 0.175702 
+MONSeptember  199.6884   101.9056    1.960 0.050420 . 
+---
+Signif. codes: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 544.2 on 748 degrees of freedom
+Multiple R-squared: 0.8445, Adjusted R-squared: 0.8405 
+F-statistic: 213.8 on 19 and 748 DF, p-value: &amp;lt; 2.2e-16&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To verify this, I build the model without the &lt;strong&gt;MON&lt;/strong&gt; term and then do an F-Test to compare using the results of the ANOVA tables below.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## FIRST ANOVA TABLE (WITH THE MON TERM)
+anova(linmod_with_mon)
+Analysis of Variance Table
+
+Response: count
+           Df     Sum Sq   Mean Sq  F value    Pr(&amp;gt;F) 
+TMIN        1   16109057  16109057  54.3844 4.383e-13 ***
+DOW         6 1019164305 169860717 573.4523 &amp;lt; 2.2e-16 ***
+HOL         1  147553631 147553631 498.1432 &amp;lt; 2.2e-16 ***
+MON        11   20322464   1847497   6.2372 6.883e-10 ***
+Residuals 748  221563026    296207 
+
+## SECOND ANOVA TABLE (WITHOUT THE MON TERM)
+anova(linmod_wo_mon)
+Analysis of Variance Table
+
+Response: count
+           Df     Sum Sq   Mean Sq F value    Pr(&amp;gt;F) 
+TMIN        1   16109057  16109057  50.548 2.688e-12 ***
+DOW         6 1019164305 169860717 532.997 &amp;lt; 2.2e-16 ***
+HOL         1  147553631 147553631 463.001 &amp;lt; 2.2e-16 ***
+Residuals 759  241885490    318690 
+
+## Ho: B9 = B10 = B11 = B12 = B13 = B14 = B15 = B16 = 
+##     B17 = B18 = B19 = 0
+## Ha: At least one is not equal to 0
+
+## F-Stat = MSdrop / MSE = 
+##          ((SSR1 - SSR2) / (DF(R)1 - DF(R)2)) / MSE
+
+f_stat &amp;lt;- ((241885490 - 221563026) / (759 - 748)) / 296207
+
+## P_VALUE OF THE F_STAT CALCULATED ABOVE
+p_value &amp;lt;- 1 - pf(f_stat, 11, 748)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since the P-Value 6.8829e-10 is MUCH MUCH less than 0.05, I can reject the null hypothesis and conclude that at least one of the parameters associated with the &lt;strong&gt;MON&lt;/strong&gt; term is not zero. Because of this, I’ll keep the term in the model.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-7-apply-the-models-to-the-test-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Step 7: Apply the Models to the Test Data&lt;/h3&gt;
+&lt;p&gt;Below I call the predict function to see how the Random Forest and Linear Model predict the test data. I am rounding the prediction to the nearest integer. To determine which model performs better, I am calculating the difference in absolute value of the predicted value from the actual count.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## PREDICT THE VALUES BASED ON THE MODELS
+test$RF &amp;lt;- round(predict(predForest, test), 0)
+test$LM &amp;lt;- round(predict.lm(linmod_with_mon, test), 0)
+
+## SEE THE ABSOLUTE DIFFERENCE FROM THE ACTUAL
+difOfRF &amp;lt;- sum(abs(test$RF - test$count))
+difOfLM &amp;lt;- sum(abs(test$LM - test$count))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;As it turns out, the Linear Model performs better than the Random Forest model. I am relatively pleased with the Linear Model - an R-Squared value of 0.8445 ain’t nothin’ to shake a stick at. You can see that Random Forests are very useful in identifying the important features. To me, it tends to be a bit more of a “black box” in comparison the linear regression - I hesitate to use it at work for more than a feature identification tool.&lt;/p&gt;
+&lt;p&gt;Overall - a nice little experiment and a great dive into some open data. I now know that PPA rarely takes a day off, regardless of the weather. I’d love to know how much of the fines they write are actually collected. I may also dive into predicting what type of ticket you received based on your location, time of ticket, etc. All in another day’s work!&lt;/p&gt;
+&lt;p&gt;Thanks for reading.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Exploring Open Data - Philadelphia Parking Violations</title>
+      <link>/post/exploring-open-data-philadelphia-parking-violations/</link>
+      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/exploring-open-data-philadelphia-parking-violations/</guid>
+      <description>
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;A few weeks ago, I stumbled across &lt;a href=&#34;https://twitter.com/dylancpurcell&#34; target=&#34;_blank&#34;&gt;Dylan Purcell&amp;rsquo;s&lt;/a&gt;
+article on &lt;a href=&#34;http://data.philly.com/philly/parking/&#34; target=&#34;_blank&#34;&gt;Philadelphia Parking Violations&lt;/a&gt;.
+This is a nice glimpse of the data, but I wanted to get a taste of it myself. I
+went and downloaded the entire data set of
+&lt;a href=&#34;https://www.opendataphilly.org/dataset/parking-violations&#34; target=&#34;_blank&#34;&gt;Parking Violations in Philadelphia&lt;/a&gt;
+from the &lt;a href=&#34;http://opendataphilly.org/&#34; target=&#34;_blank&#34;&gt;OpenDataPhilly website&lt;/a&gt; and came up with a
+few questions after checking out the data:&lt;/p&gt;
+
+&lt;p&gt;How many tickets in the data set?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What is the range of dates in the data?&lt;/li&gt;
+&lt;li&gt;Are there missing days/data?&lt;/li&gt;
+&lt;li&gt;What was the biggest/smallest individual fine? What were those fines for? Who
+issued those fines?&lt;/li&gt;
+&lt;li&gt;What was the average individual fine amount?&lt;/li&gt;
+&lt;li&gt;What day had the most/least count of fines? What is the average amount per day&lt;/li&gt;
+&lt;li&gt;How much $ in fines did they write each day?&lt;/li&gt;
+&lt;li&gt;What hour of the day are the most fines issued?&lt;/li&gt;
+&lt;li&gt;What day of the week are the most fines issued?&lt;/li&gt;
+&lt;li&gt;What state has been issued the most fines?&lt;/li&gt;
+&lt;li&gt;Who (what individual) has been issued the most fines?&lt;/li&gt;
+&lt;li&gt;How much does the individual with the most fines owe the city?&lt;/li&gt;
+&lt;li&gt;How many people have been issued fines?&lt;/li&gt;
+&lt;li&gt;What fines are issued the most/least?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And finally to the cool stuff:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Where were the most fines? Can I see them on a heat map?&lt;/li&gt;
+&lt;li&gt;Can I predict the amount of parking tickets by weather data and other factors
+using linear regression? How about using Random Forests?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;data-insights&#34;&gt;Data Insights&lt;/h3&gt;
+
+&lt;p&gt;This data set has 5,624,084 tickets in it that spans from January 1, 2012 through
+September 30, 2015 - an exact range of 1368.881 days. I was glad to find that
+there are no missing days in the data set.&lt;/p&gt;
+
+&lt;p&gt;The biggest fine, $2000 (OUCH!), was issued (many times) by the police for &amp;ldquo;ATV
+on Public Property.&amp;rdquo; The smallest fine, $15, was issued also by the police
+&amp;ldquo;parking over the time limit.&amp;rdquo; The average fine for a violation in Philadelphia
+over the time range was $46.33.&lt;/p&gt;
+
+&lt;p&gt;The most violations occurred on November 30, 2012 when 6,040 were issued. The
+least issued, unsurprisingly, was on Christmas day, 2014, when only 90 were
+issued. On average, PPA and the other 9 agencies that issued tickets (more on
+that below), issued 4,105.17 tickets per day. All of those tickets add up to
+$190,193.50 in fines issued to the residents and visitors of Philadelphia every
+day!!!&lt;/p&gt;
+
+&lt;p&gt;Digging a little deeper, I find that the most popular hour of the day for
+getting a ticket is 12 noon; 5AM nets the least tickets. Thursdays see the most
+tickets written (Thursdays and Fridays are higher than the rest of the week;
+Sundays see the least (pretty obvious). Other obvious insight is that PA licensed
+drivers were issued the most tickets.&lt;/p&gt;
+
+&lt;p&gt;Looking at individuals, there was one person who was issued 1,463 tickets
+(thats more than 1 violation per day on average) for a whopping $36,471. In
+just looking at a few of their tickets, it seems like it is probably a delivery
+vehicle that delivers to Chinatown (Tickets for &amp;ldquo;Stop Prohibited&amp;rdquo; and &amp;ldquo;Bus Only
+Zone&amp;rdquo; in the Chinatown area). I&amp;rsquo;d love to hear more about why this person has
+so many tickets and what you do about that&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1,976,559 people&lt;/strong&gt; - let me reiterate - nearly &lt;strong&gt;2 million unique vehicles&lt;/strong&gt;
+have been issued fines over the three and three quarter years this data set
+encompasses. That&amp;rsquo;s so many!!! That is 2.85 tickets per vehicle, on average (of
+course that excludes all of the cars that were here and never ticketed). That
+makes me feel much better about how many tickets I got while I lived in the city.&lt;/p&gt;
+
+&lt;p&gt;And&amp;hellip; who are the agencies behind all of this? It is no surprise that PPA
+issues the most. There are 11 agencies in all. Seems like all of the policing
+agencies like to get in on the fun from time to time.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Issuing Agency&lt;/th&gt;
+&lt;th&gt;count&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;PPA&lt;/td&gt;
+&lt;td&gt;4,979,292&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PHILADELPHIA POLICE&lt;/td&gt;
+&lt;td&gt;611,348&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CENTER CITY DISTRICT&lt;/td&gt;
+&lt;td&gt;9,628&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SEPTA&lt;/td&gt;
+&lt;td&gt;9342&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UPENN POLICE&lt;/td&gt;
+&lt;td&gt;6,366&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;TEMPLE POLICE&lt;/td&gt;
+&lt;td&gt;4,055&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;HOUSING AUTHORITY&lt;/td&gt;
+&lt;td&gt;2,137&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PRISON CORRECTIONS OFFICER&lt;/td&gt;
+&lt;td&gt;295&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;POST OFFICE&lt;/td&gt;
+&lt;td&gt;121&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;FAIRMOUNT DISTRICT&lt;/td&gt;
+&lt;td&gt;120&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;mapping-the-violations&#34;&gt;Mapping the Violations&lt;/h3&gt;
+
+&lt;p&gt;Where are you most likely to get a violation? Is there anywhere that is completely
+safe? Looking at the city as a whole, you can see that there are some places
+that are &amp;ldquo;hotter&amp;rdquo; than others. I
+&lt;a href=&#34;https://rozran00.cartodb.com/viz/ea4ebb4e-e7c0-11e5-8939-0e5db1731f59/public_map&#34; target=&#34;_blank&#34;&gt;played around in cartoDB to try to visualize this as well&lt;/a&gt;,
+but tableau seemed to do a decent enough job (though these are just screenshots).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/parking_tickets_macro.png&#34; alt=&#34;parking_tickets_macro&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Zooming in, you can see that there are some distinct areas where tickets are
+given out in more quantity.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/parking_tickets_micro.png&#34; alt=&#34;parking_tickets_micro&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looking one level deeper, you can see that there are some areas like Center City,
+east Washington Avenue, Passyunk Ave, and Broad Street that seem to be very
+highly patrolled.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/parking_tickets_zoom.png&#34; alt=&#34;parking_tickets_zoom&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;I created the above maps in Tableau. I used R to summarize the data. The R
+scripts, raw and processed data, and Tableau workbook can be found in
+&lt;a href=&#34;https://github.com/jrozra200/philly_parking_ticket_analysis&#34; target=&#34;_blank&#34;&gt;my github repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jakelearnsdatascience.com/posts/exploring-open-data-predicting-the-amount-of-violations/&#34; target=&#34;_blank&#34;&gt;In the next post, I use weather data and other parameters to predict how many tickets will be written on a daily basis&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GAP RE-MINDER</title>
+      <link>/project/gap-reminder/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>/project/gap-reminder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Data Day - DC Hackathon</title>
+      <link>/post/open-data-day-dc-hackathon/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/open-data-day-dc-hackathon/</guid>
+      <description>
+
+&lt;p&gt;For those of you who aren&amp;rsquo;t stirred from bed in the small hours to learn data
+science, you might have missed that March 5th was
+&lt;a href=&#34;http://opendataday.org/&#34; target=&#34;_blank&#34;&gt;international open data day&lt;/a&gt;. There are hundreds of
+local events around the world; I was lucky enough to attend
+&lt;a href=&#34;http://dc.opendataday.org/&#34; target=&#34;_blank&#34;&gt;DC&amp;rsquo;s Open Data Day Hackathon&lt;/a&gt;. I met a bunch of
+great people doing noble things with data who taught me a crap-ton (scientific
+term) and also validated my love for data science and how much I&amp;rsquo;ve learned
+since beginning my journey almost two years ago. Here is a quick rundown of
+what I learned and some helpful links so that you can find out more, too.
+Being that it is an &lt;strong&gt;Open&lt;/strong&gt; Data event, everything was well documented on the
+&lt;a href=&#34;https://opendatadaydc.hackpad.com/Open-Data-Day-DC-2016-JKV5PVjx8T3&#34; target=&#34;_blank&#34;&gt;hackathon hackpad&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;introduction-to-open-data&#34;&gt;Introduction to Open Data&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/konklone&#34; target=&#34;_blank&#34;&gt;Eric Mill&lt;/a&gt; gave an really nice overview of what
+JSON is how to use APIs to access the JSON and thus, the data the website is
+conveying. Though many APIs are open and documented, many are not. Eric gave
+some tips on how to access that data, too.&lt;/p&gt;
+
+&lt;p&gt;This session really opened my eyes to how to access that previously unusable
+data that was hidden in plain sight in the text of websites.&lt;/p&gt;
+
+&lt;h3 id=&#34;data-science-primer&#34;&gt;Data Science Primer&lt;/h3&gt;
+
+&lt;p&gt;This was one of the highlights for me - A couple of NIST Data Scientists, Pri
+Oberoi and Star Ying, gave a presentation and walkthrough on how to use
+&lt;a href=&#34;https://en.wikipedia.org/wiki/K-means_clustering&#34; target=&#34;_blank&#34;&gt;k-means clustering&lt;/a&gt; to
+identify groupings in your data. The data and jupyter notebook is available on
+&lt;a href=&#34;https://github.com/jrozra200/open_data_day_dc_k_means_sample&#34; target=&#34;_blank&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I will definitely be using this in my &lt;a href=&#34;https://www.jakelearnsdatascience.com/posts/identifying-compromised-user-accounts/&#34; target=&#34;_blank&#34;&gt;journey to better detect and remediate
+compromised user accounts at Comcast&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;hackathon&#34;&gt;Hackathon&lt;/h3&gt;
+
+&lt;p&gt;I joined a group that was working to use data science to
+&lt;a href=&#34;https://opendatadaydc.hackpad.com/Opioid-over-use-prescription-using-CT-CMS-data-vzWwLHSlVDR&#34; target=&#34;_blank&#34;&gt;identify Opioid overuse&lt;/a&gt;.
+Though I didn&amp;rsquo;t add much (the group was filled with some really really smart
+people), I was able to
+&lt;a href=&#34;http://jrozra200.github.io/opiod_hackathon_open_data_day_dc/&#34; target=&#34;_blank&#34;&gt;visualize the data&lt;/a&gt;
+using R and &lt;a href=&#34;https://github.com/jrozra200/opiod_hackathon_open_data_day_dc&#34; target=&#34;_blank&#34;&gt;share&lt;/a&gt;
+some of those techniques with the team.&lt;/p&gt;
+
+&lt;h3 id=&#34;intro-to-d3-visualizations&#34;&gt;Intro to D3 Visualizations&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://opendatadaydc.hackpad.com/Intro-to-D3-issXcwlDxKp&#34; target=&#34;_blank&#34;&gt;last session&lt;/a&gt; and
+probably my favorite was a tutorial on building out a
+&lt;a href=&#34;https://en.wikipedia.org/wiki/D3.js&#34; target=&#34;_blank&#34;&gt;D3 Visualization&lt;/a&gt;.
+&lt;a href=&#34;https://twitter.com/cmgiven&#34; target=&#34;_blank&#34;&gt;Chris Given&lt;/a&gt; walked a packed house through building
+a D3 viz step-by-step, giving some background on why things work they work and
+showing some great resources.&lt;/p&gt;
+
+&lt;p&gt;I am particularly proud of the
+&lt;a href=&#34;https://www.jakelearnsdatascience.com/projects/d3_sample_open_data_day_dc/&#34; target=&#34;_blank&#34;&gt;results&lt;/a&gt;
+(though I only followed his instruction to build this).&lt;/p&gt;
+
+&lt;h3 id=&#34;closing&#34;&gt;Closing&lt;/h3&gt;
+
+&lt;p&gt;I also attended &lt;a href=&#34;https://github.com/JessicaGarson/Open-Data-Day-Intro-to-Coding&#34; target=&#34;_blank&#34;&gt;2&lt;/a&gt;
+&lt;a href=&#34;https://opendatadaydc.hackpad.com/En4gCF99otc#Shell-Scripting&#34; target=&#34;_blank&#34;&gt;sessions&lt;/a&gt; about
+using the command line that totally demystified the shell prompt. All in all,
+it was a great two days! I will definitely be back next year (unless I can
+convince someone to do one in Philly).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using R and Splunk: Lookups of More Than 10,000 Results</title>
+      <link>/post/using-r-and-splunk/</link>
+      <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/using-r-and-splunk/</guid>
+      <description>
+
+
+&lt;p&gt;Splunk, for some probably very good reasons, has limits on how many results are returned by sub-searches (which in turn limits us on lookups, too). Because of this, I’ve used R to search Splunk through it’s API endpoints (using the httr package) and utilize loops, the plyr package, and other data manipulation flexibilities given through the use of R.&lt;/p&gt;
+&lt;p&gt;This has allowed me to answer some questions for our business team that at the surface seem simple enough, but the data gathering and manipulation get either too complex or large for Splunk to handle efficiently. Here are some examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Of the 1.5 million customers we’ve emailed in a marketing campaign, how many of them have made the conversion?&lt;/li&gt;
+&lt;li&gt;How are our 250,000 beta users accessing the platform?&lt;/li&gt;
+&lt;li&gt;Who are the users logging into our system from our internal IPs?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The high level steps to using R and Splunk are:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Import the lookup values of concern as a csv&lt;/li&gt;
+&lt;li&gt;Create the lookup as a string&lt;/li&gt;
+&lt;li&gt;Create the search string including the lookup just created&lt;/li&gt;
+&lt;li&gt;Execute the GET to get the data&lt;/li&gt;
+&lt;li&gt;Read the response into a data table&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I’ve taken this one step further; because my lookups are usually LARGE, I end up breaking up the search into smaller chunks and combining the results at the end.&lt;/p&gt;
+&lt;p&gt;Here is some example code that you can edit to show what I’ve done and how I’ve done it. This bit of code will iteratively run the “searchstring” 250 times and combine the results.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## LIBRARY THAT ENABLES THE HTTPS CALL ## 
+library(httr)
+
+## READ IN THE LOOKUP VALUES OF CONCERN ##
+mylookup &amp;lt;- read.csv(&amp;quot;mylookup.csv&amp;quot;, header = FALSE)
+
+## ARBITRARY &amp;quot;CHUNK&amp;quot; SIZE TO KEEP SEARCHES SMALLER ##
+start &amp;lt;- 1
+end &amp;lt;- 1000
+
+## CREATE AN EMPTY DATA FRAME THAT WILL HOLD END RESULTS ##
+alldata &amp;lt;- data.frame()
+
+## HOW MANY &amp;quot;CHUNKS&amp;quot; WILL NEED TO BE RUN TO GET COMPLETE RESULTS ##
+for(i in 1:250){
+ ## CREATES THE LOOKUP STRING FROM THE mylookup VARIABLE ##
+ lookupstring &amp;lt;- paste(mylookup[start:end], sep = &amp;quot;&amp;quot;, 
+                       collapse = &amp;#39;&amp;quot; OR VAR_NAME=&amp;quot;&amp;#39;)
+ 
+ ## CREATES THE SEARCH STRING; THIS IS A SIMPLE SEARCH EXAMPLE ##
+ searchstring &amp;lt;- paste(&amp;#39;index = &amp;quot;my_splunk_index&amp;quot; (VAR_NAME=&amp;quot;&amp;#39;, 
+                       lookupstring, &amp;#39;&amp;quot;) | stats count BY VAR_NAME&amp;#39;, 
+                       sep = &amp;quot;&amp;quot;)
+ 
+ ## RUNS THE SEARCH; SUB IN YOUR SPLUNK LINK, USERNAME, AND PASSWORD ##
+ response &amp;lt;- GET(&amp;quot;https://our.splunk.link:8089/&amp;quot;, 
+                 path = &amp;quot;servicesNS/admin/search/search/jobs/export&amp;quot;, 
+                 encode=&amp;quot;form&amp;quot;, config(ssl_verifyhost=FALSE, ssl_verifypeer=0), 
+                 authenticate(&amp;quot;USERNAME&amp;quot;, &amp;quot;PASSWORD&amp;quot;), 
+                 query=list(search=paste0(&amp;quot;search &amp;quot;, searchstring, 
+                                          collapse=&amp;quot;&amp;quot;, sep=&amp;quot;&amp;quot;), 
+                            output_mode=&amp;quot;csv&amp;quot;))
+ 
+ ## CHANGES THE RESULTS TO A DATA TABLE ## 
+ result &amp;lt;- read.table(text = content(response, as = &amp;quot;text&amp;quot;), sep = &amp;quot;,&amp;quot;, 
+                      header = TRUE, stringsAsFactors = FALSE)
+ 
+ ## BINDS THE CURRENT RESULTS WITH THE OVERALL RESULTS ##
+ alldata &amp;lt;- rbind(alldata, result)
+ 
+ ## UPDATES THE START POINT
+ start &amp;lt;- end + 1
+ 
+ ## UPDATES THE END POINT, BUT MAKES SURE IT DOESN&amp;#39;T GO TOO FAR ##
+ if((end + 1000) &amp;gt; length(allusers)){
+                end &amp;lt;- length(allusers)
+         } else {
+                end &amp;lt;- end + 1000
+         }
+ 
+ ## FOR TROUBLESHOOTING, I PRINT THE ITERATION ##
+ #print(i)
+}
+
+## WRITES THE RESULTS TO A CSV ##
+write.table(alldata, &amp;quot;mydata.csv&amp;quot;, row.names = FALSE, sep = &amp;quot;,&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So - that is how you do a giant lookup against Splunk data with R! I am sure that there are more efficient ways of doing this, even in the Splunk app itself, but this has done the trick for me!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using the Google Search API and Plotly to Locate Waterparks</title>
+      <link>/post/waterparks-with-the-google-search-api-and-plotly/</link>
+      <pubDate>Wed, 04 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/waterparks-with-the-google-search-api-and-plotly/</guid>
+      <description>
+
+
+&lt;p&gt;I’ve got a buddy who manages and builds waterparks. I thought to myself… &lt;em&gt;I am probably the only person in the world who has a friend that works at a waterpark - cool&lt;/em&gt;. Then I started thinking some more… &lt;em&gt;there has to be more than just his waterpark in this country; I’ve been to at least a few&lt;/em&gt;… and the thinking continued… &lt;em&gt;I wonder how many there are&lt;/em&gt;… and continued… &lt;em&gt;and I wonder where they are&lt;/em&gt;… and, well, here we are at the culmination of that curiosity with this blog post.&lt;/p&gt;
+&lt;p&gt;So - the first problem - how would I figure that out? As with most things I need answers to in this world, I turned to Google and asked: &lt;a href=&#34;https://www.google.com/maps/search/water+parks+in+the+US/@36.1121754,-100.6663344,4z/data=!3m1!4b1&#34;&gt;Where are the waterparks in the US?&lt;/a&gt; The answer appears to be: there are a lot. The data is there if I can get my hands on it.&lt;/p&gt;
+&lt;p&gt;Knowing that Google has an API, I signed up for an API key and away I went! Until I was stopped abruptly with limits on how many results will be returned: a measly 20 per search.&lt;/p&gt;
+&lt;p&gt;I know R and wanted to use that to hit the API. Using the httr package and a for loop, I conceded to doing the search once per state and living with a maximum of 20 results per state. Easy fix. Here’s the code to generate the search string and query Google:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;q1 &amp;lt;- paste(&amp;quot;waterparks in &amp;quot;, list_of_states[j,1], sep = &amp;quot;&amp;quot;)
+
+response &amp;lt;- GET(&amp;quot;https://maps.googleapis.com/&amp;quot;, 
+                path = &amp;quot;maps/api/place/textsearch/xml&amp;quot;, 
+                query = list(query = q1, key = &amp;quot;YOUR_API_KEY&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The results come back in XML (or JSON, if you so choose… I went with XML for this, though) - something that I have not had much experience in. I used the XML package and a healthy amount of more time in Google search-land and was able to parse the data into data frame! Success! Here’s a snippet of the code to get this all done:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;result &amp;lt;- xmlParse(response)
+result1 &amp;lt;- xmlRoot(result)
+result2 &amp;lt;- getNodeSet(result1, &amp;quot;//result&amp;quot;)
+
+data[counter, 1] &amp;lt;- xmlValue(result2[[i]][[&amp;quot;name&amp;quot;]])
+data[counter, 2] &amp;lt;- xmlValue(result2[[i]][[&amp;quot;formatted_address&amp;quot;]])
+data[counter, 3] &amp;lt;- xmlValue(result2[[i]][[&amp;quot;geometry&amp;quot;]][[&amp;quot;location&amp;quot;]][[&amp;quot;lat&amp;quot;]])
+data[counter, 4] &amp;lt;- xmlValue(result2[[i]][[&amp;quot;geometry&amp;quot;]][[&amp;quot;location&amp;quot;]][[&amp;quot;lng&amp;quot;]])
+data[counter, 5] &amp;lt;- xmlValue(result2[[i]][[&amp;quot;rating&amp;quot;]])&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that the data is gathered and in the right shape - what is the best way to present it? I’ve recently read about a package in R named plotly. They have many interesting and interactive visualizations, plus the API plugs right into R. I found a nice example of a map using the package. With just a few lines of code and a couple iterations, I was able to generate this (click on the picture to get the full interactivity):&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/plotly_waterpark.png&#34; alt=&#34;Waterpark’s in the USA&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Waterpark’s in the USA&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;This plot can be seen &lt;a href=&#34;https://plot.ly/~rozran00/61&#34;&gt;here&lt;/a&gt;, too.&lt;/p&gt;
+&lt;p&gt;Not too shabby! There are a few things to mention here… For one, not every water park has a rating; I dealt with this by making the NAs into 0s. That’s probably not the nicest way of handling that. Also - this is only the top 20 waterparks as Google decided per state. There are likely some waterparks out there that are not represented here. There are also probably non-waterparks represented here that popped up in the results.&lt;/p&gt;
+&lt;p&gt;For those of you who are interested in the data or script I used to generate this map, feel free to grab them at those links. Maybe one day I’ll come back to this to find out where there are the most waterparks per capita - or some other correlation to see what the best water park really is… this is just the tip of the iceberg.&lt;/p&gt;
+&lt;p&gt;It feels good to scratch a few curiosity driven scratches in one project!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sierpinski Triangles (and Carpets) in R</title>
+      <link>/post/sierpinski-triangles-and-carpets-in-r/</link>
+      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/sierpinski-triangles-and-carpets-in-r/</guid>
+      <description>
+
+
+&lt;p&gt;Recently in class, I was asked the following question:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Start with an equilateral triangle and a point chosen at random from the interior of that triangle. Label one vertex 1, 2, a second vertex 3, 4, and the last vertex 5, 6. Roll a die to pick a vertex. Place a dot at the point halfway between the roll-selected vertex and the point you chose. Now consider this new dot as a starting point to do this experiment once again. Roll the die to pick a new vertex. Place a dot at the point halfway between the last point and the most recent roll-selected vertex. Continue this procedure. What does the shape of the collection of dots look like?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I thought, well - it’s got to be something cool or else the professor wouldn’t ask, but I can’t imagine it will be more than a cloud of dots. Truth be told, I went to a conference for work the week of this assignment and never did it - but when I went to the next class, &lt;strong&gt;IT WAS SOMETHING COOL!&lt;/strong&gt; It turns out that this creates a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sierpinski_triangle&#34;&gt;Sierpinski Triangle&lt;/a&gt; - a fractal of increasingly smaller triangles.&lt;/p&gt;
+&lt;p&gt;I wanted to check this out for myself, so I built an R script that creates the triangle. I ran it a few times with differing amounts of points. Here is one with 100,000 points. Though this post is written in RStudio, I’ve hidden the code for readability. Actual code for this can be found &lt;a href=&#34;https://github.com/jrozra200/pretty_triangles/blob/master/createTriangle.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/2015-07-16-sierpinski-triangles-and-carpets-in-r_files/figure-html/sierpinski_triangle-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I thought - if equilateral triangles create patterns this cool, a square must be amazing! Well… it is, however you can’t just run this logic - it will return a cloud of random dots…&lt;/p&gt;
+&lt;p&gt;After talking with my professor, Dr. Levitan - it turns out you can get something equally awesome as the Sierpinski triangle with a square; you just need to make a few changes (say this with a voice of authority and calm knowingness):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Instead of 3 points to move to, you need 8 points: the 4 corners of a specified square and the midpoints between each side. Also, instead of taking the midpoint of your move to the specified location, you need to take the tripoint (division by 3 instead of 2).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is called a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sierpinski_carpet&#34;&gt;Sierpinski Carpet&lt;/a&gt; - a fractal of squares (as opposed to a fractal of equilateral triangles in the graph above). You can see in both the triangle and square that the same pattern is repeated time and again in smaller and smaller increments.&lt;/p&gt;
+&lt;p&gt;I updated my R script and voila - MORE BEAUTIFUL MATH!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/posts/2015-07-16-sierpinski-triangles-and-carpets-in-r_files/figure-html/sierpinski_carpet-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Check out the script and run the functions yourself! I only spent a little bit of time putting it together - I think it would be cool to add some other features, especially when it comes to the plotting of the points. Also - I’d like to run it for a million or more points… I just lacked the patience to wait out the script to run for that long (100,000 points took about 30 minutes to run - my script is probably not the most efficient).&lt;/p&gt;
+&lt;p&gt;Anyways - really cool to see what happens in math sometimes - its hard to imagine at first that the triangle would look that way. Another reason math is cool!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

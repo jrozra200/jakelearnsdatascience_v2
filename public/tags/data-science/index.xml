@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>data science on Jake Learns Data Science</title>
+    <link>/tags/data-science/</link>
+    <description>Recent content in data science on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Data Scientist&#39;s Take on the Roadmap to AI</title>
+      <link>/post/a-data-scientists-take-on-the-roadmap-to-ai/</link>
+      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-data-scientists-take-on-the-roadmap-to-ai/</guid>
+      <description>INTRODUCTION Recently I was asked by a former colleague about getting into AI. He has truly big data and wants to use this data to power “AI” - if the headlines are to be believed, everyone else is already doing it. Though it was difficult for my ego, I told him I couldn’t help him in our 30 minute call and that he should think about hiring someone to get him there.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Data Science</title>
+      <link>/post/getting-started-with-data-science/</link>
+      <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/getting-started-with-data-science/</guid>
+      <description>Everyone in the world has a &amp;ldquo;how to&amp;rdquo; guide to data science&amp;hellip; well, maybe not everyone - but there are a lot of &amp;ldquo;guides&amp;rdquo; out there. I get this question infrequently, so I thought I would do my best to put together what have been my best resources for learning.
+MY STORY Personally, I learned statistics by getting my Masters in Applied Statistics at Villanova University - it took 2.</description>
+    </item>
+    
+    <item>
+      <title>How to Build a Binary Classification Model</title>
+      <link>/post/how-to-build-a-binary-classification-model/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/how-to-build-a-binary-classification-model/</guid>
+      <description>What Is Binary Classification? Algorithms for Binary Classification Logistic Regression Decision Trees/Random Forests Decision Trees Random Forests  Nearest Neighbor Support Vector Machines (SVM) Neural Networks  Great. Now what? Determining What the Problem is Locate and Obtain Data Data Mining &amp;amp; Preparing for Analysis Splitting the Data Building the Models Validating the Models  Conclusion   What Is Binary Classification? Binary classification is used to classify a given set into two categories.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning Demystified</title>
+      <link>/post/machine-learning-demystified/</link>
+      <pubDate>Thu, 07 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/machine-learning-demystified/</guid>
+      <description>The differences and applications of Supervised and Unsupervised Machine Learning.
+Introduction Machine learning is one of the buzziest terms thrown around in technology these days. Combine machine learning with big data in a Google search and you&amp;rsquo;ve got yourself an unmanageable amount of information to digest. In an (possibly ironic) effort to help navigate this sea of information, this post is meant to be an introduction and simplification of some common machine learning terminology and types with some resources to dive deeper.</description>
+    </item>
+    
+    <item>
+      <title>Exploring Open Data - Predicting the Amoung of Violations</title>
+      <link>/post/exploring-open-data-predicting-the-amount-of-violations/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/exploring-open-data-predicting-the-amount-of-violations/</guid>
+      <description>Introduction In my last post, I went over some of the highlights of the open data set of all Philadelphia Parking Violations. In this post, I’ll go through the steps to build a model to predict the amount of violations the city issues on a daily basis. I’ll walk you through cleaning and building the data set, selecting and creating the important features, and building predictive models using Random Forests and Linear Regression.</description>
+    </item>
+    
+    <item>
+      <title>Open Data Day - DC Hackathon</title>
+      <link>/post/open-data-day-dc-hackathon/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/open-data-day-dc-hackathon/</guid>
+      <description>For those of you who aren&amp;rsquo;t stirred from bed in the small hours to learn data science, you might have missed that March 5th was international open data day. There are hundreds of local events around the world; I was lucky enough to attend DC&amp;rsquo;s Open Data Day Hackathon. I met a bunch of great people doing noble things with data who taught me a crap-ton (scientific term) and also validated my love for data science and how much I&amp;rsquo;ve learned since beginning my journey almost two years ago.</description>
+    </item>
+    
+    <item>
+      <title>Identifying Compromised User Accounts with Logistic Regression</title>
+      <link>/post/identifying-compromised-user-accounts/</link>
+      <pubDate>Sat, 26 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/identifying-compromised-user-accounts/</guid>
+      <description>INTRODUCTION As a Data Analyst on Comcast&amp;rsquo;s Messaging Engineering team, it is my responsibility to report on the platform statuses, identify irregularities, measure impact of changes, and identify policies to ensure that our system is used as it was intended. Part of the last responsibility is the identification and remediation of compromised user accounts.
+The challenge the company faces is being able to detect account compromises faster and remediate them closer to the moment of detection.</description>
+    </item>
+    
+  </channel>
+</rss>

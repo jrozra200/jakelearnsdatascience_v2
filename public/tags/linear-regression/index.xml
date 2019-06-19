@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linear regression on Jake Learns Data Science</title>
+    <link>/tags/linear-regression/</link>
+    <description>Recent content in linear regression on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Tue, 15 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/linear-regression/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exploring Open Data - Predicting the Amoung of Violations</title>
+      <link>/post/exploring-open-data-predicting-the-amount-of-violations/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/post/exploring-open-data-predicting-the-amount-of-violations/</guid>
+      <description>Introduction In my last post, I went over some of the highlights of the open data set of all Philadelphia Parking Violations. In this post, I’ll go through the steps to build a model to predict the amount of violations the city issues on a daily basis. I’ll walk you through cleaning and building the data set, selecting and creating the important features, and building predictive models using Random Forests and Linear Regression.</description>
+    </item>
+    
+  </channel>
+</rss>

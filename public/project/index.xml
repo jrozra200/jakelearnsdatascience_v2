@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Jake Learns Data Science</title>
+    <link>/project/</link>
+    <description>Recent content in Projects on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Tue, 26 Mar 2019 00:00:00 -0400</lastBuildDate>
+    
+	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jake Learns Data Science Visitor Dashboard</title>
+      <link>/project/jake-learns-data-science-visitors/</link>
+      <pubDate>Tue, 26 Mar 2019 00:00:00 -0400</pubDate>
+      
+      <guid>/project/jake-learns-data-science-visitors/</guid>
+      <description>A quick view of visitors to my website. Data pulled from Google Analytics and pushed to Amazon Redshift using Stitch Data.</description>
+    </item>
+    
+    <item>
+      <title>GAP RE-MINDER</title>
+      <link>/project/gap-reminder/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 -0500</pubDate>
+      
+      <guid>/project/gap-reminder/</guid>
+      <description>A demonstration D3 project, shamelessly ripping off Gapminder.</description>
+    </item>
+    
+  </channel>
+</rss>

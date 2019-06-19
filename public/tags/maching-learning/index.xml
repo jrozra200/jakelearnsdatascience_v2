@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maching learning on Jake Learns Data Science</title>
+    <link>/tags/maching-learning/</link>
+    <description>Recent content in maching learning on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/maching-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Data Scientist&#39;s Take on the Roadmap to AI</title>
+      <link>/post/a-data-scientists-take-on-the-roadmap-to-ai/</link>
+      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/a-data-scientists-take-on-the-roadmap-to-ai/</guid>
+      <description>INTRODUCTION Recently I was asked by a former colleague about getting into AI. He has truly big data and wants to use this data to power “AI” - if the headlines are to be believed, everyone else is already doing it. Though it was difficult for my ego, I told him I couldn’t help him in our 30 minute call and that he should think about hiring someone to get him there.</description>
+    </item>
+    
+  </channel>
+</rss>

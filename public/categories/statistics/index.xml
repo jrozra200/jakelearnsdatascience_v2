@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on Jake Learns Data Science</title>
+    <link>/categories/statistics/</link>
+    <description>Recent content in Statistics on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Sat, 26 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Identifying Compromised User Accounts with Logistic Regression</title>
+      <link>/post/identifying-compromised-user-accounts/</link>
+      <pubDate>Sat, 26 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/identifying-compromised-user-accounts/</guid>
+      <description>INTRODUCTION As a Data Analyst on Comcast&amp;rsquo;s Messaging Engineering team, it is my responsibility to report on the platform statuses, identify irregularities, measure impact of changes, and identify policies to ensure that our system is used as it was intended. Part of the last responsibility is the identification and remediation of compromised user accounts.
+The challenge the company faces is being able to detect account compromises faster and remediate them closer to the moment of detection.</description>
+    </item>
+    
+  </channel>
+</rss>

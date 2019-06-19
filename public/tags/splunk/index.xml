@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Splunk on Jake Learns Data Science</title>
+    <link>/tags/splunk/</link>
+    <description>Recent content in Splunk on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Fri, 04 Dec 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/splunk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using R and Splunk: Lookups of More Than 10,000 Results</title>
+      <link>/post/using-r-and-splunk/</link>
+      <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/using-r-and-splunk/</guid>
+      <description>Splunk, for some probably very good reasons, has limits on how many results are returned by sub-searches (which in turn limits us on lookups, too). Because of this, I’ve used R to search Splunk through it’s API endpoints (using the httr package) and utilize loops, the plyr package, and other data manipulation flexibilities given through the use of R.
+This has allowed me to answer some questions for our business team that at the surface seem simple enough, but the data gathering and manipulation get either too complex or large for Splunk to handle efficiently.</description>
+    </item>
+    
+  </channel>
+</rss>

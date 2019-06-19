@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Jacob Rozran">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="INTRODUCTION Recently I was asked by a former colleague about getting into AI. He has truly big data and wants to use this data to power “AI” - if the headlines are to be believed, everyone else is already doing it. Though it was difficult for my ego, I told him I couldn’t help him in our 30 minute call and that he should think about hiring someone to get him there.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/a-data-scientists-take-on-the-roadmap-to-ai/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-74033249-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Jake Learns Data Science">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Jake Learns Data Science">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/a-data-scientists-take-on-the-roadmap-to-ai/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@rozran00">
+  <meta property="twitter:creator" content="@rozran00">
+  
+  <meta property="og:site_name" content="Jake Learns Data Science">
+  <meta property="og:url" content="/post/a-data-scientists-take-on-the-roadmap-to-ai/">
+  <meta property="og:title" content="A Data Scientist&#39;s Take on the Roadmap to AI | Jake Learns Data Science">
+  <meta property="og:description" content="INTRODUCTION Recently I was asked by a former colleague about getting into AI. He has truly big data and wants to use this data to power “AI” - if the headlines are to be believed, everyone else is already doing it. Though it was difficult for my ego, I told him I couldn’t help him in our 30 minute call and that he should think about hiring someone to get him there."><meta property="og:image" content="/img/jakes_pic.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-03-23T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-03-23T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>A Data Scientist&#39;s Take on the Roadmap to AI | Jake Learns Data Science</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Jake Learns Data Science</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#posts">
+            
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#tags">
+            
+            <span>Tags</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">A Data Scientist&#39;s Take on the Roadmap to AI</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jacob Rozran">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-03-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2019-03-23 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Mar 23, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jacob Rozran">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="">Data Science</a>, 
+    
+    <a href="/categories/ai/">AI</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=A%20Data%20Scientist%27s%20Take%20on%20the%20Roadmap%20to%20AI&amp;url=%2fpost%2fa-data-scientists-take-on-the-roadmap-to-ai%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2fa-data-scientists-take-on-the-roadmap-to-ai%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fa-data-scientists-take-on-the-roadmap-to-ai%2f&amp;title=A%20Data%20Scientist%27s%20Take%20on%20the%20Roadmap%20to%20AI"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fa-data-scientists-take-on-the-roadmap-to-ai%2f&amp;title=A%20Data%20Scientist%27s%20Take%20on%20the%20Roadmap%20to%20AI"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=A%20Data%20Scientist%27s%20Take%20on%20the%20Roadmap%20to%20AI&amp;body=%2fpost%2fa-data-scientists-take-on-the-roadmap-to-ai%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+
+<div id="introduction" class="section level3">
+<h3>INTRODUCTION</h3>
+<p>Recently I was asked by a former colleague about getting into AI. He has truly big data and wants to use this data to power “AI” - if the headlines are to be believed, everyone else is already doing it. Though it was difficult for my ego, I told him I couldn’t help him in our 30 minute call and that he should think about hiring someone to get him there.</p>
+<p>The truth was I really didn’t have a solid answer for him in the moment. This was truly disappointing - in my current role and in my previous role, I put predictive models into production. After thinking about it for a bit, there is definitely a similar path I took in both roles.</p>
+<p>There’s 3 steps in my mind to getting to “AI.” Though this seems simple, it is a long process and potentially not linear - you may have to keep coming back to previous steps.</p>
+<ol style="list-style-type: decimal">
+<li>Baseline (Reporting)</li>
+<li>Understand (Advanced Analytics)</li>
+<li>Artificial Intelligence (Data Science)</li>
+</ol>
+</div>
+<div id="baseline-reporting" class="section level3">
+<h3>BASELINE (REPORTING)</h3>
+<p><em>Fun fact:</em> You cannot effectively predict anything if you cannot measure the impact.</p>
+<p>What I mean by <strong>baseline</strong> is building out a reporting suite.</p>
+<p>Having a fundamental understanding of your business and environment is key. Without doing this step, you may try to predict the wrong thing entirely - or start with something that isn’t the most impactful.</p>
+<p>For me, this step started with finding the data in the first place. Perhaps, like my colleague, you have lots of data and you’re ready to jump in. That’s great and makes getting started that much more straightforward. In my role, I joined a finance team that really didn’t have a good bead on this - finding the data was difficult (and getting the owners of that data to give me access was a process as well).</p>
+<p><strong>To be successfull, start small and iterate.</strong> Our first reports were built from manually downloading machine logs, processing them in R with JSON packages, and turning them into a black-and-white document. It was ugly, but it helped us know what we needed to know in that moment - oh yeah… it was MUCH better than nothing. <em>“Don’t let perfection be the enemy of good.”</em> - paraphrased from Voltaire.</p>
+<center>
+<img src="/post/2019-03-23-a-data-scientists-take-on-the-roadmap-to-ai/First_Report.png" alt="First Report - with some details removed" />
+</center>
+<p>From this, I gained access to our organizations data warehouse, put automation in place, and purchased some Tableau licenses. This phase took a few months and is constantly being refined, but we are now able to see the impact of our decisions at a glance.</p>
+<p>This new understanding inevitably leads to more questions - queue step 2: <strong>Understanding</strong>.</p>
+</div>
+<div id="understanding-advanced-analytics" class="section level3">
+<h3>UNDERSTANDING (ADVANCED ANALYTICS)</h3>
+<p>If you have never circulated reports and dashboards to others… let me fill you in on something: it will ALWAYS lead to additional, progressively harder questions.</p>
+<p>This step is an investment in time and expertise - you have to commit to having dedicated resource(s) (read: people… it is inhumane to call people resources and you may only need one person or some of a full time person’s time).</p>
+<ol style="list-style-type: decimal">
+<li>Why did X go up unexpectedly (breaks the current trend)?</li>
+<li>Are we over indexing on this type of customer?</li>
+<li>Right before our customer leaves, this weird thing happens - what is this weird thing and why is it happening?</li>
+</ol>
+<p>Like the previous step - this will be ongoing. Investing in someone to do advanced analytics will help you to understand the fine details of your business AND … (drum roll) … <strong>will help you to understand</strong> <strong>which part of your business is most ripe for “AI”!</strong></p>
+</div>
+<div id="artificial-intelligence-data-science" class="section level3">
+<h3>ARTIFICIAL INTELLIGENCE (DATA SCIENCE)</h3>
+<p>It is at this point that you will able to do real, bonafide, <strong>data </strong> <strong>science</strong>.</p>
+<p><em>A quick rant:</em> Notice that I purposefully did not use the term “AI” (I know I used it throughout this article and even in the title of this section… what can I say - I am in-tune with marketing concepts, too). “AI” is a term that is overused and rarely implemented. Data science, however, comes in many forms and can really transform your business.</p>
+<p>Here’s a few ideas for what you can do with <strong>data science</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>Prediction/Machine Learning</li>
+<li>Testing</li>
+<li>Graph Analysis</li>
+</ol>
+<p>Perhaps you want to <strong>predict</strong> whether a sale is fraud or which existing customer is most apt to buy your new product?</p>
+<p>You can also <strong>test</strong> whether a new strategy works better than the old. This requires that you use statistical concepts to ensure valid testing and results.</p>
+<p>My new obsession is around <strong>graph analysis</strong>. With graphs you can see relationships that may have been hidden before - this will enable you to identify new targets and enrich your understanding of your business!</p>
+<p>Data science usually is very specific thing and takes many forms!</p>
+</div>
+<div id="summary" class="section level3">
+<h3>SUMMARY</h3>
+<p>Getting to <strong>data science</strong> is a process - it will take an investment. There are products out there that will help you shortcut some of these steps and I encourage you to consider these.</p>
+<p>There are products to help with reporting, analytics, and data science. These should, in my very humble opinion, be used by people who are dedicated to the organizations data, analytics, and science.</p>
+<p><strong>Directions for data science - measure, analyze, predict, repeat!</strong></p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="">data science</a>
+  
+  <a class="badge badge-light" href="/tags/ai/">AI</a>
+  
+  <a class="badge badge-light" href="/tags/roadmap/">roadmap</a>
+  
+  <a class="badge badge-light" href="">data analytics</a>
+  
+  <a class="badge badge-light" href="">maching learning</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/jakes_pic.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Jacob Rozran</a></h5>
+    <h6 class="card-subtitle">Data Guy, Dad, &amp; Uncle</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:jacob.rozran@gmail.com" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/rozran00/" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/jacob-rozran-884580b/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/jrozra200/" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://public.tableau.com/profile/jacob.rozran#!/" target="_blank" rel="noopener">
+          <i class="fas fa-chart-area"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://plot.ly/~rozran00#/" target="_blank" rel="noopener">
+          <i class="fas fa-chart-bar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.flickr.com/photos/jakes_project_365/" target="_blank" rel="noopener">
+          <i class="fab fa-flickr"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="/files/cv.pdf" >
+          <i class="ai ai-cv"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/getting-started-with-data-science/">Getting Started with Data Science</a></li>
+        
+        <li><a href="/post/how-to-build-a-binary-classification-model/">How to Build a Binary Classification Model</a></li>
+        
+        <li><a href="/post/machine-learning-demystified/">Machine Learning Demystified</a></li>
+        
+        <li><a href="/post/exploring-open-data-predicting-the-amount-of-violations/">Exploring Open Data - Predicting the Amoung of Violations</a></li>
+        
+        <li><a href="/post/open-data-day-dc-hackathon/">Open Data Day - DC Hackathon</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2019 Jacob Rozran &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/toml.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.07fbebbbf71b021c8836e1d7ecffa489.js"></script>
+
+    
+
+  </body>
+</html>
+

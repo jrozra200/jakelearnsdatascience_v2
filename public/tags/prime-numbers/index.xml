@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>prime numbers on Jake Learns Data Science</title>
+    <link>/tags/prime-numbers/</link>
+    <description>Recent content in prime numbers on Jake Learns Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <lastBuildDate>Fri, 20 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/prime-numbers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Prime Number Patterns</title>
+      <link>/post/prime-number-patterns/</link>
+      <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/prime-number-patterns/</guid>
+      <description>I found a very thought provoking and beautiful visualization on the D3 Website regarding prime numbers. What the visualization shows is that if you draw periodic curves beginning at the origin for each positive integer, the prime numbers will be intersected by only two curves: the prime itself&amp;rsquo;s curve and the curve for one.
+When I saw this, my mind was blown. How interesting&amp;hellip; and also how obvious. The definition of a prime is that it can only be divided by itself and one (duh).</description>
+    </item>
+    
+  </channel>
+</rss>

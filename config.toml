@@ -273,7 +273,7 @@ enableGitInfo = false
   [[params.social]]
     icon = "linkedin"
     icon_pack = "fab"
-    link = "https://www.linkedin.com/in/jacob-rozran-884580b/"
+    link = "https://www.linkedin.com/in/jacob-rozran"
 
   [[params.social]]
     icon = "github"

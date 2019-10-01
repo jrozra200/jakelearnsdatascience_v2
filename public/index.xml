@@ -6,8 +6,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
-    <lastBuildDate>Tue, 26 Mar 2019 00:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2019 00:00:00 -0400</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How Data Science Is Keeping Your Cell Phone Info Safe</title>
+      <link>/project/philly-mag-article/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 -0400</pubDate>
+      
+      <guid>/project/philly-mag-article/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Jake Learns Data Science Visitor Dashboard</title>
@@ -1315,35 +1324,6 @@ data[counter, 5] &amp;lt;- xmlValue(result2[[i]][[&amp;quot;rating&amp;quot;]])&
 &lt;p&gt;Not too shabby! There are a few things to mention here… For one, not every water park has a rating; I dealt with this by making the NAs into 0s. That’s probably not the nicest way of handling that. Also - this is only the top 20 waterparks as Google decided per state. There are likely some waterparks out there that are not represented here. There are also probably non-waterparks represented here that popped up in the results.&lt;/p&gt;
 &lt;p&gt;For those of you who are interested in the data or script I used to generate this map, feel free to grab them at those links. Maybe one day I’ll come back to this to find out where there are the most waterparks per capita - or some other correlation to see what the best water park really is… this is just the tip of the iceberg.&lt;/p&gt;
 &lt;p&gt;It feels good to scratch a few curiosity driven scratches in one project!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Sierpinski Triangles (and Carpets) in R</title>
-      <link>/post/sierpinski-triangles-and-carpets-in-r/</link>
-      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/sierpinski-triangles-and-carpets-in-r/</guid>
-      <description>
-
-
-&lt;p&gt;Recently in class, I was asked the following question:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Start with an equilateral triangle and a point chosen at random from the interior of that triangle. Label one vertex 1, 2, a second vertex 3, 4, and the last vertex 5, 6. Roll a die to pick a vertex. Place a dot at the point halfway between the roll-selected vertex and the point you chose. Now consider this new dot as a starting point to do this experiment once again. Roll the die to pick a new vertex. Place a dot at the point halfway between the last point and the most recent roll-selected vertex. Continue this procedure. What does the shape of the collection of dots look like?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I thought, well - it’s got to be something cool or else the professor wouldn’t ask, but I can’t imagine it will be more than a cloud of dots. Truth be told, I went to a conference for work the week of this assignment and never did it - but when I went to the next class, &lt;strong&gt;IT WAS SOMETHING COOL!&lt;/strong&gt; It turns out that this creates a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sierpinski_triangle&#34;&gt;Sierpinski Triangle&lt;/a&gt; - a fractal of increasingly smaller triangles.&lt;/p&gt;
-&lt;p&gt;I wanted to check this out for myself, so I built an R script that creates the triangle. I ran it a few times with differing amounts of points. Here is one with 100,000 points. Though this post is written in RStudio, I’ve hidden the code for readability. Actual code for this can be found &lt;a href=&#34;https://github.com/jrozra200/pretty_triangles/blob/master/createTriangle.R&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/2015-07-16-sierpinski-triangles-and-carpets-in-r_files/figure-html/sierpinski_triangle-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;I thought - if equilateral triangles create patterns this cool, a square must be amazing! Well… it is, however you can’t just run this logic - it will return a cloud of random dots…&lt;/p&gt;
-&lt;p&gt;After talking with my professor, Dr. Levitan - it turns out you can get something equally awesome as the Sierpinski triangle with a square; you just need to make a few changes (say this with a voice of authority and calm knowingness):&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Instead of 3 points to move to, you need 8 points: the 4 corners of a specified square and the midpoints between each side. Also, instead of taking the midpoint of your move to the specified location, you need to take the tripoint (division by 3 instead of 2).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This is called a &lt;a href=&#34;https://en.wikipedia.org/wiki/Sierpinski_carpet&#34;&gt;Sierpinski Carpet&lt;/a&gt; - a fractal of squares (as opposed to a fractal of equilateral triangles in the graph above). You can see in both the triangle and square that the same pattern is repeated time and again in smaller and smaller increments.&lt;/p&gt;
-&lt;p&gt;I updated my R script and voila - MORE BEAUTIFUL MATH!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/posts/2015-07-16-sierpinski-triangles-and-carpets-in-r_files/figure-html/sierpinski_carpet-1.png&#34; width=&#34;100%&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Check out the script and run the functions yourself! I only spent a little bit of time putting it together - I think it would be cool to add some other features, especially when it comes to the plotting of the points. Also - I’d like to run it for a million or more points… I just lacked the patience to wait out the script to run for that long (100,000 points took about 30 minutes to run - my script is probably not the most efficient).&lt;/p&gt;
-&lt;p&gt;Anyways - really cool to see what happens in math sometimes - its hard to imagine at first that the triangle would look that way. Another reason math is cool!&lt;/p&gt;
 </description>
     </item>
     

@@ -10,7 +10,7 @@ summary = "I am honored to have been interviewed by Philly Magazine about how my
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["d3.js", "data visualization"]`
-tags = ["articles", "Philly Magazine"]
+tags = ["articles", "philly magazine"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://www.phillymag.com/sponsor-content/data-science-statistics-cell-phones/"

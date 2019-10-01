@@ -41,6 +41,10 @@ filter_default = 0
   tag = "*"
 
 [[filter]]
+  name = "Articles"
+  tag = "articles"
+  
+[[filter]]
   name = "Data Visualization"
   tag = "data visualization"
 

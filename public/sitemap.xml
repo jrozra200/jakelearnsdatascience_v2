@@ -20,15 +20,6 @@
     
     <url>
     
-      <loc>/tags/philly-magazine/</loc>
-      <lastmod>2019-09-30T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/project/</loc>
       <lastmod>2019-09-30T00:00:00-04:00</lastmod>
       <priority>0</priority>
@@ -48,6 +39,15 @@
     <url>
     
       <loc>/tags/articles/</loc>
+      <lastmod>2019-09-30T00:00:00-04:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/philly-magazine/</loc>
       <lastmod>2019-09-30T00:00:00-04:00</lastmod>
       <priority>0</priority>
     </url>
@@ -90,7 +90,7 @@
     
     <url>
     
-      <loc>/tags/ai/</loc>
+      <loc>/categories/ai/</loc>
       <lastmod>2019-03-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -99,7 +99,7 @@
     
     <url>
     
-      <loc>/categories/ai/</loc>
+      <loc>/tags/ai/</loc>
       <lastmod>2019-03-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -126,7 +126,7 @@
     
     <url>
     
-      <loc>/tags/data-science/</loc>
+      <loc>/categories/data-science/</loc>
       <lastmod>2019-03-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
@@ -135,7 +135,7 @@
     
     <url>
     
-      <loc>/categories/data-science/</loc>
+      <loc>/tags/data-science/</loc>
       <lastmod>2019-03-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

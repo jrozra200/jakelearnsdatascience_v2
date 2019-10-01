@@ -13,20 +13,20 @@
     
     
     <item>
-      <title>Philly Magazine</title>
-      <link>/tags/philly-magazine/</link>
-      <pubDate>Mon, 30 Sep 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/tags/philly-magazine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>articles</title>
       <link>/tags/articles/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 -0400</pubDate>
       
       <guid>/tags/articles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>philly magazine</title>
+      <link>/tags/philly-magazine/</link>
+      <pubDate>Mon, 30 Sep 2019 00:00:00 -0400</pubDate>
+      
+      <guid>/tags/philly-magazine/</guid>
       <description></description>
     </item>
     

@@ -1,19 +1,19 @@
 +++
 # Project title.
-title = "GAP RE-MINDER"
+title = "Twitter Analysis - R Shiny App"
 
 # Date this page was created.
-date = 2016-03-07T00:00:00
+date = 2019-11-21T00:00:00
 
 # Project summary to display on homepage.
-summary = "A demonstration D3 project, shamelessly ripping off Gapminder."
+summary = "I created a Shiny app that searches Twitter and does some simple analysis."
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["d3.js", "data visualization"]`
-tags = ["d3.js", "data visualization", "projects"]
+tags = ["data visualization", "projects", "shiny", "twitter"]
 
 # Optional external URL for project (replaces project detail page).
-external_link = "https://www.jakelearnsdatascience.com/project/d3_sample_open_data_day_dc/"
+external_link = "https://jakelearnsdatascience.shinyapps.io/twitter_shiny/"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your project's folder. 

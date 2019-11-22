@@ -47,6 +47,10 @@ filter_default = 0
 [[filter]]
   name = "Data Visualization"
   tag = "data visualization"
+  
+[[filter]]
+  name = "Projects"
+  tag = "projects"
 
 +++
 

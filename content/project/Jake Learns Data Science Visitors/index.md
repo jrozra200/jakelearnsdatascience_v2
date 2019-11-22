@@ -10,7 +10,7 @@ summary = "A quick view of visitors to my website. Data pulled from Google Analy
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["d3.js", "data visualization"]`
-tags = ["tableau public", "data visualization"]
+tags = ["tableau public", "data visualization", "projects"]
 
 # Optional external URL for project (replaces project detail page).
 external_link = "https://public.tableau.com/profile/jacob.rozran#!/vizhome/JakeLearnsDataScience/JakeLearnsDataScienceVisitors"

@@ -17,6 +17,28 @@ tags:
 
 
 
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+<pre><code>&lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&quot;&gt;&lt;/script&gt;
+&lt;!-- MathJax configuration --&gt;
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+        displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&quot;\\[&quot;,&quot;\\]&quot;] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: &#39;center&#39;,
+    &quot;HTML-CSS&quot;: {
+        styles: {&#39;.MathJax_Display&#39;: {&quot;margin&quot;: 0}},
+        linebreaks: { automatic: true }
+    }
+});
+&lt;/script&gt;
+&lt;!-- End of mathjax configuration --&gt;</code></pre>
 <div id="introduction" class="section level3">
 <h3>INTRODUCTION</h3>
 <p>Whether you are a data professional or in a job that requires data driven

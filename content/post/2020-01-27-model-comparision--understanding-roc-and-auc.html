@@ -74,6 +74,7 @@ Logistic Regression, and random prediction using a uniform distribution.</p>
 <h4>Step 1: Rank Order Predictions</h4>
 <p>To build the ROC curve for each model, you first rank order your predictions:</p>
 
+<center>
 <table>
 <thead>
 <tr class="header">
@@ -108,6 +109,7 @@ Logistic Regression, and random prediction using a uniform distribution.</p>
 </tr>
 </tbody>
 </table>
+</center>
 
 </div>
 <div id="step-2-calculate-tpr-fpr-for-first-iteration" class="section level4">
@@ -118,6 +120,7 @@ the remaining are predicted FALSE.</p>
 <p>From the table below, we can see that the first row is FALSE, though we are
 predicting it TRUE. This leads to the following metrics for our first iteration:</p>
 
+<center>
 <table>
 <thead>
 <tr class="header">
@@ -146,6 +149,7 @@ predicting it TRUE. This leads to the following metrics for our first iteration:
 </tr>
 </tbody>
 </table>
+</center>
 
 <p>This is what we’d expect. We have a 0% TPR on the first iteration because we got
 that single prediction wrong. Since we’ve only got 1 false positve, our FPR is
@@ -156,6 +160,7 @@ still low: 3.7%.</p>
 <p>Now, let’s go through all of the possible cut points and calculate the TPR and
 FPR.</p>
 
+<center>
 <table>
 <thead>
 <tr class="header">
@@ -260,6 +265,7 @@ FPR.</p>
 </tr>
 </tbody>
 </table>
+</center>
 
 </div>
 <div id="step-4-repeat-steps-1-3-for-each-model" class="section level4">

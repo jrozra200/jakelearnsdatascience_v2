@@ -73,7 +73,7 @@ Logistic Regression, and random prediction using a uniform distribution.
 
 To build the ROC curve for each model, you first rank order your predictions: 
 
-<div align="center">
+<center>
 
 ```{r rankorder, echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
 library(ggplot2)
@@ -121,7 +121,7 @@ names(rf_tab) <- c("Actual", "Predicted")
 kable(head(rf_tab), row.names = FALSE, digits = 4)
 ```
 
-</div>
+</center>
 
 #### Step 2: Calculate TPR & FPR for First Iteration
 
@@ -132,7 +132,7 @@ the remaining are predicted FALSE.
 From the table below, we can see that the first row is FALSE, though we are 
 predicting it TRUE. This leads to the following metrics for our first iteration: 
 
-<div align="center">
+<center>
 
 ```{r stepone,  echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
 rf_tab$order <- 1:nrow(rf_tab)
@@ -166,7 +166,7 @@ tmp <- data.frame(Iteration = cut,
 kable(tmp, row.names = FALSE, digits = 4)
 ```
 
-</div>
+</center>
 
 This is what we'd expect. We have a 0% TPR on the first iteration because we got 
 that single prediction wrong. Since we've only got 1 false positve, our FPR is 
@@ -177,7 +177,7 @@ still low: 3.7%.
 Now, let's go through all of the possible cut points and calculate the TPR and 
 FPR. 
 
-<div align="center">
+<center>
 
 ```{r iterate, echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
 roc_dat <- data.frame()
@@ -233,7 +233,7 @@ names(disp_tab) <- c("Actual Outcome", "Predicted Outcome", "Model", "Rank",
 kable(disp_tab, row.names = FALSE, digits = 4)
 ```
 
-</div>
+</center>
 
 #### Step 4: Repeat Steps 1-3 for Each Model
 

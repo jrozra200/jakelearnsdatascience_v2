@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 3.3.0">
-  <meta name="generator" content="Hugo 0.56.1" />
+  <meta name="generator" content="Hugo 0.63.1" />
   <meta name="author" content="Jacob Rozran">
 
   
@@ -432,116 +432,86 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h3 id="introduction">INTRODUCTION</h3>
-
+      <h3 id="introduction">INTRODUCTION</h3>
 <p>I have had a few discussions around web user agents at work recently. It turns out that they are not straightforward at all. In other words, trying to report browser usage to our Business Unit required a nontrivial translation. The more I dug in, the more I learned. I had some challenges finding the information, so I thought it be useful to document my findings and centralizing the sites I used to figure all this out.</p>
-
 <p>Just a quick background: Our web application, for a multitude of reasons, sends Internet Explorer users into a kind of compatibility mode in which it appears the browser is another version of IE (frequently 7, which no one uses anymore). In addition to this, in some of the application logs, there are user agents that appear with the prefix from the app followed by the browser as it understands it - also frequently IE7. For other browsers - it could be Google Crome (GC43; 43 is the browser version) or Mozilla Firefox (FF38; same deal here with the version number) - it does the same thing, though those browsers do not default to a compatibility mode in the same way.</p>
-
 <p>This is only the beginning of the confusion that is a web user agent string.</p>
-
 <p>While there isn&rsquo;t much I can do about the application logs doing its own user agent translations (we&rsquo;ll need to make some changes to the system logging), I can decipher the users strings from the places in the app that report the raw user agent strings. These are the strings that begin with Mozilla (more on that below). Let&rsquo;s walk through them.</p>
-
 <h3 id="the-user-agent-string">THE USER AGENT STRING</h3>
-
 <p>It can look like many different things. Here are some examples:</p>
-
 <ul>
-<li>Mozilla/5.0 (Windows NT 6.1;; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36<br /></li>
-<li>Mozilla/5.0 (Windows NT 6.3;; WOW64;; rv:31.0) Gecko/20100101 Firefox/31.0<br /></li>
-<li>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_10_3) AppleWebKit/600.5.17 (KHTML, like Gecko) Version/8.0.5 Safari/600.5.17<br /></li>
-<li>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; .NET4.0C;; .NET4.0E)<br /></li>
-<li>Mozilla/4.0 (compatible;; MSIE 7.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; MAEM;; .NET4.0C;; InfoPath.1)<br /></li>
-<li>Mozilla/4.0 (compatible;; MSIE 8.0;; Windows NT 5.1;; Trident/4.0;; .NET CLR 1.0.3705;; .NET CLR 1.1.4322;; Media Center PC 4.0;; .NET CLR 2.0.50727;; .NET CLR 3.0.4506.2152;; .NET CLR 3.5.30729;; InfoPath.3;; .NET4.0C;; yie8)<br /></li>
-<li>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; Trident/5.0)<br /></li>
+<li>Mozilla/5.0 (Windows NT 6.1;; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36</li>
+<li>Mozilla/5.0 (Windows NT 6.3;; WOW64;; rv:31.0) Gecko/20100101 Firefox/31.0</li>
+<li>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_10_3) AppleWebKit/600.5.17 (KHTML, like Gecko) Version/8.0.5 Safari/600.5.17</li>
+<li>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; .NET4.0C;; .NET4.0E)</li>
+<li>Mozilla/4.0 (compatible;; MSIE 7.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; MAEM;; .NET4.0C;; InfoPath.1)</li>
+<li>Mozilla/4.0 (compatible;; MSIE 8.0;; Windows NT 5.1;; Trident/4.0;; .NET CLR 1.0.3705;; .NET CLR 1.1.4322;; Media Center PC 4.0;; .NET CLR 2.0.50727;; .NET CLR 3.0.4506.2152;; .NET CLR 3.5.30729;; InfoPath.3;; .NET4.0C;; yie8)</li>
+<li>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; Trident/5.0)</li>
 </ul>
-
 <p>As you can see - they all have different components and parts to them. Some seem to be very straightforward at first glance (keyword: seem) and others are totally baffling.</p>
-
 <h3 id="translating-the-user-agent-string">TRANSLATING THE USER AGENT STRING</h3>
-
 <p>Much of my understanding of these user agent strings came from plugging the user agent strings into this page and a fair amount of Googling.</p>
-
 <p>Let&rsquo;s pull apart the first user agent string from above: Mozilla/5.0 (Windows NT 6.1;; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36</p>
-
 <ul>
-<li>Mozilla/5.0<br />
-
+<li>Mozilla/5.0
 <ul>
-<li>&ldquo;MozillaProductSlice. Claims to be a Mozilla based user agent, which is only true for Gecko browsers like Firefox and Netscape. For all other user agents it means &lsquo;Mozilla-compatible&rsquo;. In modern browsers, this is only used for historical reasons. It has no real meaning anymore&rdquo;<br /></li>
-<li><strong>TRANSLATION</strong> We don&rsquo;t care about this field in any of the user agent strings. It&rsquo;s good to know that it starts the web user agent strings, but that&rsquo;s about it.<br /></li>
-</ul></li>
-<li>(Windows NT 6.1;; WOW64)<br />
-
-<ul>
-<li>Operating System = Windows 7<br /></li>
-<li><strong>TRANSLATION</strong> This is at least in the right ball park, but still not exactly straightforward. Why can&rsquo;t it just be Windows 7 for Windows 7?<br /></li>
-</ul></li>
-<li>AppleWebKit/537.36<br />
-
-<ul>
-<li>&ldquo;The Web Kit provides a set of core classes to display web content in windows&rdquo;<br /></li>
-<li><strong>TRANSLATION</strong> I don&rsquo;t even know&hellip; don&rsquo;t care.<br /></li>
-</ul></li>
-<li>(KHTML,<br />
-
-<ul>
-<li>&ldquo;Open Source HTML layout engine developed by the KDE project&rdquo;<br /></li>
-<li><strong>TRANSLATION</strong> Still don&rsquo;t know or care.<br /></li>
-</ul></li>
-<li>like Gecko)<br />
-
-<ul>
-<li>&ldquo;like Gecko&hellip;&rdquo;<br /></li>
-<li><strong>TRANSLATION</strong> What? Yep. Don&rsquo;t care - makes no sense.<br /></li>
-</ul></li>
-<li>Chrome/43.0.2357.81<br />
-
-<ul>
-<li>This is the browser and it&rsquo;s version<br /></li>
-<li><strong>TRANSLATION</strong> Google Chrome v. 43. YES! ONE THAT MAKES SENSE AND HAS INFO WE WANT!<br /></li>
-</ul></li>
-<li>Safari/537.36<br />
-
-<ul>
-<li>&ldquo;Based on Safari&rdquo;<br /></li>
-<li><strong>TRANSLATION</strong> Um&hellip; ok? So this isn&rsquo;t actually Apple Safari? NOPE! It&rsquo;s Chrome, which makes pulling Safari quite the challenge. I&rsquo;ll spell that out in more detail in outlining the if statement below.
-Out of that whole thing, we have several things that aren&rsquo;t important and several things that look like they could be another thing, but aren&rsquo;t.<br /></li>
-</ul></li>
+<li>&ldquo;MozillaProductSlice. Claims to be a Mozilla based user agent, which is only true for Gecko browsers like Firefox and Netscape. For all other user agents it means &lsquo;Mozilla-compatible&rsquo;. In modern browsers, this is only used for historical reasons. It has no real meaning anymore&rdquo;</li>
+<li><strong>TRANSLATION</strong> We don&rsquo;t care about this field in any of the user agent strings. It&rsquo;s good to know that it starts the web user agent strings, but that&rsquo;s about it.</li>
 </ul>
-
+</li>
+<li>(Windows NT 6.1;; WOW64)
+<ul>
+<li>Operating System = Windows 7</li>
+<li><strong>TRANSLATION</strong> This is at least in the right ball park, but still not exactly straightforward. Why can&rsquo;t it just be Windows 7 for Windows 7?</li>
+</ul>
+</li>
+<li>AppleWebKit/537.36
+<ul>
+<li>&ldquo;The Web Kit provides a set of core classes to display web content in windows&rdquo;</li>
+<li><strong>TRANSLATION</strong> I don&rsquo;t even know&hellip; don&rsquo;t care.</li>
+</ul>
+</li>
+<li>(KHTML,
+<ul>
+<li>&ldquo;Open Source HTML layout engine developed by the KDE project&rdquo;</li>
+<li><strong>TRANSLATION</strong> Still don&rsquo;t know or care.</li>
+</ul>
+</li>
+<li>like Gecko)
+<ul>
+<li>&ldquo;like Gecko&hellip;&rdquo;</li>
+<li><strong>TRANSLATION</strong> What? Yep. Don&rsquo;t care - makes no sense.</li>
+</ul>
+</li>
+<li>Chrome/43.0.2357.81
+<ul>
+<li>This is the browser and it&rsquo;s version</li>
+<li><strong>TRANSLATION</strong> Google Chrome v. 43. YES! ONE THAT MAKES SENSE AND HAS INFO WE WANT!</li>
+</ul>
+</li>
+<li>Safari/537.36
+<ul>
+<li>&ldquo;Based on Safari&rdquo;</li>
+<li><strong>TRANSLATION</strong> Um&hellip; ok? So this isn&rsquo;t actually Apple Safari? NOPE! It&rsquo;s Chrome, which makes pulling Safari quite the challenge. I&rsquo;ll spell that out in more detail in outlining the if statement below.
+Out of that whole thing, we have several things that aren&rsquo;t important and several things that look like they could be another thing, but aren&rsquo;t.</li>
+</ul>
+</li>
+</ul>
 <p>So&hellip; Long story short - all of that info boils down to the user coming to our site using Google Crome 43 from a Window&rsquo;s 7 machine.</p>
-
 <h3 id="the-internet-explorer-user-agent">THE INTERNET EXPLORER USER AGENT</h3>
-
 <p>Confused yet? Hold on to your butts. The Internet Explorer User Agent String is the level 2 version of the previous string.</p>
-
 <p>Let&rsquo;s look at: Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; .NET4.0C;; .NET4.0E)</p>
-
 <p>I found some light reading to explain some of what we are about to dive into.</p>
-
 <p>Most important from that page is this line:</p>
-
 <p>&ldquo;When the F12 developer tools are used to change the browser mode of Internet Explorer, the version token of the user-agent string is modified to appear so that the browser appears to be an earlier version. <strong>This is done to allow browser specific content to be served to Internet Explorer and is usually necessary only when websites have not been updated to reflect current versions of the browser.</strong> When this happens, a Trident token is added to the user-agent string. This token includes a version number that enables you to identify the version of the browser, regardless of the current browser mode.&rdquo;</p>
-
 <p><strong>TRANSLATION</strong> Though the browser version above looks like MSIE 9.0 (that&rsquo;s clearly what the string says), the Trident version identifies the browser as actually Internet Explorer 11. I am 90% sure that our site has many many many many many customizations done to deal specifically with Internet Explorer funny business. This is why the browser appears many times as MSIE 7.0 (Like this example which is actually IE 11, too: Mozilla/4.0 (compatible;; MSIE 7.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; MAEM;; .NET4.0C;; InfoPath.1))</p>
-
 <p>If you&rsquo;d like additional information on Trident, it can be found here.</p>
-
 <p>Just to summarize: For those user agent strings from Internet Explorer, the important detail is that Trident bit for determining what browser they came from.</p>
-
 <h3 id="putting-the-pieces-together">PUTTING THE PIECES TOGETHER</h3>
-
 <p>Ok ok ok&hellip; now we at least can read the string - maybe there are a bunch of questions about a lot of this, but we can pull the browser version at this point.</p>
-
-<p>After pulling all of this information together and getting a general understanding of it, I read this <a href="http://webaim.org/blog/user-agent-string-history/" target="_blank">brief history of user agent strings</a>. Now I understand why they are the way they are - though I still think it&rsquo;s stupid.</p>
-
+<p>After pulling all of this information together and getting a general understanding of it, I read this <a href="http://webaim.org/blog/user-agent-string-history/">brief history of user agent strings</a>. Now I understand why they are the way they are - though I still think it&rsquo;s stupid.</p>
 <h3 id="deciphering-user-agents">DECIPHERING USER AGENTS</h3>
-
 <p>If you, like me, need to translate these user strings into something that normal people can understand - use this table for reference. We use Splunk to do our web scraping and analysis. By using the &ldquo;BIT THAT MATTERS,&rdquo; I was able to build a case statement to translate the User Agent Strings into human readable analysis.</p>
-
 <table>
 <thead>
 <tr>
@@ -550,62 +520,52 @@ Out of that whole thing, we have several things that aren&rsquo;t important and 
 <th>BIT THAT MATTERS</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Internet Explorer 11</td>
 <td>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.1;; WOW64;; Trident/7.0;; SLCC2;; .NET CLR 2.0.50727;; .NET CLR 3.5.30729;; .NET CLR 3.0.30729;; Media Center PC 6.0;; .NET4.0C;; .NET4.0E)</td>
 <td>Trident/7.0</td>
 </tr>
-
 <tr>
 <td>Internet Explorer 10</td>
 <td>Mozilla/4.0 (compatible;; MSIE 7.0;; Windows NT 6.2;; WOW64;; Trident/6.0;; .NET4.0E;; .NET4.0C;; .NET CLR 3.5.30729;; .NET CLR 2.0.50727;; .NET CLR 3.0.30729;; MDDCJS)</td>
 <td>Trident/6.0</td>
 </tr>
-
 <tr>
 <td>Internet Explorer 9</td>
 <td>Mozilla/5.0 (compatible;; MSIE 9.0;; Windows NT 6.0;; Trident/5.0;; BOIE9;;ENUSMSCOM)</td>
 <td>Trident/5.0</td>
 </tr>
-
 <tr>
 <td>Mozilla Firefox 4X.x</td>
 <td>Mozilla/5.0 (Windows NT 6.1;; Win64;; x64;; rv:40.0) Gecko/20100101 Firefox/40.0</td>
 <td>Firefox/4</td>
 </tr>
-
 <tr>
 <td>Mozilla Firefox 3X.x</td>
 <td>Mozilla/5.0 (Windows NT 6.1;; rv:38.0) Gecko/20100101 Firefox/38.0</td>
 <td>Firefox/3</td>
 </tr>
-
 <tr>
 <td>Google Chrome 4X.x</td>
 <td>Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko)</td>
 <td>Chrome/43.0.2357.81 Safari/537.36</td>
 </tr>
-
 <tr>
 <td>Google Chrome 3X.x</td>
 <td>Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.154 Safari/537.36</td>
 <td>Chrome/3</td>
 </tr>
-
 <tr>
 <td>Apple Safari 8.x</td>
 <td>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5</td>
 <td>Version/8</td>
 </tr>
-
 <tr>
 <td>Apple Safari 7.x</td>
 <td>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_9_5) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/7.1.3 Safari/537.85.12</td>
 <td>Version/7</td>
 </tr>
-
 <tr>
 <td>Apple Safari 6.x</td>
 <td>Mozilla/5.0 (Macintosh;; Intel Mac OS X 10_7_5) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/6.1.6 Safari/537.78.2</td>
@@ -805,7 +765,7 @@ Out of that whole thing, we have several things that aren&rsquo;t important and 
   
 
   <p class="powered-by">
-    &copy; 2019 Jacob Rozran &middot; 
+    © 2020 Jacob Rozran &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

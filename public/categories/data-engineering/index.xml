@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Engineering on Jake Learns Data Science</title>
@@ -6,7 +6,7 @@
     <description>Recent content in Data Engineering on Jake Learns Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
+    <copyright>&amp;copy; 2020 Jacob Rozran</copyright>
     <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-engineering/index.xml" rel="self" type="application/rss+xml" />
@@ -28,7 +28,8 @@
       
       <guid>/post/exploring-open-data-philadelphia-parking-violations/</guid>
       <description>Introduction A few weeks ago, I stumbled across Dylan Purcell&amp;rsquo;s article on Philadelphia Parking Violations. This is a nice glimpse of the data, but I wanted to get a taste of it myself. I went and downloaded the entire data set of Parking Violations in Philadelphia from the OpenDataPhilly website and came up with a few questions after checking out the data:
-How many tickets in the data set?</description>
+How many tickets in the data set?
+ What is the range of dates in the data?</description>
     </item>
     
     <item>

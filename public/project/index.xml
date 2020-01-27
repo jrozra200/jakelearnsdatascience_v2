@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Jake Learns Data Science</title>
@@ -6,11 +6,20 @@
     <description>Recent content in Projects on Jake Learns Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
-    <lastBuildDate>Mon, 30 Sep 2019 00:00:00 -0400</lastBuildDate>
+    <copyright>&amp;copy; 2020 Jacob Rozran</copyright>
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 -0500</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Twitter Analysis - R Shiny App</title>
+      <link>/project/twitter-shiny-app/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/project/twitter-shiny-app/</guid>
+      <description>I created a Shiny app that searches Twitter and does some simple analysis.</description>
+    </item>
     
     <item>
       <title>How Data Science Is Keeping Your Cell Phone Info Safe</title>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jake Learns Data Science</title>
@@ -6,11 +6,92 @@
     <description>Recent content in Tags on Jake Learns Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
-    <lastBuildDate>Mon, 30 Sep 2019 00:00:00 -0400</lastBuildDate>
+    <copyright>&amp;copy; 2020 Jacob Rozran</copyright>
+    <lastBuildDate>Mon, 27 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI</title>
+      <link>/tags/ai/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AUC</title>
+      <link>/tags/auc/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/auc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>model coparison</title>
+      <link>/tags/model-coparison/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/model-coparison/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ROC curves</title>
+      <link>/tags/roc-curves/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/roc-curves/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data visualization</title>
+      <link>/tags/data-visualization/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/data-visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>projects</title>
+      <link>/tags/projects/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shiny</title>
+      <link>/tags/shiny/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>twitteR</title>
+      <link>/tags/twitter/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/tags/twitter/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>articles</title>
@@ -31,15 +112,6 @@
     </item>
     
     <item>
-      <title>data visualization</title>
-      <link>/tags/data-visualization/</link>
-      <pubDate>Tue, 26 Mar 2019 00:00:00 -0400</pubDate>
-      
-      <guid>/tags/data-visualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tableau public</title>
       <link>/tags/tableau-public/</link>
       <pubDate>Tue, 26 Mar 2019 00:00:00 -0400</pubDate>
@@ -49,29 +121,11 @@
     </item>
     
     <item>
-      <title>AI</title>
-      <link>/tags/ai/</link>
-      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ai/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>data analytics</title>
       <link>/tags/data-analytics/</link>
       <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-analytics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data science</title>
-      <link>/tags/data-science/</link>
-      <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-science/</guid>
       <description></description>
     </item>
     
@@ -94,24 +148,6 @@
     </item>
     
     <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Strava</title>
-      <link>/tags/strava/</link>
-      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/strava/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>data engineering</title>
       <link>/tags/data-engineering/</link>
       <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
@@ -130,11 +166,29 @@
     </item>
     
     <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>rStrava</title>
       <link>/tags/rstrava/</link>
       <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/rstrava/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strava</title>
+      <link>/tags/strava/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/strava/</guid>
       <description></description>
     </item>
     
@@ -283,20 +337,20 @@
     </item>
     
     <item>
-      <title>Splunk</title>
-      <link>/tags/splunk/</link>
-      <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/splunk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>api</title>
       <link>/tags/api/</link>
       <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
       
       <guid>/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Splunk</title>
+      <link>/tags/splunk/</link>
+      <pubDate>Fri, 04 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/splunk/</guid>
       <description></description>
     </item>
     
@@ -387,15 +441,6 @@
       <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>/tags/sentiment-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>twitteR</title>
-      <link>/tags/twitter/</link>
-      <pubDate>Mon, 29 Dec 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/twitter/</guid>
       <description></description>
     </item>
     

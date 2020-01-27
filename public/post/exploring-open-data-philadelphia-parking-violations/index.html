@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 3.3.0">
-  <meta name="generator" content="Hugo 0.56.1" />
+  <meta name="generator" content="Hugo 0.63.1" />
   <meta name="author" content="Jacob Rozran">
 
   
@@ -16,7 +16,8 @@
     
   
   <meta name="description" content="Introduction A few weeks ago, I stumbled across Dylan Purcell&rsquo;s article on Philadelphia Parking Violations. This is a nice glimpse of the data, but I wanted to get a taste of it myself. I went and downloaded the entire data set of Parking Violations in Philadelphia from the OpenDataPhilly website and came up with a few questions after checking out the data:
-How many tickets in the data set?">
+How many tickets in the data set?
+ What is the range of dates in the data?">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/exploring-open-data-philadelphia-parking-violations/">
@@ -124,7 +125,8 @@ How many tickets in the data set?">
   <meta property="og:url" content="/post/exploring-open-data-philadelphia-parking-violations/">
   <meta property="og:title" content="Exploring Open Data - Philadelphia Parking Violations | Jake Learns Data Science">
   <meta property="og:description" content="Introduction A few weeks ago, I stumbled across Dylan Purcell&rsquo;s article on Philadelphia Parking Violations. This is a nice glimpse of the data, but I wanted to get a taste of it myself. I went and downloaded the entire data set of Parking Violations in Philadelphia from the OpenDataPhilly website and came up with a few questions after checking out the data:
-How many tickets in the data set?"><meta property="og:image" content="/img/jakes_pic.jpg">
+How many tickets in the data set?
+ What is the range of dates in the data?"><meta property="og:image" content="/img/jakes_pic.jpg">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2016-03-10T00:00:00&#43;00:00">
@@ -438,20 +440,15 @@ How many tickets in the data set?"><meta property="og:image" content="/img/jakes
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      
-
-<h3 id="introduction">Introduction</h3>
-
-<p>A few weeks ago, I stumbled across <a href="https://twitter.com/dylancpurcell" target="_blank">Dylan Purcell&rsquo;s</a>
-article on <a href="http://data.philly.com/philly/parking/" target="_blank">Philadelphia Parking Violations</a>.
+      <h3 id="introduction">Introduction</h3>
+<p>A few weeks ago, I stumbled across <a href="https://twitter.com/dylancpurcell">Dylan Purcell&rsquo;s</a>
+article on <a href="http://data.philly.com/philly/parking/">Philadelphia Parking Violations</a>.
 This is a nice glimpse of the data, but I wanted to get a taste of it myself. I
 went and downloaded the entire data set of
-<a href="https://www.opendataphilly.org/dataset/parking-violations" target="_blank">Parking Violations in Philadelphia</a>
-from the <a href="http://opendataphilly.org/" target="_blank">OpenDataPhilly website</a> and came up with a
+<a href="https://www.opendataphilly.org/dataset/parking-violations">Parking Violations in Philadelphia</a>
+from the <a href="http://opendataphilly.org/">OpenDataPhilly website</a> and came up with a
 few questions after checking out the data:</p>
-
 <p>How many tickets in the data set?</p>
-
 <ul>
 <li>What is the range of dates in the data?</li>
 <li>Are there missing days/data?</li>
@@ -468,56 +465,45 @@ issued those fines?</li>
 <li>How many people have been issued fines?</li>
 <li>What fines are issued the most/least?</li>
 </ul>
-
 <p>And finally to the cool stuff:</p>
-
 <ul>
 <li>Where were the most fines? Can I see them on a heat map?</li>
 <li>Can I predict the amount of parking tickets by weather data and other factors
 using linear regression? How about using Random Forests?</li>
 </ul>
-
 <h3 id="data-insights">Data Insights</h3>
-
 <p>This data set has 5,624,084 tickets in it that spans from January 1, 2012 through
 September 30, 2015 - an exact range of 1368.881 days. I was glad to find that
 there are no missing days in the data set.</p>
-
 <p>The biggest fine, $2000 (OUCH!), was issued (many times) by the police for &ldquo;ATV
 on Public Property.&rdquo; The smallest fine, $15, was issued also by the police
 &ldquo;parking over the time limit.&rdquo; The average fine for a violation in Philadelphia
 over the time range was $46.33.</p>
-
 <p>The most violations occurred on November 30, 2012 when 6,040 were issued. The
 least issued, unsurprisingly, was on Christmas day, 2014, when only 90 were
 issued. On average, PPA and the other 9 agencies that issued tickets (more on
 that below), issued 4,105.17 tickets per day. All of those tickets add up to
 $190,193.50 in fines issued to the residents and visitors of Philadelphia every
 day!!!</p>
-
 <p>Digging a little deeper, I find that the most popular hour of the day for
 getting a ticket is 12 noon; 5AM nets the least tickets. Thursdays see the most
 tickets written (Thursdays and Fridays are higher than the rest of the week;
 Sundays see the least (pretty obvious). Other obvious insight is that PA licensed
 drivers were issued the most tickets.</p>
-
 <p>Looking at individuals, there was one person who was issued 1,463 tickets
 (thats more than 1 violation per day on average) for a whopping $36,471. In
 just looking at a few of their tickets, it seems like it is probably a delivery
 vehicle that delivers to Chinatown (Tickets for &ldquo;Stop Prohibited&rdquo; and &ldquo;Bus Only
 Zone&rdquo; in the Chinatown area). I&rsquo;d love to hear more about why this person has
 so many tickets and what you do about that&hellip;</p>
-
 <p><strong>1,976,559 people</strong> - let me reiterate - nearly <strong>2 million unique vehicles</strong>
 have been issued fines over the three and three quarter years this data set
 encompasses. That&rsquo;s so many!!! That is 2.85 tickets per vehicle, on average (of
 course that excludes all of the cars that were here and never ticketed). That
 makes me feel much better about how many tickets I got while I lived in the city.</p>
-
 <p>And&hellip; who are the agencies behind all of this? It is no surprise that PPA
 issues the most. There are 11 agencies in all. Seems like all of the policing
 agencies like to get in on the fun from time to time.</p>
-
 <table>
 <thead>
 <tr>
@@ -525,88 +511,68 @@ agencies like to get in on the fun from time to time.</p>
 <th>count</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>PPA</td>
 <td>4,979,292</td>
 </tr>
-
 <tr>
 <td>PHILADELPHIA POLICE</td>
 <td>611,348</td>
 </tr>
-
 <tr>
 <td>CENTER CITY DISTRICT</td>
 <td>9,628</td>
 </tr>
-
 <tr>
 <td>SEPTA</td>
 <td>9342</td>
 </tr>
-
 <tr>
 <td>UPENN POLICE</td>
 <td>6,366</td>
 </tr>
-
 <tr>
 <td>TEMPLE POLICE</td>
 <td>4,055</td>
 </tr>
-
 <tr>
 <td>HOUSING AUTHORITY</td>
 <td>2,137</td>
 </tr>
-
 <tr>
 <td>PRISON CORRECTIONS OFFICER</td>
 <td>295</td>
 </tr>
-
 <tr>
 <td>POST OFFICE</td>
 <td>121</td>
 </tr>
-
 <tr>
 <td>FAIRMOUNT DISTRICT</td>
 <td>120</td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="mapping-the-violations">Mapping the Violations</h3>
-
 <p>Where are you most likely to get a violation? Is there anywhere that is completely
 safe? Looking at the city as a whole, you can see that there are some places
 that are &ldquo;hotter&rdquo; than others. I
-<a href="https://rozran00.cartodb.com/viz/ea4ebb4e-e7c0-11e5-8939-0e5db1731f59/public_map" target="_blank">played around in cartoDB to try to visualize this as well</a>,
+<a href="https://rozran00.cartodb.com/viz/ea4ebb4e-e7c0-11e5-8939-0e5db1731f59/public_map">played around in cartoDB to try to visualize this as well</a>,
 but tableau seemed to do a decent enough job (though these are just screenshots).</p>
-
-<p><img src="/img/parking_tickets_macro.png" alt="parking_tickets_macro" /></p>
-
+<p><img src="/img/parking_tickets_macro.png" alt="parking_tickets_macro"></p>
 <p>Zooming in, you can see that there are some distinct areas where tickets are
 given out in more quantity.</p>
-
-<p><img src="/img/parking_tickets_micro.png" alt="parking_tickets_micro" /></p>
-
+<p><img src="/img/parking_tickets_micro.png" alt="parking_tickets_micro"></p>
 <p>Looking one level deeper, you can see that there are some areas like Center City,
 east Washington Avenue, Passyunk Ave, and Broad Street that seem to be very
 highly patrolled.</p>
-
-<p><img src="/img/parking_tickets_zoom.png" alt="parking_tickets_zoom" /></p>
-
+<p><img src="/img/parking_tickets_zoom.png" alt="parking_tickets_zoom"></p>
 <h3 id="summary">Summary</h3>
-
 <p>I created the above maps in Tableau. I used R to summarize the data. The R
 scripts, raw and processed data, and Tableau workbook can be found in
-<a href="https://github.com/jrozra200/philly_parking_ticket_analysis" target="_blank">my github repo</a>.</p>
-
-<p><a href="https://www.jakelearnsdatascience.com/posts/exploring-open-data-predicting-the-amount-of-violations/" target="_blank">In the next post, I use weather data and other parameters to predict how many tickets will be written on a daily basis</a>.</p>
+<a href="https://github.com/jrozra200/philly_parking_ticket_analysis">my github repo</a>.</p>
+<p><a href="https://www.jakelearnsdatascience.com/posts/exploring-open-data-predicting-the-amount-of-violations/">In the next post, I use weather data and other parameters to predict how many tickets will be written on a daily basis</a>.</p>
 
     </div>
 
@@ -825,7 +791,7 @@ scripts, raw and processed data, and Tableau workbook can be found in
   
 
   <p class="powered-by">
-    &copy; 2019 Jacob Rozran &middot; 
+    © 2020 Jacob Rozran &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

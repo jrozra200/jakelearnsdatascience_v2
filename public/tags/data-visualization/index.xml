@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data visualization on Jake Learns Data Science</title>
@@ -6,11 +6,20 @@
     <description>Recent content in data visualization on Jake Learns Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
-    <lastBuildDate>Tue, 26 Mar 2019 00:00:00 -0400</lastBuildDate>
+    <copyright>&amp;copy; 2020 Jacob Rozran</copyright>
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 -0500</lastBuildDate>
     
 	<atom:link href="/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Twitter Analysis - R Shiny App</title>
+      <link>/project/twitter-shiny-app/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0500</pubDate>
+      
+      <guid>/project/twitter-shiny-app/</guid>
+      <description>I created a Shiny app that searches Twitter and does some simple analysis.</description>
+    </item>
     
     <item>
       <title>Jake Learns Data Science Visitor Dashboard</title>
@@ -47,7 +56,8 @@ When I saw this, my mind was blown. How interesting&amp;hellip; and also how obv
       
       <guid>/post/exploring-open-data-philadelphia-parking-violations/</guid>
       <description>Introduction A few weeks ago, I stumbled across Dylan Purcell&amp;rsquo;s article on Philadelphia Parking Violations. This is a nice glimpse of the data, but I wanted to get a taste of it myself. I went and downloaded the entire data set of Parking Violations in Philadelphia from the OpenDataPhilly website and came up with a few questions after checking out the data:
-How many tickets in the data set?</description>
+How many tickets in the data set?
+ What is the range of dates in the data?</description>
     </item>
     
     <item>

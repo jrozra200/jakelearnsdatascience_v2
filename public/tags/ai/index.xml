@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AI on Jake Learns Data Science</title>
@@ -6,11 +6,21 @@
     <description>Recent content in AI on Jake Learns Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2019 Jacob Rozran</copyright>
-    <lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <copyright>&amp;copy; 2020 Jacob Rozran</copyright>
+    <lastBuildDate>Mon, 27 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Model Comparision - Understanding Reciever Operating Characteristic (ROC) Curves &amp; Area Under the Curve (AUC)</title>
+      <link>/post/model-comparison-understanding-roc-curves-and-auc/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/model-comparison-understanding-roc-curves-and-auc/</guid>
+      <description>INTRODUCTION Whether you are a data professional or in a job that requires data driven decisions, predictive analytics and related products (aka machine learning aka ML aka artificial intelligence aka AI) are here and understanding them is paramount. They are being used to drive industry. Because of this, understanding how to compare predictive models is very important.
+This post gets into a very popular method of decribing how well a model performs: the Area Under the Curve (AUC) metric.</description>
+    </item>
     
     <item>
       <title>A Data Scientist&#39;s Take on the Roadmap to AI</title>

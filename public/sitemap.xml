@@ -3,8 +3,48 @@
     
     <url>
     
-      <loc>/project/philly-mag-article/</loc>
-      <lastmod>2019-09-30T00:00:00-04:00</lastmod>
+      <loc>/tags/ai/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/ai/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/auc/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/data-science/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/data-science/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -12,17 +52,39 @@
     <url>
     
       <loc>/</loc>
-      <lastmod>2019-09-30T00:00:00-04:00</lastmod>
-      <priority>0</priority>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
     </url>
     
   
     
     <url>
     
-      <loc>/project/</loc>
-      <lastmod>2019-09-30T00:00:00-04:00</lastmod>
-      <priority>0</priority>
+      <loc>/post/model-comparison-understanding-roc-curves-and-auc/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/model-coparison/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/modeling/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/roc-curves/</loc>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -30,8 +92,55 @@
     <url>
     
       <loc>/tags/</loc>
-      <lastmod>2019-09-30T00:00:00-04:00</lastmod>
-      <priority>0</priority>
+      <lastmod>2020-01-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/data-visualization/</loc>
+      <lastmod>2019-11-21T00:00:00-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/</loc>
+      <lastmod>2019-11-21T00:00:00-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/projects/</loc>
+      <lastmod>2019-11-21T00:00:00-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/shiny/</loc>
+      <lastmod>2019-11-21T00:00:00-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/twitter/</loc>
+      <lastmod>2019-11-21T00:00:00-05:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/twitter-shiny-app/</loc>
+      <lastmod>2019-11-21T00:00:00-05:00</lastmod>
     </url>
     
   
@@ -40,7 +149,14 @@
     
       <loc>/tags/articles/</loc>
       <lastmod>2019-09-30T00:00:00-04:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/project/philly-mag-article/</loc>
+      <lastmod>2019-09-30T00:00:00-04:00</lastmod>
     </url>
     
   
@@ -49,7 +165,6 @@
     
       <loc>/tags/philly-magazine/</loc>
       <lastmod>2019-09-30T00:00:00-04:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -64,18 +179,8 @@
     
     <url>
     
-      <loc>/tags/data-visualization/</loc>
-      <lastmod>2019-03-26T00:00:00-04:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/tableau-public/</loc>
       <lastmod>2019-03-26T00:00:00-04:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -90,54 +195,8 @@
     
     <url>
     
-      <loc>/categories/ai/</loc>
-      <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/ai/</loc>
-      <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/</loc>
-      <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/data-analytics/</loc>
       <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/categories/data-science/</loc>
-      <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/data-science/</loc>
-      <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -146,7 +205,6 @@
     
       <loc>/tags/maching-learning/</loc>
       <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -155,7 +213,6 @@
     
       <loc>/tags/roadmap/</loc>
       <lastmod>2019-03-23T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -164,7 +221,14 @@
     
       <loc>/categories/data-engineering/</loc>
       <lastmod>2019-01-14T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/data-engineering/</loc>
+      <lastmod>2019-01-14T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -173,7 +237,14 @@
     
       <loc>/categories/data-visualization/</loc>
       <lastmod>2019-01-14T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/ggplot/</loc>
+      <lastmod>2019-01-14T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -182,7 +253,14 @@
     
       <loc>/tags/r/</loc>
       <lastmod>2019-01-14T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/rstrava/</loc>
+      <lastmod>2019-01-14T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -191,7 +269,6 @@
     
       <loc>/tags/strava/</loc>
       <lastmod>2019-01-14T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -206,27 +283,8 @@
     
     <url>
     
-      <loc>/tags/data-engineering/</loc>
-      <lastmod>2019-01-14T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/ggplot/</loc>
-      <lastmod>2019-01-14T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/rstrava/</loc>
-      <lastmod>2019-01-14T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/tags/getting-started/</loc>
+      <lastmod>2018-12-21T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -241,18 +299,8 @@
     
     <url>
     
-      <loc>/tags/getting-started/</loc>
-      <lastmod>2018-12-21T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/learning/</loc>
       <lastmod>2018-12-21T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -269,7 +317,14 @@
     
       <loc>/categories/binary-classification-models/</loc>
       <lastmod>2017-02-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/classification/</loc>
+      <lastmod>2017-02-07T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -284,18 +339,8 @@
     
     <url>
     
-      <loc>/tags/classification/</loc>
-      <lastmod>2017-02-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/machine-learning/</loc>
       <lastmod>2017-02-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -304,7 +349,14 @@
     
       <loc>/tags/d3.js/</loc>
       <lastmod>2017-01-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/plotly/</loc>
+      <lastmod>2017-01-20T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -321,16 +373,6 @@
     
       <loc>/categories/prime-numbers/</loc>
       <lastmod>2017-01-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/plotly/</loc>
-      <lastmod>2017-01-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -339,7 +381,6 @@
     
       <loc>/tags/prime-numbers/</loc>
       <lastmod>2017-01-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -356,7 +397,6 @@
     
       <loc>/categories/machine-learning/</loc>
       <lastmod>2016-07-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -373,7 +413,6 @@
     
       <loc>/tags/supervised-learning/</loc>
       <lastmod>2016-07-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -382,7 +421,6 @@
     
       <loc>/tags/unsupervised-learning/</loc>
       <lastmod>2016-07-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -391,7 +429,14 @@
     
       <loc>/categories/data-analysis/</loc>
       <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/data-analysis/</loc>
+      <lastmod>2016-03-15T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -406,27 +451,16 @@
     
     <url>
     
-      <loc>/categories/open-data/</loc>
-      <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/data-analysis/</loc>
-      <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/linear-regression/</loc>
       <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/categories/open-data/</loc>
+      <lastmod>2016-03-15T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -435,7 +469,6 @@
     
       <loc>/tags/open-data/</loc>
       <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -444,7 +477,14 @@
     
       <loc>/tags/random-forest/</loc>
       <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/cartodb/</loc>
+      <lastmod>2016-03-10T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -459,18 +499,8 @@
     
     <url>
     
-      <loc>/tags/cartodb/</loc>
-      <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/tableau/</loc>
       <lastmod>2016-03-10T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -487,7 +517,14 @@
     
       <loc>/categories/hackathon/</loc>
       <lastmod>2016-03-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/hackathon/</loc>
+      <lastmod>2016-03-07T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -502,9 +539,8 @@
     
     <url>
     
-      <loc>/tags/hackathon/</loc>
-      <lastmod>2016-03-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/tags/api/</loc>
+      <lastmod>2015-12-04T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -513,7 +549,6 @@
     
       <loc>/tags/splunk/</loc>
       <lastmod>2015-12-04T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -528,9 +563,8 @@
     
     <url>
     
-      <loc>/tags/api/</loc>
-      <lastmod>2015-12-04T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+      <loc>/tags/google-search/</loc>
+      <lastmod>2015-11-04T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -545,18 +579,8 @@
     
     <url>
     
-      <loc>/tags/google-search/</loc>
-      <lastmod>2015-11-04T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/rstudio/</loc>
       <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -565,7 +589,14 @@
     
       <loc>/categories/sierpinski-triangles/</loc>
       <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/tags/sierpinski-triangles/</loc>
+      <lastmod>2015-10-05T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -580,18 +611,8 @@
     
     <url>
     
-      <loc>/tags/sierpinski-triangles/</loc>
-      <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>/tags/stat-theory/</loc>
       <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -606,18 +627,16 @@
     
     <url>
     
-      <loc>/categories/statistics/</loc>
+      <loc>/tags/logistic-regression/</loc>
       <lastmod>2015-09-26T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>/tags/logistic-regression/</loc>
+      <loc>/categories/statistics/</loc>
       <lastmod>2015-09-26T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -626,7 +645,6 @@
     
       <loc>/tags/statistics/</loc>
       <lastmod>2015-09-26T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -634,15 +652,6 @@
     <url>
     
       <loc>/categories/conferences/</loc>
-      <lastmod>2015-07-16T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/post/first-annual-data-jawn/</loc>
       <lastmod>2015-07-16T00:00:00+00:00</lastmod>
     </url>
     
@@ -652,7 +661,6 @@
     
       <loc>/tags/conferences/</loc>
       <lastmod>2015-07-16T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -661,7 +669,14 @@
     
       <loc>/tags/data-jawn/</loc>
       <lastmod>2015-07-16T00:00:00+00:00</lastmod>
-      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/post/first-annual-data-jawn/</loc>
+      <lastmod>2015-07-16T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -678,7 +693,6 @@
     
       <loc>/categories/user-agents/</loc>
       <lastmod>2015-06-19T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -687,7 +701,6 @@
     
       <loc>/tags/user-agents/</loc>
       <lastmod>2015-06-19T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -704,16 +717,6 @@
     
       <loc>/tags/sentiment-analysis/</loc>
       <lastmod>2014-12-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>/tags/twitter/</loc>
-      <lastmod>2014-12-29T00:00:00+00:00</lastmod>
-      <priority>0</priority>
     </url>
     
   
@@ -729,7 +732,6 @@
     <url>
     
       <loc>/publication_types/</loc>
-      <priority>0</priority>
     </url>
     
   

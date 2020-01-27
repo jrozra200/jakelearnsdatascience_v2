@@ -20,8 +20,10 @@ tags:
 <div id="introduction" class="section level3">
 <h3>INTRODUCTION</h3>
 <p>Whether you are a data professional or in a job that requires data driven
-decisions, predictive analytics and related products (aka machine learning aka ML aka artificial intelligence aka AI) are here and understanding them is paramount. They are being used to drive industry. Because of this, understanding how to
-compare predictive models is very important.</p>
+decisions, predictive analytics and related products (aka machine learning aka
+ML aka artificial intelligence aka AI) are here and understanding them is
+paramount. They are being used to drive industry. Because of this, understanding
+how to compare predictive models is very important.</p>
 <p>This post gets into a very popular method of decribing how well a model performs:
 the Area Under the Curve (AUC) metric.</p>
 <p>As the term implies, AUC is a measure of area under the <strong>curve</strong>. The curve
@@ -81,27 +83,27 @@ Logistic Regression, and random prediction using a uniform distribution.</p>
 <tbody>
 <tr class="odd">
 <td align="left">FALSE</td>
-<td align="right">0.9291153</td>
+<td align="right">0.9291</td>
 </tr>
 <tr class="even">
 <td align="left">FALSE</td>
-<td align="right">0.9199880</td>
+<td align="right">0.9200</td>
 </tr>
 <tr class="odd">
 <td align="left">TRUE</td>
-<td align="right">0.8517817</td>
+<td align="right">0.8518</td>
 </tr>
 <tr class="even">
 <td align="left">TRUE</td>
-<td align="right">0.8488991</td>
+<td align="right">0.8489</td>
 </tr>
 <tr class="odd">
 <td align="left">TRUE</td>
-<td align="right">0.8462403</td>
+<td align="right">0.8462</td>
 </tr>
 <tr class="even">
 <td align="left">TRUE</td>
-<td align="right">0.7391254</td>
+<td align="right">0.7391</td>
 </tr>
 </tbody>
 </table>
@@ -111,7 +113,7 @@ Logistic Regression, and random prediction using a uniform distribution.</p>
 <p>Now, we step through the table. Using a “cutoff” as the first row (effectively
 the most likely to be TRUE), we say that the first row is predicted TRUE and
 the remaining are predicted FALSE.</p>
-<p>From the table above, we can see that the first row is FALSE, though we are
+<p>From the table below, we can see that the first row is FALSE, though we are
 predicting it TRUE. This leads to the following metrics for our first iteration:</p>
 <table>
 <thead>
@@ -131,9 +133,9 @@ predicting it TRUE. This leads to the following metrics for our first iteration:
 <tr class="odd">
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="right">0.037037</td>
+<td align="right">0.037</td>
 <td align="right">0</td>
-<td align="right">0.962963</td>
+<td align="right">0.963</td>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">26</td>
@@ -169,13 +171,13 @@ FPR.</p>
 <tbody>
 <tr class="odd">
 <td align="left">FALSE</td>
-<td align="right">0.9291153</td>
+<td align="right">0.9291</td>
 <td align="left">Logistic Regression</td>
 <td align="right">1</td>
-<td align="right">0.0000000</td>
-<td align="right">0.0370370</td>
-<td align="right">0.0000000</td>
-<td align="right">0.9629630</td>
+<td align="right">0.0000</td>
+<td align="right">0.0370</td>
+<td align="right">0.0000</td>
+<td align="right">0.9630</td>
 <td align="right">26</td>
 <td align="right">0</td>
 <td align="right">11</td>
@@ -183,13 +185,13 @@ FPR.</p>
 </tr>
 <tr class="even">
 <td align="left">FALSE</td>
-<td align="right">0.9199880</td>
+<td align="right">0.9200</td>
 <td align="left">Logistic Regression</td>
 <td align="right">2</td>
-<td align="right">0.0000000</td>
-<td align="right">0.0740741</td>
-<td align="right">0.0000000</td>
-<td align="right">0.9259259</td>
+<td align="right">0.0000</td>
+<td align="right">0.0741</td>
+<td align="right">0.0000</td>
+<td align="right">0.9259</td>
 <td align="right">25</td>
 <td align="right">0</td>
 <td align="right">11</td>
@@ -197,13 +199,13 @@ FPR.</p>
 </tr>
 <tr class="odd">
 <td align="left">TRUE</td>
-<td align="right">0.8517817</td>
+<td align="right">0.8518</td>
 <td align="left">Logistic Regression</td>
 <td align="right">3</td>
-<td align="right">0.0909091</td>
-<td align="right">0.0740741</td>
-<td align="right">0.0909091</td>
-<td align="right">0.9259259</td>
+<td align="right">0.0909</td>
+<td align="right">0.0741</td>
+<td align="right">0.0909</td>
+<td align="right">0.9259</td>
 <td align="right">25</td>
 <td align="right">1</td>
 <td align="right">10</td>
@@ -211,13 +213,13 @@ FPR.</p>
 </tr>
 <tr class="even">
 <td align="left">TRUE</td>
-<td align="right">0.8488991</td>
+<td align="right">0.8489</td>
 <td align="left">Logistic Regression</td>
 <td align="right">4</td>
-<td align="right">0.1818182</td>
-<td align="right">0.0740741</td>
-<td align="right">0.1818182</td>
-<td align="right">0.9259259</td>
+<td align="right">0.1818</td>
+<td align="right">0.0741</td>
+<td align="right">0.1818</td>
+<td align="right">0.9259</td>
 <td align="right">25</td>
 <td align="right">2</td>
 <td align="right">9</td>
@@ -225,13 +227,13 @@ FPR.</p>
 </tr>
 <tr class="odd">
 <td align="left">TRUE</td>
-<td align="right">0.8462403</td>
+<td align="right">0.8462</td>
 <td align="left">Logistic Regression</td>
 <td align="right">5</td>
-<td align="right">0.2727273</td>
-<td align="right">0.0740741</td>
-<td align="right">0.2727273</td>
-<td align="right">0.9259259</td>
+<td align="right">0.2727</td>
+<td align="right">0.0741</td>
+<td align="right">0.2727</td>
+<td align="right">0.9259</td>
 <td align="right">25</td>
 <td align="right">3</td>
 <td align="right">8</td>
@@ -239,13 +241,13 @@ FPR.</p>
 </tr>
 <tr class="even">
 <td align="left">TRUE</td>
-<td align="right">0.7391254</td>
+<td align="right">0.7391</td>
 <td align="left">Logistic Regression</td>
 <td align="right">6</td>
-<td align="right">0.3636364</td>
-<td align="right">0.0740741</td>
-<td align="right">0.3636364</td>
-<td align="right">0.9259259</td>
+<td align="right">0.3636</td>
+<td align="right">0.0741</td>
+<td align="right">0.3636</td>
+<td align="right">0.9259</td>
 <td align="right">25</td>
 <td align="right">4</td>
 <td align="right">7</td>
@@ -260,7 +262,7 @@ FPR.</p>
 </div>
 <div id="step-5-plot-the-results-calculate-auc" class="section level4">
 <h4>Step 5: Plot the Results &amp; Calculate AUC</h4>
-<p>As you can see, the Random Forest does remarkably well. It perfectly separated
+<p>As you can see below, the Random Forest does remarkably well. It perfectly separated
 the outcomes in this example (to be fair, this is really small data and test
 data). What I mean is, when the data is rank ordered by the predicted likelihood<br />
 of being TRUE, the actual outcome of TRUE are grouped together. There are no

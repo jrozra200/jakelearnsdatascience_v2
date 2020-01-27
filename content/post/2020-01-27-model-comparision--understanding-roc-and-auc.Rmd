@@ -18,8 +18,10 @@ tags:
 ### INTRODUCTION
 
 Whether you are a data professional or in a job that requires data driven 
-decisions, predictive analytics and related products (aka machine learning aka ML aka artificial intelligence aka AI) are here and understanding them is paramount. They are being used to drive industry. Because of this, understanding how to 
-compare predictive models is very important.
+decisions, predictive analytics and related products (aka machine learning aka 
+ML aka artificial intelligence aka AI) are here and understanding them is 
+paramount. They are being used to drive industry. Because of this, understanding 
+how to compare predictive models is very important.
 
 This post gets into a very popular method of decribing how well a model performs: 
 the Area Under the Curve (AUC) metric. 
@@ -114,7 +116,7 @@ rf_tab <- rf_tab[order(rf_tab$value, decreasing = TRUE), ]
 rf_tab$variable <- NULL
 names(rf_tab) <- c("Actual", "Predicted")
 
-kable(head(rf_tab), row.names = FALSE)
+kable(head(rf_tab), row.names = FALSE, digits = 4)
 ```
 
 #### Step 2: Calculate TPR & FPR for First Iteration
@@ -123,7 +125,7 @@ Now, we step through the table. Using a "cutoff" as the first row (effectively
 the most likely to be TRUE), we say that the first row is predicted TRUE and 
 the remaining are predicted FALSE. 
 
-From the table above, we can see that the first row is FALSE, though we are 
+From the table below, we can see that the first row is FALSE, though we are 
 predicting it TRUE. This leads to the following metrics for our first iteration: 
 
 ```{r stepone,  echo = FALSE, warning = FALSE, error = FALSE, message = FALSE}
@@ -155,7 +157,7 @@ tmp <- data.frame(Iteration = cut,
                   `True Negative` = tn,
                   `False Negative` = fn)
 
-kable(tmp, row.names = FALSE)
+kable(tmp, row.names = FALSE, digits = 4)
 ```
 
 This is what we'd expect. We have a 0% TPR on the first iteration because we got 
@@ -217,7 +219,8 @@ names(disp_tab) <- c("Actual Outcome", "Predicted Outcome", "Model", "Rank",
                      "True Positive Rate", "False Positive Rate", "Sensitivity",
                      "Specificity", "True Negative", "True Positive", 
                      "False Negative", "False Positive")
-kable(disp_tab, row.names = FALSE)
+
+kable(disp_tab, row.names = FALSE, digits = 4)
 ```
 
 #### Step 4: Repeat Steps 1-3 for Each Model
@@ -226,7 +229,7 @@ Calculate the TPR & FPR for each rank and model!
 
 #### Step 5: Plot the Results & Calculate AUC
 
-As you can see, the Random Forest does remarkably well. It perfectly separated 
+As you can see below, the Random Forest does remarkably well. It perfectly separated 
 the outcomes in this example (to be fair, this is really small data and test 
 data). What I mean is, when the data is rank ordered by the predicted likelihood  
 of being TRUE, the actual outcome of TRUE are grouped together. There are no 
@@ -250,7 +253,7 @@ roc_dat_rand <- roc(test_dat$versicolor[test_dat$variable == "pred_rand"],
 
 ggplot(roc_dat, aes(x = false_pos_rate, y = true_pos_rate, group = model, 
                     color = model)) + 
-    geom_line() + 
+    geom_line(size = 2) + 
     geom_abline(intercept = 0, slope = 1, linetype = "dashed") + 
     scale_color_manual(values = c("dark gray", "navy", "light blue"),
                        labels = c(paste0("Logistic Regression, AUC = ",

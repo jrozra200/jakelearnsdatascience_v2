@@ -6,7 +6,7 @@ title = "Jake on Strava - R Shiny App"
 date = 2020-04-20T00:00:00
 
 # Project summary to display on homepage.
-summary = "I created a Shiny app that searches grabs my running, riding, and other exercise stats from Strava and creates some simple visualizations."
+summary = "I created a Shiny app that grabs my running, riding, and other exercise stats from Strava and creates some simple visualizations."
 
 # Tags: can be used for filtering projects.
 # Example: `tags = ["d3.js", "data visualization"]`
